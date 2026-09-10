@@ -32,9 +32,10 @@
     .tab:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,32,64,0.14); border-color: var(--red); }
     .tab.active { border-color: var(--amber); box-shadow: 0 6px 16px rgba(206,17,38,0.18); }
     .tab.active::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 9px solid transparent; border-right: 9px solid transparent; border-top: 10px solid var(--amber); }
-    .tab-thumb { position: relative; aspect-ratio: 16/9; background: linear-gradient(135deg, #1a3866, #0d1f3a); overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 6px; color: rgba(255,255,255,0.55); }
-    .tab-thumb i { font-size: 1.15rem; opacity: 0.55; }
-    .tab-thumb .lbl { font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; text-align: center; }
+    .tab-thumb { position: relative; aspect-ratio: 16/9; background: linear-gradient(135deg, #1a3866, #0d1f3a); overflow: hidden; }
+    .tab-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+    .tab-thumb .tp { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 2; }
+    .tab-thumb .tp i { width: 26px; height: 26px; border-radius: 50%; background: rgba(206,17,38,0.92); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 8px; padding-left: 1px; box-shadow: 0 2px 6px rgba(0,0,0,0.45); }
     .tab-num { position: absolute; top: 4px; left: 7px; font-family: var(--font-display); font-size: 12px; font-weight: 700; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.75); z-index: 2; }
     .tab-title { padding: 6px 10px 8px; font-size: 10px; font-weight: 800; color: var(--text); line-height: 1.25; min-height: 36px; background: var(--card); text-transform: uppercase; letter-spacing: 0.3px; }
     .tab.active .tab-title { color: var(--red-deep); background: rgba(255,185,29,0.08); }
@@ -198,27 +199,27 @@
   <div class="switch fi">
     <div class="tabs" role="tablist" aria-label="Six pivot competencies">
       <button class="tab active" data-tab="1" type="button">
-        <div class="tab-thumb"><span class="tab-num">01</span><i class="fas fa-video"></i><span class="lbl">Footage compiling</span></div>
+        <div class="tab-thumb"><img src="https://img.youtube.com/vi/DlT4JBb6Fo0/hqdefault.jpg" alt=""><span class="tab-num">01</span><span class="tp"><i class="fas fa-play"></i></span></div>
         <div class="tab-title">Physically Dominant</div>
       </button>
       <button class="tab" data-tab="2" type="button">
-        <div class="tab-thumb"><span class="tab-num">02</span><i class="fas fa-video"></i><span class="lbl">Footage compiling</span></div>
+        <div class="tab-thumb"><img src="https://img.youtube.com/vi/uVhn9-6P8X8/hqdefault.jpg" alt=""><span class="tab-num">02</span><span class="tp"><i class="fas fa-play"></i></span></div>
         <div class="tab-title">Constant Threat</div>
       </button>
       <button class="tab" data-tab="3" type="button">
-        <div class="tab-thumb"><span class="tab-num">03</span><i class="fas fa-video"></i><span class="lbl">Footage compiling</span></div>
+        <div class="tab-thumb"><img src="https://img.youtube.com/vi/zmRC5aI2NDM/hqdefault.jpg" alt=""><span class="tab-num">03</span><span class="tp"><i class="fas fa-play"></i></span></div>
         <div class="tab-title">Retains Under Pressure</div>
       </button>
       <button class="tab" data-tab="4" type="button">
-        <div class="tab-thumb"><span class="tab-num">04</span><i class="fas fa-video"></i><span class="lbl">Footage compiling</span></div>
+        <div class="tab-thumb"><img src="https://img.youtube.com/vi/eCp5T_w2wy0/hqdefault.jpg" alt=""><span class="tab-num">04</span><span class="tp"><i class="fas fa-play"></i></span></div>
         <div class="tab-title">Press Intensity</div>
       </button>
       <button class="tab" data-tab="5" type="button">
-        <div class="tab-thumb"><span class="tab-num">05</span><i class="fas fa-video"></i><span class="lbl">Footage compiling</span></div>
+        <div class="tab-thumb"><img src="https://img.youtube.com/vi/82mNUxfOenM/hqdefault.jpg" alt=""><span class="tab-num">05</span><span class="tp"><i class="fas fa-play"></i></span></div>
         <div class="tab-title">Problem Solver</div>
       </button>
       <button class="tab" data-tab="6" type="button">
-        <div class="tab-thumb"><span class="tab-num">06</span><i class="fas fa-video"></i><span class="lbl">Footage compiling</span></div>
+        <div class="tab-thumb"><img src="https://img.youtube.com/vi/aKdNUCQ0Z8k/hqdefault.jpg" alt=""><span class="tab-num">06</span><span class="tp"><i class="fas fa-play"></i></span></div>
         <div class="tab-title">Technical Execution</div>
       </button>
     </div>
