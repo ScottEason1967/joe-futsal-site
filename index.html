@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Joe Eason · Pivot | Futsal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .page { max-width: 1180px; margin: 0 auto; padding: 48px 40px 0; }
+
+    .hero { margin-bottom: 48px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center; }
+    .hero-rule { width: 72px; height: 4px; background: var(--amber); border-radius: 2px; margin-bottom: 18px; }
+    .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2.2px; color: rgba(255,255,255,0.85); text-transform: uppercase; margin-bottom: 14px; }
+    .hero h1 { font-family: var(--font-display); font-size: clamp(40px, 6vw, 56px); font-weight: 700; line-height: 1.02; color: #fff; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 16px; }
+    .hero h1 em { font-style: normal; color: var(--red); }
+    .hero-sub { font-size: 16px; color: rgba(255,255,255,0.9); line-height: 1.65; margin-bottom: 24px; max-width: 500px; }
+    .hero-sub strong { color: #fff; font-weight: 700; }
+    .hero-bottom { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: stretch; }
+    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--card); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,32,64,0.12); }
+    .hero-stat { padding: 16px 14px; text-align: center; border-right: 1px solid var(--border-lt); }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat strong { display: block; font-family: var(--font-display); font-size: 1.7rem; font-weight: 700; color: var(--blue-deep); }
+    .hero-stat small { font-size: 0.58rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; }
+    .hero-club-tile { width: 90px; align-self: center; display: block; }
+    .hero-club-tile img { width: 100%; height: auto; display: block; border: 1.5px solid #fff; border-radius: 10px; box-shadow: 0 4px 16px rgba(0,32,64,0.12); }
+    .hero-club-tile .p { color: var(--red); font-family: var(--font-display); font-size: 1.15rem; text-align: center; line-height: 1.05; }
+    .hero-photo { aspect-ratio: 3/4; border-radius: 14px; overflow: hidden; background: linear-gradient(135deg, #0a1a2e, #1a2e4a); border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 12px 40px rgba(0,0,0,0.35); max-height: 400px; display: flex; align-items: center; justify-content: center; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-photo .ph { color: rgba(255,255,255,0.45); text-align: center; padding: 20px; }
+    .hero-photo .ph i { font-size: 1.6rem; display: block; margin-bottom: 10px; opacity: 0.6; }
+    .hero-photo .ph span { display: block; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
+
+    .joe-voice { padding: 20px 0 56px; text-align: center; }
+    .joe-voice-mark { font-family: var(--font-display); font-size: 96px; line-height: 0.6; color: var(--amber); opacity: 0.65; margin-bottom: 8px; user-select: none; }
+    .joe-voice-quote { font-size: clamp(20px, 2.3vw, 26px); font-style: italic; font-weight: 400; color: #fff; line-height: 1.5; max-width: 780px; margin: 0 auto 18px; }
+    .joe-voice-quote strong { color: var(--amber); font-weight: 600; font-style: italic; }
+    .joe-voice-attr { font-family: var(--font-display); font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 2px; }
+
+    .hub { position: relative; margin-bottom: 40px; }
+    .hub-label { margin-bottom: 28px; }
+    .hub-label .hub-ef { display: inline-block; background: #fff; border-radius: 8px; padding: 8px 13px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.18); }
+    .hub-label .hub-ef img { width: 124px; height: auto; display: block; }
+    .hub-label .rule { width: 72px; height: 4px; background: var(--amber); border-radius: 2px; margin-bottom: 16px; }
+    .hub-label .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2.2px; color: rgba(255,255,255,0.85); text-transform: uppercase; margin-bottom: 8px; }
+    .hub-label h2 { font-size: 30px; font-weight: 800; color: #fff; letter-spacing: -0.6px; line-height: 1.1; margin-bottom: 6px; }
+    .hub-label p { font-size: 14.5px; color: rgba(255,255,255,0.88); line-height: 1.55; max-width: 600px; }
+
+    .hub-stage { position: relative; width: 100%; max-width: 720px; margin: 0 auto; aspect-ratio: 1/1; }
+    .hub-svg { width: 100%; height: 100%; display: block; overflow: visible; }
+    .hub-svg .petal { cursor: pointer; }
+    .hub-svg .petal-bg { fill: rgba(0,48,135,0.65); transition: fill 0.22s ease; }
+    .hub-svg .petal:hover .petal-bg { fill: rgba(206,17,38,0.75); }
+    .hub-svg .petal-stroke { stroke: rgba(255,255,255,0.22); stroke-width: 1.5; transition: stroke 0.22s ease, stroke-width 0.22s ease; }
+    .hub-svg .petal:hover .petal-stroke { stroke: var(--amber); stroke-width: 3; }
+    .hub-svg .petal-shade { transition: opacity 0.22s ease; }
+    .hub-svg .petal:hover .petal-shade { opacity: 0.30; }
+    .hub-svg .petal-title { font-family: var(--font-display); font-size: 15.5px; font-weight: 700; fill: #fff; text-transform: uppercase; letter-spacing: 0.6px; paint-order: stroke; stroke: rgba(0,20,50,0.75); stroke-width: 3; stroke-linejoin: round; pointer-events: none; }
+    .hub-svg .petal-num { font-family: var(--font-display); font-size: 12px; font-weight: 700; fill: var(--amber); text-transform: uppercase; pointer-events: none; }
+
+    .hub-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 36%; aspect-ratio: 1/1; border-radius: 50%; background: var(--card); box-shadow: 0 12px 38px rgba(0,32,64,0.30); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 5%; z-index: 5; overflow: hidden; }
+    .hub-center::before { content: ''; position: absolute; inset: 0; background-image: url('img/photo-futsal.jpg'); background-size: cover; background-position: center; opacity: 0.85; z-index: 0; pointer-events: none; }
+    .hub-center::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.85) 40%, rgba(255,255,255,0.55) 72%, rgba(255,255,255,0.1) 100%); z-index: 1; pointer-events: none; }
+    .hub-center > * { position: relative; z-index: 2; }
+    .hub-center .lbl-big { font-family: var(--font-display); font-size: clamp(17px, 2.7vw, 24px); font-weight: 700; color: var(--red); line-height: 1; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; text-shadow: 0 1px 2px rgba(255,255,255,0.95), 0 0 9px rgba(255,255,255,0.85); }
+    /* Icon items — movie(6) and star(7). Icon centred above its caption. Both same size. */
+    .hub-center .disc-item { display: flex; flex-direction: column; align-items: center; gap: 2px; text-decoration: none; margin-top: 7px; }
+    .hub-center .ico { position: relative; display: inline-flex; width: 28px; height: 28px; align-items: center; justify-content: center; }
+    .hub-center .ico i { color: var(--amber); font-size: 28px; filter: drop-shadow(0 2px 4px rgba(255,185,29,0.4)); transition: transform 0.15s; }
+    .hub-center .ico .n { position: absolute; left: 50%; transform: translate(-50%, -50%); font-family: var(--font-display); font-weight: 700; color: var(--blue-deep); }
+    .hub-center .ico.movie .n { top: 52%; font-size: 11px; }
+    .hub-center .ico.star .n { top: 56%; font-size: 11px; }
+    .hub-center .disc-item .cap { font-size: 8.5px; font-weight: 800; color: var(--amber-deep); text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.2; text-shadow: 0 1px 2px rgba(255,255,255,0.95), 0 0 7px rgba(255,255,255,0.85); }
+    .hub-center .disc-item:hover .ico i { transform: scale(1.1); }
+    .hub-center .disc-item:hover .cap { color: var(--red); }
+    .hub-center .cta { font-size: 9.5px; font-weight: 700; color: var(--red); margin-top: 8px; letter-spacing: 0.3px; text-decoration: none; text-shadow: 0 1px 2px rgba(255,255,255,0.95), 0 0 7px rgba(255,255,255,0.85); }
+    .hub-center .cta:hover { text-decoration: underline; }
+
+    .hub-mobile { display: none; }
+    .hub-mobile-list { display: grid; gap: 10px; }
+    .m-center { display: flex; flex-direction: column; align-items: center; gap: 6px; background: var(--card); border-radius: 12px; padding: 18px; text-decoration: none; color: inherit; text-align: center; border: 2px solid var(--red); margin-bottom: 10px; }
+    .m-tile { display: flex; align-items: center; gap: 12px; background: var(--card); border: 1px solid var(--border-lt); border-radius: 12px; padding: 14px 16px; text-decoration: none; color: inherit; }
+    .m-tile .n { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--red); flex-shrink: 0; width: 32px; }
+    .m-tile .title { font-size: 0.92rem; font-weight: 800; color: var(--text); line-height: 1.3; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; gap: 24px; }
+      .hero-photo { max-width: 320px; margin: 0 auto; max-height: 400px; }
+      .hub-stage { display: none; }
+      .hub-mobile { display: block; }
+      .page { padding: 32px 22px 0; }
+    }
+    @media (max-width: 480px) { .hero-bottom { grid-template-columns: 1fr; } .hero-club-tile { width: 96px; margin: 0 auto; } }
+
+    /* Beyond the pivot — action photo + looping technical clip */
+    .extras { margin-top: 12px; padding-top: 34px; border-top: 1px solid rgba(255,255,255,0.12); text-align: center; }
+    .extras .rule { width: 72px; height: 4px; background: var(--amber); border-radius: 2px; margin: 0 auto 16px; }
+    .extras .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2.2px; color: rgba(255,255,255,0.85); text-transform: uppercase; margin-bottom: 8px; }
+    .extras h2 { font-size: 30px; font-weight: 800; color: #fff; letter-spacing: -0.6px; line-height: 1.1; margin-bottom: 6px; }
+    .extras .ex-head p { font-size: 14.5px; color: rgba(255,255,255,0.88); line-height: 1.55; max-width: 600px; margin: 0 auto 24px; }
+    .ex-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; max-width: 620px; margin: 0 auto; }
+    .ex-item figcaption { text-align: center; }
+    .ex-item { margin: 0; }
+    .ex-media { border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 8px 24px rgba(0,0,0,0.35); aspect-ratio: 3/4; }
+    .ex-media img, .ex-media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .ex-item figcaption { margin-top: 10px; font-size: 12.5px; color: rgba(255,255,255,0.82); line-height: 1.45; }
+    .ex-item figcaption strong { color: #fff; font-weight: 800; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-brand">Joe <em>Eason</em></a>
+    <button class="nav-ham" id="navHam"><i class="fas fa-bars"></i></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="on">Home</a></li>
+      <li><a href="pivot.html">The Pivot</a></li>
+      <li><a href="record.html">Record</a></li>
+      <li><a href="bio.html">Bio</a></li>
+      <li><a href="physical.html">Physical</a></li>
+      <li><a href="references.html">References</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="hero fi">
+    <div>
+      <div class="hero-rule"></div>
+      <div class="hero-eyebrow">Pivot · National Futsal Series · FutsalUOS</div>
+      <h1>Joe <em>Eason</em></h1>
+      <p class="hero-sub">Athletic, physically strong, technically excellent pivot. Analysed against the seven competencies that decide the modern pivot role.</p>
+      <div class="hero-bottom">
+        <div class="hero-stats">
+          <div class="hero-stat"><strong>18</strong><small>Age</small></div>
+          <div class="hero-stat"><strong>6'2"</strong><small>Height</small></div>
+          <div class="hero-stat"><strong>84kg</strong><small>Weight</small></div>
+        </div>
+        <div class="hero-club-tile">
+          <img src="img/UOS.jpg" alt="Team Sunderland Futsal badge" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <div class="p" style="display:none;">FUTSAL<br>UOS</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="img/hero.jpg" alt="Joe Eason, pivot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="ph" style="display:none; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%;">
+        <i class="fas fa-camera"></i><span>Hero Photo</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hub">
+    <div class="hub-label">
+      <div class="hub-ef"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div>
+      <div class="rule"></div>
+      <div class="eyebrow">Position Analysis</div>
+      <h2>The Pivot</h2>
+      <p>England Futsal's Pride framework defines seven requirements for the pivot. Six petals below cover what you can see on film. The seventh — psychological robustness — is the star at the centre. The part you can't coach.</p>
+    </div>
+
+    <div class="hub-stage fi">
+      <svg class="hub-svg" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Pivot — six competencies hex hub">
+        <g class="petals">
+
+          <a href="pivot.html#p1" class="petal" aria-label="Physically Dominant">
+            <path d="M 330.52 269.32 A 148 148 0 0 1 469.48 269.32 L 578.40 64.48 A 380 380 0 0 0 221.60 64.48 Z" class="petal-bg"/>
+            <path d="M 330.52 269.32 A 148 148 0 0 1 469.48 269.32 L 578.40 64.48 A 380 380 0 0 0 221.60 64.48 Z" fill="rgba(0,10,30,0.15)" class="petal-shade"/>
+            <path d="M 330.52 269.32 A 148 148 0 0 1 469.48 269.32 L 578.40 64.48 A 380 380 0 0 0 221.60 64.48 Z" class="petal-stroke" fill="none"/>
+            <text x="400" y="115" class="petal-num" text-anchor="middle">01</text>
+            <text x="400" y="185" class="petal-title" text-anchor="middle"><tspan x="400" dy="0">Physically</tspan><tspan x="400" dy="18">Dominant</tspan></text>
+          </a>
+
+          <a href="pivot.html#p2" class="petal" aria-label="Constant Threat">
+            <path d="M 478.43 274.49 A 148 148 0 0 1 547.91 394.83 L 779.77 386.74 A 380 380 0 0 0 601.37 77.74 Z" class="petal-bg"/>
+            <path d="M 478.43 274.49 A 148 148 0 0 1 547.91 394.83 L 779.77 386.74 A 380 380 0 0 0 601.37 77.74 Z" fill="rgba(0,10,30,0.15)" class="petal-shade"/>
+            <path d="M 478.43 274.49 A 148 148 0 0 1 547.91 394.83 L 779.77 386.74 A 380 380 0 0 0 601.37 77.74 Z" class="petal-stroke" fill="none"/>
+            <text x="672" y="272" class="petal-num" text-anchor="middle">02</text>
+            <text x="588" y="291" class="petal-title" text-anchor="middle"><tspan x="588" dy="0">Constant</tspan><tspan x="588" dy="18">Threat</tspan></text>
+          </a>
+
+          <a href="pivot.html#p3" class="petal" aria-label="Retains Under Pressure">
+            <path d="M 547.91 405.17 A 148 148 0 0 1 478.43 525.51 L 601.37 722.26 A 380 380 0 0 0 779.77 413.26 Z" class="petal-bg"/>
+            <path d="M 547.91 405.17 A 148 148 0 0 1 478.43 525.51 L 601.37 722.26 A 380 380 0 0 0 779.77 413.26 Z" fill="rgba(0,10,30,0.15)" class="petal-shade"/>
+            <path d="M 547.91 405.17 A 148 148 0 0 1 478.43 525.51 L 601.37 722.26 A 380 380 0 0 0 779.77 413.26 Z" class="petal-stroke" fill="none"/>
+            <text x="672" y="587" class="petal-num" text-anchor="middle">03</text>
+            <text x="588" y="504" class="petal-title" text-anchor="middle"><tspan x="588" dy="0">Retains</tspan><tspan x="588" dy="18">Under Pressure</tspan></text>
+          </a>
+
+          <a href="pivot.html#p4" class="petal" aria-label="Press Intensity">
+            <path d="M 469.48 530.68 A 148 148 0 0 1 330.52 530.68 L 221.60 735.52 A 380 380 0 0 0 578.40 735.52 Z" class="petal-bg"/>
+            <path d="M 469.48 530.68 A 148 148 0 0 1 330.52 530.68 L 221.60 735.52 A 380 380 0 0 0 578.40 735.52 Z" fill="rgba(0,10,30,0.15)" class="petal-shade"/>
+            <path d="M 469.48 530.68 A 148 148 0 0 1 330.52 530.68 L 221.60 735.52 A 380 380 0 0 0 578.40 735.52 Z" class="petal-stroke" fill="none"/>
+            <text x="400" y="720" class="petal-num" text-anchor="middle">04</text>
+            <text x="400" y="617" class="petal-title" text-anchor="middle"><tspan x="400" dy="0">Press</tspan><tspan x="400" dy="18">Intensity</tspan></text>
+          </a>
+
+          <a href="pivot.html#p5" class="petal" aria-label="Problem Solver">
+            <path d="M 321.57 525.51 A 148 148 0 0 1 252.09 405.17 L 20.23 413.26 A 380 380 0 0 0 198.63 722.26 Z" class="petal-bg"/>
+            <path d="M 321.57 525.51 A 148 148 0 0 1 252.09 405.17 L 20.23 413.26 A 380 380 0 0 0 198.63 722.26 Z" fill="rgba(0,10,30,0.15)" class="petal-shade"/>
+            <path d="M 321.57 525.51 A 148 148 0 0 1 252.09 405.17 L 20.23 413.26 A 380 380 0 0 0 198.63 722.26 Z" class="petal-stroke" fill="none"/>
+            <text x="127" y="587" class="petal-num" text-anchor="middle">05</text>
+            <text x="211" y="504" class="petal-title" text-anchor="middle"><tspan x="211" dy="0">Problem</tspan><tspan x="211" dy="18">Solver</tspan></text>
+          </a>
+
+          <a href="pivot.html#p6" class="petal" aria-label="Technical Execution">
+            <path d="M 252.09 394.83 A 148 148 0 0 1 321.57 274.49 L 198.63 77.74 A 380 380 0 0 0 20.23 386.74 Z" class="petal-bg"/>
+            <path d="M 252.09 394.83 A 148 148 0 0 1 321.57 274.49 L 198.63 77.74 A 380 380 0 0 0 20.23 386.74 Z" fill="rgba(0,10,30,0.15)" class="petal-shade"/>
+            <path d="M 252.09 394.83 A 148 148 0 0 1 321.57 274.49 L 198.63 77.74 A 380 380 0 0 0 20.23 386.74 Z" class="petal-stroke" fill="none"/>
+            <text x="127" y="272" class="petal-num" text-anchor="middle">06</text>
+            <text x="211" y="291" class="petal-title" text-anchor="middle"><tspan x="211" dy="0">Technical</tspan><tspan x="211" dy="18">Execution</tspan></text>
+          </a>
+
+        </g>
+      </svg>
+
+      <div class="hub-center">
+        <div class="lbl-big">The Pivot</div>
+        <a href="pivot.html" class="disc-item" title="Six competencies on film">
+          <span class="ico movie"><i class="fas fa-film"></i><span class="n">6</span></span>
+          <span class="cap">Competencies<br>on film</span>
+        </a>
+        <a href="pivot.html#coach" class="disc-item" title="The 7th — the part you can't coach">
+          <span class="ico star"><i class="fas fa-star"></i><span class="n">7</span></span>
+          <span class="cap">The part you<br>can't coach</span>
+        </a>
+        <a href="pivot.html" class="cta">Read the analysis →</a>
+      </div>
+    </div>
+
+    <div class="hub-mobile">
+      <a href="pivot.html#coach" class="m-center" style="border-color: var(--amber); background: rgba(255,185,29,0.06);">
+        <div style="font-size: 34px; color: var(--amber); line-height: 1;"><i class="fas fa-star"></i></div>
+        <div style="font-family: var(--font-display); font-size: 22px; color: var(--red); line-height: 1;">7</div>
+        <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text);">The Part You Can't Coach</div>
+        <div style="font-size: 11px; font-weight: 700; color: var(--amber-deep);">Read →</div>
+      </a>
+      <div class="hub-mobile-list">
+        <a href="pivot.html#p1" class="m-tile"><div class="n">01</div><div class="title">Physically Dominant</div></a>
+        <a href="pivot.html#p2" class="m-tile"><div class="n">02</div><div class="title">Constant Threat</div></a>
+        <a href="pivot.html#p3" class="m-tile"><div class="n">03</div><div class="title">Retains Under Pressure</div></a>
+        <a href="pivot.html#p4" class="m-tile"><div class="n">04</div><div class="title">Press Intensity</div></a>
+        <a href="pivot.html#p5" class="m-tile"><div class="n">05</div><div class="title">Problem Solver</div></a>
+        <a href="pivot.html#p6" class="m-tile"><div class="n">06</div><div class="title">Technical Execution</div></a>
+      </div>
+    </div>
+  </div>
+
+  <section class="extras fi">
+    <div class="ex-head">
+      <div class="rule"></div>
+      <div class="eyebrow">Beyond the pivot</div>
+      <h2>Athlete first</h2>
+      <p>A senior-football background and the close control to match — the base the pivot role is built on.</p>
+    </div>
+    <div class="ex-grid">
+      <figure class="ex-item">
+        <div class="ex-media"><img src="img/photo-match.jpg" alt="Joe Eason in senior football action"></div>
+        <figcaption><strong>Senior football</strong> · Step 4/5 non-league — the physical base behind the pivot.</figcaption>
+      </figure>
+      <figure class="ex-item">
+        <div class="ex-media"><video src="videos/tennis-ball.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Joe juggling a tennis ball"></video></div>
+        <figcaption><strong>Close control</strong> · Tennis-ball juggling, one take.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+</div>
+
+<footer class="foot"><div class="wrap"><p>&copy; 2026 Joe Eason</p></div></footer>
+
+<script>
+const ham = document.getElementById('navHam'); const links = document.getElementById('navLinks');
+if (ham) { ham.addEventListener('click', () => links.classList.toggle('on')); links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('on'))); }
+document.querySelectorAll('.fi').forEach(el => { new IntersectionObserver((entries, obs) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }).observe(el); });
+</script>
+</body>
+</html>

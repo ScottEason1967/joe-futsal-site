@@ -1,0 +1,93 @@
+/* SHARED STYLES — Joe Eason · The Pivot | Futsal site */
+
+:root {
+  --blue: #005EB8;
+  --blue-deep: #003087;
+  --blue-dark: #001c4a;
+  --red: #CE1126;
+  --red-deep: #8B0A1B;
+  --amber: #FFB91D;
+  --amber-deep: #C9A227;
+  --green: #006747;
+  --text: #212B32;
+  --text-sec: #4C6272;
+  --text-muted: #7E8B97;
+  --border-lt: #E1E7ED;
+  --card: #ffffff;
+  --font: 'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  --font-display: 'Oswald', sans-serif;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: var(--font);
+  background: linear-gradient(180deg, var(--blue) 0%, var(--blue-dark) 100%);
+  background-attachment: fixed;
+  color: var(--text); line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+a { color: var(--blue); text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* NAV */
+.nav {
+  background: rgba(0,28,74,0.94); backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  height: 56px; position: sticky; top: 0; z-index: 100;
+}
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
+.nav-brand { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: #fff; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; }
+.nav-brand em { font-style: normal; color: var(--amber); }
+.nav-links { display: flex; gap: 2px; list-style: none; }
+.nav-links a { display: block; padding: 7px 13px; font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.75); text-decoration: none; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.4px; transition: all 0.15s; }
+.nav-links a:hover { color: #fff; background: rgba(255,255,255,0.1); }
+.nav-links a.on { color: #fff; background: rgba(206,17,38,0.35); }
+.nav-ham { display: none; background: none; border: none; color: #fff; font-size: 1.2rem; cursor: pointer; width: 40px; height: 40px; align-items: center; justify-content: center; }
+
+/* PAGE HEADER (dark blue full-width area under nav) */
+.pg-header { padding: 46px 0 34px; }
+.pg-header .pg-label { font-size: 11px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+.pg-header h1 { font-family: var(--font-display); font-size: clamp(38px, 6vw, 60px); font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: -1px; line-height: 1.02; margin-bottom: 10px; }
+.pg-header p { font-size: 15px; color: rgba(255,255,255,0.9); line-height: 1.65; max-width: 720px; }
+
+/* SECTIONS (like sec-dark / sec-alt on football site) */
+.sec { padding: 46px 0; }
+.sec > .wrap { background: var(--card); border-radius: 14px; padding: 44px 46px; box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+.sec-alt { padding-top: 0; }
+.sec-alt > .wrap { background: linear-gradient(135deg, var(--blue-deep), var(--blue-dark)); color: #fff; }
+.sec-alt > .wrap .sec-label, .sec-alt > .wrap .sec-title { color: #fff; }
+.sec-alt > .wrap .sec-title { color: #fff; }
+.sec-alt > .wrap p { color: rgba(255,255,255,0.9); }
+.sec-label { font-size: 10.5px; font-weight: 800; color: var(--red); text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 10px; }
+.sec-title { font-size: 1.55rem; font-weight: 800; color: var(--text); letter-spacing: -0.4px; line-height: 1.18; margin-bottom: 8px; }
+.sec-sub { font-size: 0.94rem; color: var(--text-sec); line-height: 1.7; max-width: 720px; margin-bottom: 28px; }
+
+/* GRIDS */
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.g4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+
+/* FADE-IN */
+.fi { opacity: 0; transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.fi.vis { opacity: 1; transform: translateY(0); }
+
+/* FOOTER */
+.foot { padding: 32px 0; text-align: center; }
+.foot p { color: rgba(255,255,255,0.55); font-size: 12px; }
+
+/* CARDS */
+.card { background: var(--card); border: 1px solid var(--border-lt); border-radius: 14px; padding: 24px 26px; box-shadow: 0 2px 8px rgba(0,32,64,0.06); }
+
+/* BUTTONS */
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: var(--red); color: #fff; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; border-radius: 8px; text-decoration: none; }
+.btn.amber { background: var(--amber); color: var(--blue-deep); }
+
+@media (max-width: 900px) {
+  .g2, .g3, .g4 { grid-template-columns: 1fr; }
+  .wrap { padding: 0 22px; }
+  .sec > .wrap { padding: 32px 22px; }
+  .nav-links { display: none; }
+  .nav-links.on { display: flex; flex-direction: column; position: absolute; top: 56px; right: 0; background: rgba(0,28,74,0.98); padding: 12px 20px; gap: 2px; border-radius: 0 0 0 12px; }
+  .nav-ham { display: flex; }
+}

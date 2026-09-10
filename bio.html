@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bio — Joe Eason | Futsal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .bio-grid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 40px; align-items: stretch; }
+    .bio-text { display: flex; flex-direction: column; }
+    .bio-text p { font-size: 0.95rem; color: var(--text); line-height: 1.85; margin-bottom: 16px; }
+    .bio-text p strong { color: var(--blue-deep); }
+    .bio-right { display: flex; flex-direction: column; gap: 16px; }
+    .bio-photo { width: 100%; aspect-ratio: 4/5; border-radius: 14px; overflow: hidden; background: linear-gradient(135deg, #0a1a2e, #1a2e4a); box-shadow: 0 6px 20px rgba(0,32,64,0.16); display: flex; align-items: center; justify-content: center; }
+    .bio-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .bio-photo .ph { color: rgba(255,255,255,0.45); text-align: center; padding: 24px; }
+    .bio-photo .ph i { font-size: 1.4rem; display: block; margin-bottom: 8px; opacity: 0.55; }
+    .bio-photo .ph span { display: block; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
+    .details { display: grid; gap: 12px; }
+    .d-row { padding-bottom: 10px; border-bottom: 1px solid var(--border-lt); }
+    .d-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .d-lbl { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 2px; }
+    .d-val { font-weight: 600; color: var(--text); font-size: 0.9rem; }
+    .beyond { margin-top: 22px; flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 26px 30px; background: linear-gradient(135deg, rgba(206,17,38,0.06), rgba(206,17,38,0.02)); border: 1px solid var(--border-lt); border-left: 3px solid var(--red); border-radius: 12px; }
+    .beyond .h { font-size: 11px; font-weight: 800; color: var(--red); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px; }
+    .beyond ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 28px; }
+    .beyond li { font-size: 0.9rem; color: var(--text-sec); line-height: 1.55; padding: 5px 0 5px 18px; position: relative; }
+    .beyond li::before { content: '·'; color: var(--red); font-weight: 700; position: absolute; left: 6px; font-size: 1.3rem; line-height: 1; }
+    .bio-quote { margin-top: 26px; padding: 26px 30px; background: linear-gradient(135deg, var(--blue-deep), var(--blue-dark)); border-radius: 14px; color: #fff; }
+    .bio-quote .k { display: inline-block; padding: 4px 10px; border-radius: 6px; background: rgba(255,185,29,0.16); color: var(--amber); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px; }
+    .bio-quote p { font-size: 1.08rem; font-style: italic; line-height: 1.65; color: #fff; margin: 0; }
+    .bio-quote .a { font-family: var(--font-display); font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.75); text-transform: uppercase; letter-spacing: 2px; margin-top: 18px; font-style: normal; }
+    @media (max-width: 900px) { .bio-grid { grid-template-columns: 1fr; } .bio-photo { max-width: 340px; margin: 0 auto; } .beyond ul { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-brand">Joe <em>Eason</em></a>
+    <button class="nav-ham" id="navHam"><i class="fas fa-bars"></i></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pivot.html">The Pivot</a></li>
+      <li><a href="record.html">Record</a></li>
+      <li><a href="bio.html" class="on">Bio</a></li>
+      <li><a href="physical.html">Physical</a></li>
+      <li><a href="references.html">References</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="pg-header">
+  <div class="wrap">
+    <div class="pg-label">Bio</div>
+    <h1>Joe Eason</h1>
+    <p>Who Joe is as a player, and where the pivot fits into his broader profile.</p>
+  </div>
+</div>
+
+<section class="sec">
+  <div class="wrap fi">
+    <div class="bio-grid">
+      <div class="bio-text">
+        <p>Joe Eason is an 18-year-old athlete from Stockton-on-Tees currently playing pivot for <strong>FutsalUOS</strong> in the National Futsal Series Tier 2 North. Now in his first NFS season, he has scored <strong>8 goals from 7 appearances</strong>.</p>
+        <p>His head coach at FutsalUOS describes him as <strong>athletic, physically strong, technically excellent</strong> — able to protect the ball, beat players 1v1 and finish. At 6'2" and 84kg with elite verified sprint and jump numbers, he brings the physical presence a modern pivot needs, matched by two-footed technique and the composure to receive with a defender close.</p>
+        <p>Away from futsal, Joe has an extensive senior football background — playing central midfield and centre-back at Step 4 and 5 of the English non-league pyramid, with independently verified S&amp;C data from nine years at PROformance Athlete Development. That base carries directly into the pivot role: acceleration for the press, jump for aerial reach in the attacking third, frame for hold-up.</p>
+        <p>Off the pitch, he coaches at <strong>Thornaby Women's FC</strong> as an assistant, is a <strong>Level 1 Personal Trainer</strong>, and works as an <strong>assistant strength &amp; conditioning coach at PROformance</strong> alongside his own training. Nine GCSEs at grades 7–9, Duke of Edinburgh Award, and qualified referee.</p>
+        <div class="bio-quote">
+          <div class="k">Head Coach · FutsalUOS</div>
+          <p>"An athletic, physically strong, technically excellent pivot who can protect the ball, beat players 1v1 and finish."</p>
+          <div class="a">— Tony Loftus · Individual Player Development Plan</div>
+        </div>
+        <div class="beyond">
+          <div class="h">Beyond the court</div>
+          <ul>
+            <li>Assistant coach — Thornaby Women's FC</li>
+            <li>Level 1 Personal Trainer</li>
+            <li>Assistant S&amp;C Coach — PROformance Athlete Development</li>
+            <li>Qualified referee</li>
+            <li>Duke of Edinburgh Award</li>
+            <li>Nine GCSEs at grades 7–9</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bio-right">
+        <div class="bio-photo">
+          <img src="img/bio.jpg" alt="Joe Eason" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="ph" style="display:none; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%;">
+            <i class="fas fa-camera"></i><span>Bio Photo</span>
+          </div>
+        </div>
+        <div class="card details">
+          <div class="d-row"><div class="d-lbl">Full Name</div><div class="d-val">Joseph Eason</div></div>
+          <div class="d-row"><div class="d-lbl">DOB</div><div class="d-val">28 November 2007 (18)</div></div>
+          <div class="d-row"><div class="d-lbl">Height / Weight</div><div class="d-val">187cm (6'2") · 84kg</div></div>
+          <div class="d-row"><div class="d-lbl">Position</div><div class="d-val">Pivot</div></div>
+          <div class="d-row"><div class="d-lbl">Foot</div><div class="d-val">Right (Two-footed)</div></div>
+          <div class="d-row"><div class="d-lbl">Club</div><div class="d-val">FutsalUOS</div></div>
+          <div class="d-row"><div class="d-lbl">Competition</div><div class="d-val">National Futsal Series Tier 2 North</div></div>
+          <div class="d-row"><div class="d-lbl">Location</div><div class="d-val">Stockton-on-Tees</div></div>
+          <div class="d-row"><div class="d-lbl">Contact</div><div class="d-val"><a href="mailto:scott.eason@gmail.com">scott.eason@gmail.com</a></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot"><div class="wrap"><p>&copy; 2026 Joe Eason</p></div></footer>
+
+<script>
+const ham = document.getElementById('navHam'); const links = document.getElementById('navLinks');
+if (ham) { ham.addEventListener('click', () => links.classList.toggle('on')); links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('on'))); }
+document.querySelectorAll('.fi').forEach(el => { new IntersectionObserver((entries, obs) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }).observe(el); });
+</script>
+</body>
+</html>

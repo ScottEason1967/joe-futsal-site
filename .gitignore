@@ -1,0 +1,16 @@
+# Large raw match footage — already on YouTube, must NOT go in the web repo
+videos/Highlights videos/
+
+# Camera originals & working files not used by the live site
+img/*.HEIC
+img/*.heic
+img/*.MP4
+img/*-original.png
+img/hero-25.jpg
+img/intro-photo.jpg
+img/20260818_073415000_iOS.png
+img/20260902_183025000_iOS.jpg
+
+# OS cruft
+.DS_Store
+Thumbs.db

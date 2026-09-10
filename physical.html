@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physical Profile — Joe Eason | Futsal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .p-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 32px; }
+    .p-tile { padding: 22px 14px; text-align: center; background: linear-gradient(135deg, rgba(0,94,184,0.05), rgba(0,94,184,0.01)); border: 1px solid var(--border-lt); border-radius: 10px; }
+    .p-tile .v { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: var(--blue-deep); line-height: 1; }
+    .p-tile .l { font-size: 10px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; margin-top: 6px; }
+    .p-tile .b { display: inline-block; margin-top: 6px; padding: 2px 6px; border-radius: 6px; font-size: 8.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.4px; background: rgba(0,103,71,0.10); color: var(--green); }
+
+    .sc-row { display: grid; grid-template-columns: 210px 1fr; gap: 24px; align-items: center; padding: 20px 24px; background: #fafbfc; border-radius: 10px; border: 1px solid var(--border-lt); margin-bottom: 10px; }
+    .sc-metric { text-align: center; }
+    .sc-metric .v { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; color: var(--blue-deep); line-height: 1; }
+    .sc-metric .l { font-size: 10px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; margin-top: 6px; }
+    .sc-translate { font-size: 0.9rem; color: var(--text-sec); line-height: 1.7; }
+    .sc-translate strong { color: var(--blue-deep); font-weight: 700; }
+
+    /* NATIVE VIDEO CARDS */
+    .v-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; align-items: start; }
+    .v-card { background: var(--card); border: 1px solid var(--border-lt); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,32,64,0.06); }
+    .v-frame { position: relative; background: #000; aspect-ratio: 9/16; cursor: pointer; overflow: hidden; }
+    .v-frame video { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .v-frame img.poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .v-frame .play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 56px; height: 56px; border-radius: 50%; background: rgba(206,17,38,0.92); border: 2px solid rgba(255,255,255,0.95); display: flex; align-items: center; justify-content: center; z-index: 2; box-shadow: 0 6px 18px rgba(0,0,0,0.35); }
+    .v-frame .play i { color: #fff; font-size: 1rem; margin-left: 3px; }
+    .v-frame.playing .play, .v-frame.playing img.poster, .v-frame.playing .tag { display: none; }
+    .v-frame .tag { position: absolute; top: 10px; left: 10px; padding: 4px 10px; border-radius: 4px; background: var(--amber); color: var(--blue-deep); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; z-index: 3; }
+    .v-body { padding: 16px 20px; }
+    .v-body h4 { font-size: 0.95rem; font-weight: 800; color: var(--text); line-height: 1.3; margin-bottom: 4px; }
+    .v-body p { font-size: 0.82rem; color: var(--text-sec); line-height: 1.5; }
+    /* Stills strip — two frames side by side showing the full jump sequence */
+    .v-stills { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 6px; background: var(--card); border-top: 1px solid var(--border-lt); }
+    .v-still { position: relative; aspect-ratio: 4/5; border-radius: 4px; overflow: hidden; background: #0a1a2e; }
+    .v-still img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .v-still-cap { position: absolute; bottom: 0; left: 0; right: 0; padding: 4px 8px 5px; background: linear-gradient(to top, rgba(0,20,50,0.85), transparent); color: #fff; font-size: 9px; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; }
+
+    @media (max-width: 900px) { .sc-row { grid-template-columns: 1fr; gap: 10px; text-align: center; } .v-grid { grid-template-columns: 1fr; } .p-grid { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-brand">Joe <em>Eason</em></a>
+    <button class="nav-ham" id="navHam"><i class="fas fa-bars"></i></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pivot.html">The Pivot</a></li>
+      <li><a href="record.html">Record</a></li>
+      <li><a href="bio.html">Bio</a></li>
+      <li><a href="physical.html" class="on">Physical</a></li>
+      <li><a href="references.html">References</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="pg-header">
+  <div class="wrap">
+    <div class="pg-label">Physical Profile · PROformance</div>
+    <h1>The Physical Base</h1>
+    <p>Nine years of continuous strength &amp; conditioning testing at PROformance Athlete Development. Every number below is independently measured. Testing footage below the data.</p>
+  </div>
+</div>
+
+<section class="sec">
+  <div class="wrap fi">
+    <div class="sec-label">Verified Data</div>
+    <div class="sec-title">Test results</div>
+    <p class="sec-sub">Elite-benchmarked results across sprint, jump and frame.</p>
+    <div class="p-grid">
+      <div class="p-tile"><div class="v">0.91s</div><div class="l">5m Sprint</div><span class="b">Elite</span></div>
+      <div class="p-tile"><div class="v">1.62s</div><div class="l">10m Sprint</div><span class="b">Elite</span></div>
+      <div class="p-tile"><div class="v">3.89s</div><div class="l">30m Sprint</div><span class="b">Elite</span></div>
+      <div class="p-tile"><div class="v">34 km/h</div><div class="l">Top Speed</div><span class="b">Elite</span></div>
+      <div class="p-tile"><div class="v">60cm</div><div class="l">CMJ</div><span class="b">Elite</span></div>
+      <div class="p-tile"><div class="v">62.5cm</div><div class="l">Abalakov Jump</div><span class="b">Elite</span></div>
+      <div class="p-tile"><div class="v">305cm</div><div class="l">Broad Jump</div><span class="b">Elite</span></div>
+      <div class="p-tile"><div class="v">6'2" · 84kg</div><div class="l">Frame</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap fi">
+    <div class="sec-label">Testing Footage</div>
+    <div class="sec-title">Sprint &amp; jump tests on film</div>
+    <p class="sec-sub">Click either video to play in place — testing sessions filmed at PROformance.</p>
+    <div class="v-grid">
+      <div class="v-card">
+        <div class="v-frame" data-src="videos/test-running-1.mp4">
+          <img class="poster" src="img/photo-running.jpg" alt="Sprint testing on track — session 1">
+          <div class="tag">Sprint · Session 1</div>
+          <div class="play"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="v-body"><h4>Track sprint testing · session 1</h4><p>Verified times captured: 5m 0.91s · 10m 1.62s · 30m 3.89s · top speed 34 km/h.</p></div>
+      </div>
+      <div class="v-card">
+        <div class="v-frame" data-src="videos/test-running-2.mp4">
+          <img class="poster" src="img/photo-running-2.jpg" alt="Sprint testing on track — session 2">
+          <div class="tag">Sprint · Session 2</div>
+          <div class="play"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="v-body"><h4>Track sprint testing · session 2</h4><p>Second sprint session at the same intensity — top-end pace repeated and confirmed across the run.</p></div>
+      </div>
+      <div class="v-card">
+        <div class="v-frame" data-src="videos/test-jumping.mp4">
+          <img class="poster" src="img/photo-jump-airborne.jpg" alt="Jump testing at PROformance">
+          <div class="tag">Jumping</div>
+          <div class="play"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="v-stills">
+          <div class="v-still">
+            <img src="img/photo-jump-squat.jpg" alt="Joe in the loaded squat phase before take-off">
+            <div class="v-still-cap">1 · Squat phase</div>
+          </div>
+          <div class="v-still">
+            <img src="img/photo-jump-airborne.jpg" alt="Joe airborne at the peak of the jump">
+            <div class="v-still-cap">2 · Airborne</div>
+          </div>
+        </div>
+        <div class="v-body"><h4>Jump testing compilation</h4><p>Countermovement jump, Abalakov, broad jump and box jumps. Verified: CMJ 60cm · Abalakov 62.5cm · broad 305cm.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap fi">
+    <div class="sec-label">Pivot-Specific Translation</div>
+    <div class="sec-title">What each number means on a 40m court</div>
+    <p class="sec-sub">Every verified metric translated to a specific demand of the pivot role.</p>
+
+    <div class="sc-row">
+      <div class="sc-metric"><div class="v">0.91s</div><div class="l">5m sprint</div></div>
+      <div class="sc-translate"><strong>The first step out of a press.</strong> Elite over 5m turns a hold-up moment into a break — the difference between the pivot being bounced off the ball and the pivot beating the defender to the second phase.</div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-metric"><div class="v">34 km/h</div><div class="l">Top speed</div></div>
+      <div class="sc-translate"><strong>Closing the 1v1 with the GK.</strong> When the pivot breaks in behind the last line, top-end pace decides whether the GK reaches the ball first. Verified across PROformance, STATSports GPS in match, and PlayerMaker boot data.</div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-metric"><div class="v">60cm</div><div class="l">Countermovement Jump</div></div>
+      <div class="sc-translate"><strong>Aerial reach in the attacking third.</strong> Winning a keeper's long throw or a clearance dropping into the final part of the court. Elite vertical means Joe gets to the ball first when it hangs in the air ahead of a defender.</div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-metric"><div class="v">305cm</div><div class="l">Broad Jump</div></div>
+      <div class="sc-translate"><strong>Lateral power in hold-up.</strong> The core power that lets the pivot shrug a defender off a shoulder in a duel with back to goal — the physical currency of retaining possession under pressure.</div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-metric"><div class="v">6'2" · 84kg</div><div class="l">Frame</div></div>
+      <div class="sc-translate"><strong>Physical presence on a small court.</strong> A pivot with size and mass sets the reference point the whole team plays through. Defenders cannot easily bump him off the ball.</div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot"><div class="wrap"><p>&copy; 2026 Joe Eason</p></div></footer>
+
+<script>
+const ham = document.getElementById('navHam'); const links = document.getElementById('navLinks');
+if (ham) { ham.addEventListener('click', () => links.classList.toggle('on')); links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('on'))); }
+document.querySelectorAll('.fi').forEach(el => { new IntersectionObserver((entries, obs) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }).observe(el); });
+
+// Click-to-play native videos
+document.querySelectorAll('.v-frame[data-src]').forEach(frame => {
+  frame.addEventListener('click', () => {
+    if (frame.classList.contains('playing')) return;
+    const v = document.createElement('video');
+    v.src = frame.dataset.src; v.controls = true; v.autoplay = true; v.playsInline = true; v.preload = 'metadata';
+    frame.appendChild(v);
+    frame.classList.add('playing');
+  });
+});
+</script>
+</body>
+</html>
