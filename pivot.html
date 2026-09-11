@@ -60,7 +60,7 @@
     .tab-coach.active .c-title { color: var(--blue-deep); }
     .tab-coach .c-desc { display: block; font-size: 11px; font-weight: 600; color: var(--text-sec); line-height: 1.45; margin-top: 5px; max-width: 560px; text-transform: none; letter-spacing: 0; }
     .tab-coach.active .c-desc { color: var(--blue-deep); }
-    /* Player Profile top row: heading over video 1, intangibles button stretched over videos 2–3 */
+    /* Pride DNA top row: heading over video 1, Emotional Intelligence button stretched over videos 2–3 */
     .pp-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; align-items: stretch; margin-bottom: 8px; }
     .pp-top .tab-group-head { grid-column: 1; margin-bottom: 0; align-self: center; }
     .pp-top .tab-coach { grid-column: 2 / 4; width: 100%; justify-content: flex-start; padding: 14px 22px; }
@@ -159,6 +159,20 @@
       .tabs { grid-template-columns: repeat(2, 1fr); }
       .case { padding: 24px 22px 20px; }
     }
+    /* DNA framework key + colour-coded groups (echoes the homepage house) */
+    .dna-frame-key { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 14px; padding: 16px 20px; margin-bottom: 20px; }
+    .dna-frame-key .dfk-lead { font-size: 12px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255,255,255,0.9); margin-bottom: 13px; }
+    .dna-frame-key .dfk-lead i { color: var(--amber); margin-right: 7px; }
+    .dna-frame-key .dfk-lead strong { color: var(--amber); }
+    .dfk-parts { display: flex; align-items: stretch; gap: 12px; flex-wrap: wrap; }
+    .dfk-part { flex: 1; min-width: 240px; display: flex; flex-direction: column; gap: 5px; padding: 13px 16px; border-radius: 10px; font-family: var(--font-display); font-size: 1.08rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; color: #fff; }
+    .dfk-part small { font-family: var(--font-display); font-weight: 600; font-size: 10.5px; letter-spacing: 0.2px; text-transform: none; color: rgba(255,255,255,0.82); }
+    .dfk-part.role { background: rgba(90,169,230,0.15); border-left: 4px solid #5aa9e6; }
+    .dfk-part.pillars { background: rgba(255,185,29,0.14); border-left: 4px solid var(--amber); }
+    .dfk-plus { align-self: center; font-family: var(--font-display); font-size: 1.5rem; color: rgba(255,255,255,0.5); font-weight: 700; }
+    .tab-group.grp-role { border-top: 3px solid #5aa9e6; }
+    .tab-group.grp-pillars { border-top: 3px solid var(--amber); }
+    @media (max-width: 620px) { .dfk-part { min-width: 0; } .dfk-plus { display: none; } }
   </style>
 </head>
 <body>
@@ -182,7 +196,7 @@
   <div class="wrap">
     <div class="pg-label">Position Analysis</div>
     <h1>The Pivot</h1>
-    <p>England Futsal's Pride framework defines seven things a pivot has to deliver — six that can be shown on film, and one you can only see in behaviour. All seven analysed below.</p>
+    <p>England Futsal's Pride DNA sets four pillars every player is judged on, plus role-specific attributes for the pivot. Here is Joe against all of them — on film where it shows, in testimony where it can't.</p>
   </div>
 </div>
 
@@ -191,17 +205,17 @@
   <div class="intro-split fi">
     <div class="intro-text">
       <p class="lead">Joe plays pivot for <strong>Team Sunderland</strong> in the National Futsal Series Tier 2 North. His current coach, <strong>Tony Loftus</strong>, describes him as an athletic, physically strong, technically excellent pivot who can protect the ball, beat players 1v1 and finish.</p>
-      <p class="lead">The six film-able competencies sit in the tabs below, split into the two halves of the Pride: the <strong>Pivot Role</strong> — what the position must deliver — and the <strong>Player Profile</strong> every Pride player needs. The seventh requirement, <strong>psychological robustness</strong>, completes the Player Profile as "The Part You Can't Coach" — proven through coach testimony rather than video.</p>
+      <p class="lead">The tabs below split into the two parts of the Pride DNA: the pivot's <strong>Role-Specific Attributes</strong> — what the position must deliver — and the four <strong>Pride DNA pillars</strong> every England player is judged on. The fourth pillar, <strong>Emotional Intelligence</strong>, is the one that never shows on film — "The Part You Can't Coach" — proven through coach testimony.</p>
       <div class="intro-facts">
         <span>18 years</span>
-        <span>6'2" · 84kg</span>
+        <span>6'2" · 89.9kg</span>
         <span>Two-footed</span>
-        <span>8 goals · 8 apps</span>
+        <span>8 goals · 7 apps</span>
         <span>NFS Tier 2 North</span>
       </div>
       <div class="intro-ef">
         <img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal">
-        <span>Every competency below is drawn from England Futsal's own Pride framework for the pivot.</span>
+        <span>Every pillar and attribute below is drawn from England Futsal's own Pride DNA.</span>
       </div>
     </div>
     <div class="intro-photo">
@@ -213,9 +227,17 @@
   </div>
 
   <div class="switch fi">
-    <div class="tab-group">
-      <div class="tab-group-head"><div class="tg-kicker">England Futsal · The Pride</div><div class="tg-title">Pivot Role</div><div class="tg-sub">Position-specific — what the pivot must deliver</div></div>
-    <div class="tabs tabs-3" role="tablist" aria-label="The Pride pivot role">
+    <div class="dna-frame-key">
+      <div class="dfk-lead"><i class="fas fa-house-chimney"></i> England Futsal · <strong>Pride DNA</strong> — two parts, both analysed below</div>
+      <div class="dfk-parts">
+        <span class="dfk-part role">Role-Specific · The Pivot<small>Constant Threat · Retains Under Pressure · First-Line Press</small></span>
+        <span class="dfk-plus">+</span>
+        <span class="dfk-part pillars">The Four Pillars<small>Technical Excellence · Athletic Dominance · Game Sense · Emotional Intelligence</small></span>
+      </div>
+    </div>
+    <div class="tab-group grp-role">
+      <div class="tab-group-head"><div class="tg-kicker">England Futsal · Pride DNA · Role-Specific</div><div class="tg-title">The Pivot</div><div class="tg-sub">The three attributes the Pride DNA sets specifically for the pivot position</div></div>
+    <div class="tabs tabs-3" role="tablist" aria-label="Pivot role-specific attributes">
       <button class="tab active" data-tab="2" type="button">
         <div class="tab-thumb"><img src="https://img.youtube.com/vi/uVhn9-6P8X8/hqdefault.jpg" alt=""><span class="tab-num">01</span><span class="tp"><i class="fas fa-play"></i></span></div>
         <div class="tab-title">Constant Threat</div>
@@ -226,34 +248,34 @@
       </button>
       <button class="tab" data-tab="4" type="button">
         <div class="tab-thumb"><img src="https://img.youtube.com/vi/eCp5T_w2wy0/hqdefault.jpg" alt=""><span class="tab-num">03</span><span class="tp"><i class="fas fa-play"></i></span></div>
-        <div class="tab-title">Press Intensity</div>
+        <div class="tab-title">First-Line Press</div>
       </button>
     </div>
     </div>
-    <div class="tab-group">
+    <div class="tab-group grp-pillars">
       <div class="pp-top">
-        <div class="tab-group-head"><div class="tg-kicker">England Futsal · The Pride</div><div class="tg-title">Player Profile</div><div class="tg-sub">The profile every Pride player needs — four requirements, including the one you can't put on film</div></div>
+        <div class="tab-group-head"><div class="tg-kicker">England Futsal · Pride DNA · The Four Pillars</div><div class="tg-title">The Four Pillars</div><div class="tg-sub">Applied to every England player — evidenced here through Joe's pivot play</div></div>
         <button class="tab-coach" data-tab="coach" type="button">
           <i class="fas fa-star"></i>
           <div>
-            <span class="c-eyebrow">7th Pride requirement · Intangibles</span>
-            <span class="c-title">The Part You Can't Coach</span>
-            <span class="c-desc">Psychological robustness completes the Player Profile — the requirement proven in coach testimony rather than on video.</span>
+            <span class="c-eyebrow">Pride DNA · 4th Pillar</span>
+            <span class="c-title">Emotional Intelligence</span>
+            <span class="c-desc">"The Part You Can't Coach" — performance mindset, proven in coach testimony rather than on video.</span>
           </div>
         </button>
       </div>
-    <div class="tabs tabs-3" role="tablist" aria-label="The Pride player profile">
+    <div class="tabs tabs-3" role="tablist" aria-label="The Pride DNA pillars">
       <button class="tab" data-tab="6" type="button">
         <div class="tab-thumb"><img src="https://img.youtube.com/vi/aKdNUCQ0Z8k/hqdefault.jpg" alt=""><span class="tab-num">01</span><span class="tp"><i class="fas fa-play"></i></span></div>
-        <div class="tab-title">Technical Execution</div>
+        <div class="tab-title">Technical Excellence</div>
       </button>
       <button class="tab" data-tab="5" type="button">
         <div class="tab-thumb"><img src="https://img.youtube.com/vi/82mNUxfOenM/hqdefault.jpg" alt=""><span class="tab-num">02</span><span class="tp"><i class="fas fa-play"></i></span></div>
-        <div class="tab-title">Problem Solver</div>
+        <div class="tab-title">Game Sense</div>
       </button>
       <button class="tab" data-tab="1" type="button">
         <div class="tab-thumb"><img src="https://img.youtube.com/vi/wYYt72EmyF0/hqdefault.jpg" alt=""><span class="tab-num">03</span><span class="tp"><i class="fas fa-play"></i></span></div>
-        <div class="tab-title">Physically Dominant</div>
+        <div class="tab-title">Athletic Dominance</div>
       </button>
     </div>
     </div>
@@ -262,13 +284,13 @@
 
       <div class="panel" data-panel="1" id="p1">
         <div class="case">
-          <div class="case-banner"><span class="num">03</span><div class="heads"><span class="role">The Pride · Player Profile</span><h3>Physically dominant in all areas of the court</h3></div></div>
+          <div class="case-banner"><span class="num">03</span><div class="heads"><span class="role">Pride DNA · Athletic Dominance</span><h3>Athletic dominance across all areas of the court</h3></div></div>
           <p class="case-lead">The pivot has to <strong>own the physical exchange</strong> — absorb contact, stay up, set the ball. On a 40m court, there's nowhere to hide from it.</p>
-          <div class="ef-quote"><div class="ef-logo"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div><div class="ef-body"><div class="k">England Futsal · Pride Profile</div><div class="t">"Physically dominant in all areas of the court."</div></div></div>
-          <a class="vid-embed" href="https://www.youtube.com/watch?v=wYYt72EmyF0" target="_blank" rel="noopener" aria-label="Play Physically Dominant highlights"><img src="https://i.ytimg.com/vi/wYYt72EmyF0/hqdefault.jpg" alt="Physically Dominant highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
+          <div class="ef-quote"><div class="ef-logo"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div><div class="ef-body"><div class="k">England Futsal · Pride DNA</div><div class="t">"Efficient and effective mover."</div></div></div>
+          <a class="vid-embed" href="https://www.youtube.com/watch?v=wYYt72EmyF0" target="_blank" rel="noopener" aria-label="Play Athletic Dominance highlights"><img src="https://i.ytimg.com/vi/wYYt72EmyF0/hqdefault.jpg" alt="Athletic Dominance highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
           <div class="case-stats">
             <div class="case-stat"><div class="v">6'2"</div><div class="l">Height</div></div>
-            <div class="case-stat"><div class="v">84kg</div><div class="l">Frame</div></div>
+            <div class="case-stat"><div class="v">89.9kg</div><div class="l">Frame</div></div>
             <div class="case-stat"><div class="v">305cm</div><div class="l">Broad Jump</div><span class="b">Elite</span></div>
             <div class="case-stat"><div class="v">60cm</div><div class="l">CMJ (aerial reach)</div><span class="b">Elite</span></div>
           </div>
@@ -286,19 +308,19 @@
               <div class="cq-body"><span class="k">Reference · 11 years</span><p class="q">"He has developed into an extremely quick, strong and physical athlete… he can dominate physically due to his height, pace and strength."</p><p class="a">Mark Hodgson · Brazilian Soccer Schools</p><a class="cq-ref" href="docs/reference-hodgson.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>View reference</a></div>
             </div>
           </div>
-          <div class="case-analysis"><p>Verified elite jump and lateral-power numbers underneath a 6'2", 84kg frame.</p></div>
+          <div class="case-analysis"><p>Verified elite jump and lateral-power numbers underneath a 6'2", 89.9kg frame.</p></div>
         </div>
       </div>
 
       <div class="panel active" data-panel="2" id="p2">
         <div class="case">
-          <div class="case-banner"><span class="num">01</span><div class="heads"><span class="role">The Pride · Pivot Role</span><h3>A constant threat receiving, turning and shooting in the attacking third</h3></div></div>
+          <div class="case-banner"><span class="num">01</span><div class="heads"><span class="role">Pride DNA · Pivot Role-Specific</span><h3>A constant threat receiving, turning and shooting in the final third</h3></div></div>
           <p class="case-lead">The pivot's core job on the ball. <strong>Receive, turn, shoot</strong> — a permanent threat every time possession arrives in the attacking third.</p>
-          <div class="ef-quote"><div class="ef-logo"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div><div class="ef-body"><div class="k">England Futsal · Pride Pivot</div><div class="t">"Possesses a constant threat through receiving, turning and shooting in the attacking third."</div></div></div>
+          <div class="ef-quote"><div class="ef-logo"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div><div class="ef-body"><div class="k">England Futsal · Pride DNA</div><div class="t">"Possess a constant threat through receiving, turning and shooting in the final third."</div></div></div>
           <a class="vid-embed" href="https://www.youtube.com/watch?v=uVhn9-6P8X8" target="_blank" rel="noopener" aria-label="Play Constant Threat highlights"><img src="https://i.ytimg.com/vi/uVhn9-6P8X8/hqdefault.jpg" alt="Constant Threat highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
           <div class="case-stats">
             <div class="case-stat feat"><div class="v">8</div><div class="l">NFS Goals · 2025/26</div></div>
-            <div class="case-stat"><div class="v">8</div><div class="l">Appearances</div></div>
+            <div class="case-stat"><div class="v">7</div><div class="l">Appearances</div></div>
             <div class="case-stat"><div class="v">Two-footed</div><div class="l">Either side</div></div>
           </div>
           <div class="case-quotes">
@@ -315,15 +337,15 @@
               <div class="cq-body"><span class="k">Scout report</span><p class="q">"He is a threat with the ball, can pick a hard pass, play through the lines, and judges his attacking runs well."</p><p class="a">David Banjura · Former National League Chief Scout</p></div>
             </div>
           </div>
-          <div class="case-analysis"><p>Eight goals from eight appearances in his first NFS season. Verified on The FA's NFS platform.</p></div>
+          <div class="case-analysis"><p>Eight goals from seven appearances in his first NFS season. Verified on The FA's NFS platform.</p></div>
         </div>
       </div>
 
       <div class="panel" data-panel="3" id="p3">
         <div class="case">
-          <div class="case-banner"><span class="num">02</span><div class="heads"><span class="role">The Pride · Pivot Role</span><h3>Effectively retains possession under pressure</h3></div></div>
+          <div class="case-banner"><span class="num">02</span><div class="heads"><span class="role">Pride DNA · Pivot Role-Specific</span><h3>Effectively retains possession under pressure</h3></div></div>
           <p class="case-lead">The pivot is the team's <strong>focal point</strong>. Retaining under pressure isn't just holding — it's absorbing contact, staying up, and setting the ball back cleanly so the team plays through you rather than around you.</p>
-          <div class="ef-quote"><div class="ef-logo"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div><div class="ef-body"><div class="k">England Futsal · Pride Pivot</div><div class="t">"Effectively retains possession under pressure."</div></div></div>
+          <div class="ef-quote"><div class="ef-logo"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div><div class="ef-body"><div class="k">England Futsal · Pride DNA</div><div class="t">"Effectively retains possession under pressure."</div></div></div>
           <a class="vid-embed" href="https://www.youtube.com/watch?v=zmRC5aI2NDM" target="_blank" rel="noopener" aria-label="Play Retains Under Pressure highlights"><img src="https://i.ytimg.com/vi/zmRC5aI2NDM/hqdefault.jpg" alt="Retains Under Pressure highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
           <div class="case-quotes">
             <div class="case-quote">
@@ -345,10 +367,10 @@
 
       <div class="panel" data-panel="4" id="p4">
         <div class="case">
-          <div class="case-banner"><span class="num">03</span><div class="heads"><span class="role">The Pride · Pivot Role</span><h3>Demonstrates an intensity and understanding to press the ball and/or passing line</h3></div></div>
+          <div class="case-banner"><span class="num">03</span><div class="heads"><span class="role">Pride DNA · Pivot Role-Specific</span><h3>Demonstrates athleticism and an understanding to press effectively at the first line</h3></div></div>
           <p class="case-lead">The pivot is the team's <strong>furthest-forward defender</strong>. Press intensity plus positional understanding — knowing which passing line to close and when.</p>
-          <div class="ef-quote"><div class="ef-logo"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div><div class="ef-body"><div class="k">England Futsal · Pride Pivot</div><div class="t">"Demonstrates an intensity and understanding to press the ball and/or passing line."</div></div></div>
-          <a class="vid-embed" href="https://www.youtube.com/watch?v=eCp5T_w2wy0" target="_blank" rel="noopener" aria-label="Play Press Intensity highlights"><img src="https://i.ytimg.com/vi/eCp5T_w2wy0/hqdefault.jpg" alt="Press Intensity highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
+          <div class="ef-quote"><div class="ef-logo"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div><div class="ef-body"><div class="k">England Futsal · Pride DNA</div><div class="t">"Demonstrates athleticism and an understanding to press effectively at the first line."</div></div></div>
+          <a class="vid-embed" href="https://www.youtube.com/watch?v=eCp5T_w2wy0" target="_blank" rel="noopener" aria-label="Play First-Line Press highlights"><img src="https://i.ytimg.com/vi/eCp5T_w2wy0/hqdefault.jpg" alt="First-Line Press highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
           <div class="case-stats">
             <div class="case-stat"><div class="v">0.91s</div><div class="l">5m sprint</div><span class="b">Elite</span></div>
             <div class="case-stat"><div class="v">1.62s</div><div class="l">10m sprint</div><span class="b">Elite</span></div>
@@ -374,10 +396,10 @@
 
       <div class="panel" data-panel="5" id="p5">
         <div class="case">
-          <div class="case-banner"><span class="num">02</span><div class="heads"><span class="role">The Pride · Player Profile</span><h3>Effective problem solver within the game — as an individual and for the team</h3></div></div>
+          <div class="case-banner"><span class="num">02</span><div class="heads"><span class="role">Pride DNA · Game Sense</span><h3>Game sense — reading space, time and the picture to solve the game</h3></div></div>
           <p class="case-lead">A Pride player <strong>reads the picture and acts on it</strong>. For the pivot, that's the decision loop of hold / set / turn / drive / finish — reading the defender, the wing runner and the space around all in one moment.</p>
-          <div class="ef-quote"><div class="ef-logo"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div><div class="ef-body"><div class="k">England Futsal · Pride Profile</div><div class="t">"Effective problem solver within the game as an individual and for the team."</div></div></div>
-          <a class="vid-embed" href="https://www.youtube.com/watch?v=82mNUxfOenM" target="_blank" rel="noopener" aria-label="Play Problem Solver highlights"><img src="https://i.ytimg.com/vi/82mNUxfOenM/hqdefault.jpg" alt="Problem Solver highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
+          <div class="ef-quote"><div class="ef-logo"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div><div class="ef-body"><div class="k">England Futsal · Pride DNA</div><div class="t">"Understand space &amp; time."</div></div></div>
+          <a class="vid-embed" href="https://www.youtube.com/watch?v=82mNUxfOenM" target="_blank" rel="noopener" aria-label="Play Game Sense highlights"><img src="https://i.ytimg.com/vi/82mNUxfOenM/hqdefault.jpg" alt="Game Sense highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
           <div class="case-quotes">
             <div class="case-quote">
               <div class="cq-logo"><img src="img/logo-redhouse.png" alt="Red House School"></div>
@@ -398,10 +420,10 @@
 
       <div class="panel" data-panel="6" id="p6">
         <div class="case">
-          <div class="case-banner"><span class="num">01</span><div class="heads"><span class="role">The Pride · Player Profile</span><h3>Consistent technical execution under pressure</h3></div></div>
+          <div class="case-banner"><span class="num">01</span><div class="heads"><span class="role">Pride DNA · Technical Excellence</span><h3>Technical excellence — skilfully adaptable under pressure</h3></div></div>
           <p class="case-lead">The Pride standard is <strong>consistent, not occasional</strong>. First touch, weight of pass, quality of set — all held under pressure from the defending pivot with the ball moving quickly around them.</p>
-          <div class="ef-quote"><div class="ef-logo"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div><div class="ef-body"><div class="k">England Futsal · Pride Profile</div><div class="t">"Consistent technical execution under pressure."</div></div></div>
-          <a class="vid-embed" href="https://www.youtube.com/watch?v=aKdNUCQ0Z8k" target="_blank" rel="noopener" aria-label="Play Technical Execution highlights"><img src="https://i.ytimg.com/vi/aKdNUCQ0Z8k/hqdefault.jpg" alt="Technical Execution highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
+          <div class="ef-quote"><div class="ef-logo"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div><div class="ef-body"><div class="k">England Futsal · Pride DNA</div><div class="t">"Skilfully adaptable under pressure."</div></div></div>
+          <a class="vid-embed" href="https://www.youtube.com/watch?v=aKdNUCQ0Z8k" target="_blank" rel="noopener" aria-label="Play Technical Excellence highlights"><img src="https://i.ytimg.com/vi/aKdNUCQ0Z8k/hqdefault.jpg" alt="Technical Excellence highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
           <div class="case-stats">
             <div class="case-stat"><div class="v">Two-footed</div><div class="l">Either side</div></div>
           </div>
@@ -426,9 +448,9 @@
       <!-- COACH / PSYCHOLOGICAL ROBUSTNESS PANEL -->
       <div class="panel coach" data-panel="coach" id="coach">
         <div class="case">
-          <div class="case-banner"><span class="num" style="color: var(--amber-deep);">07</span><div class="heads"><span class="role" style="color: var(--amber-deep);">The Pride · Player Profile · Intangibles</span><h3>Psychologically robust and emotionally intelligent within the Pride environment</h3></div></div>
-          <p class="coach-lead">Psychological robustness is the fourth strand of the <strong>Player Profile</strong> — and the one Pride requirement that never shows up on film. It doesn't get a highlight reel, so it is evidenced the only way it can be: through the people who have coached and scouted Joe. Every one of them raises the same thing unprompted — <strong>determination, self-awareness, and how he behaves under pressure and after a mistake</strong>. Independent voices from every stage of his development, all pointing the same way.</p>
-          <div class="ef-quote"><div class="ef-logo"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div><div class="ef-body"><div class="k">England Futsal · Pride Profile</div><div class="t">"Psychologically robust &amp; emotionally intelligent within the Pride environment."</div></div></div>
+          <div class="case-banner"><span class="num" style="color: var(--amber-deep);">04</span><div class="heads"><span class="role" style="color: var(--amber-deep);">Pride DNA · Emotional Intelligence</span><h3>Psychologically robust and emotionally intelligent within the Pride environment</h3></div></div>
+          <p class="coach-lead">Emotional Intelligence is the fourth pillar of the <strong>Pride DNA</strong> — and the one that never shows up on film. It doesn't get a highlight reel, so it is evidenced the only way it can be: through the people who have coached and scouted Joe. Every one of them raises the same thing unprompted — <strong>determination, self-awareness, and how he behaves under pressure and after a mistake</strong>. Independent voices from every stage of his development, all pointing the same way.</p>
+          <div class="ef-quote"><div class="ef-logo"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div><div class="ef-body"><div class="k">England Futsal · Pride DNA</div><div class="t">"Psychologically robust &amp; emotionally intelligent within the Pride environment."</div></div></div>
           <div class="coach-grid">
             <div class="coach-card">
               <span class="k">Character reference · School</span>

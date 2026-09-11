@@ -29,7 +29,7 @@
     .hero-club-tile { width: 90px; align-self: center; display: block; }
     .hero-club-tile img { width: 100%; height: auto; display: block; border: 1.5px solid #fff; border-radius: 10px; box-shadow: 0 4px 16px rgba(0,32,64,0.12); }
     .hero-club-tile .p { color: var(--red); font-family: var(--font-display); font-size: 1.15rem; text-align: center; line-height: 1.05; }
-    .hero-photo { aspect-ratio: 3/4; border-radius: 14px; overflow: hidden; background: linear-gradient(135deg, #0a1a2e, #1a2e4a); border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 12px 40px rgba(0,0,0,0.35); max-height: 400px; display: flex; align-items: center; justify-content: center; }
+    .hero-photo { aspect-ratio: 3/4; border-radius: 14px; overflow: hidden; background: linear-gradient(135deg, #0a1a2e, #1a2e4a); border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 12px 40px rgba(0,0,0,0.35); max-height: 400px; display: flex; align-items: center; justify-content: center; justify-self: end; width: 300px; }
     .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
     .hero-photo .ph { color: rgba(255,255,255,0.45); text-align: center; padding: 20px; }
     .hero-photo .ph i { font-size: 1.6rem; display: block; margin-bottom: 10px; opacity: 0.6; }
@@ -55,21 +55,45 @@
     .hub-legend .sw-pivot { background: var(--amber); }
     .hub-legend .sw-profile { background: #5aa9e6; }
 
-    .hub-stage { position: relative; width: 100%; max-width: 720px; margin: 0 auto; aspect-ratio: 1/1; }
-    .hub-svg { width: 100%; height: 100%; display: block; overflow: visible; }
-    .hub-svg .petal { cursor: pointer; }
-    .hub-svg .petal-shade, .hub-svg .petal-stroke { transition: opacity 0.22s ease, stroke 0.22s ease, stroke-width 0.22s ease; }
-    .hub-svg .petal-play { transition: transform 0.22s ease; transform-origin: center; transform-box: fill-box; }
-    .hub-svg .petal-stroke { stroke: rgba(255,255,255,0.18); stroke-width: 1.5; }
-    .hub-svg .petal.grp-pivot .petal-stroke { stroke: var(--amber); stroke-width: 3; }
-    .hub-svg .petal.grp-profile .petal-stroke { stroke: #5aa9e6; stroke-width: 3; }
-    .hub-svg .petal:hover .petal-shade { opacity: 0.28; }
-    .hub-svg .petal:hover .petal-stroke { stroke: #fff; stroke-width: 4; }
-    .hub-svg .petal:hover .petal-play { transform: scale(1.12); }
-    .hub-svg .half-frames { pointer-events: none; }
-    .hub-svg .frame-pivot { fill: none; stroke: var(--amber); stroke-width: 4; stroke-dasharray: 1 13; stroke-linecap: round; opacity: 0.92; }
-    .hub-svg .frame-profile { fill: none; stroke: #5aa9e6; stroke-width: 4; stroke-dasharray: 1 13; stroke-linecap: round; opacity: 0.92; }
-    .hub-svg .petal-title { font-family: var(--font-display); font-size: 15.5px; font-weight: 700; fill: #fff; text-transform: uppercase; letter-spacing: 0.6px; paint-order: stroke; stroke: rgba(0,20,50,0.78); stroke-width: 3.5; stroke-linejoin: round; pointer-events: none; }
+    /* ===== Pride DNA house ===== */
+    .dna-house { max-width: 640px; margin: 0 auto; }
+    .dna-gable { display: block; width: 100%; height: 50px; }
+    .dna-gable svg { display: block; width: 100%; height: 100%; }
+    .dna-tile { position: relative; display: flex; overflow: hidden; text-decoration: none; background: #082047; border: 1.5px solid rgba(255,255,255,0.16); cursor: pointer; transition: border-color 0.16s ease, transform 0.16s ease; }
+    .dna-tile:hover { border-color: #fff; transform: translateY(-2px); }
+    .dna-tile .thumb { position: absolute; inset: 0; background-size: cover; background-position: center 26%; opacity: 0.5; z-index: 0; transition: opacity 0.2s ease; }
+    .dna-tile:hover .thumb { opacity: 0.68; }
+    .dna-tile .shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(4,17,44,0.94), rgba(4,17,44,0.6) 60%, rgba(4,17,44,0.42)); z-index: 1; }
+    .dna-tile .row { position: relative; z-index: 2; flex: 1; display: flex; align-items: center; gap: 14px; padding: 15px 19px; }
+    .dna-tile .ico { width: 44px; height: 44px; border-radius: 11px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--amber); flex-shrink: 0; }
+    .dna-tile .txt { flex: 1; min-width: 0; }
+    .dna-tile .role { display: block; font-size: 9px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: var(--amber); margin-bottom: 3px; }
+    .dna-tile .name { display: block; font-family: var(--font-display); font-size: 1.18rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; line-height: 1.04; color: #fff; }
+    .dna-tile .strap { display: block; font-size: 11.5px; color: rgba(255,255,255,0.82); margin-top: 4px; line-height: 1.35; }
+    .dna-tile .play { flex-shrink: 0; width: 38px; height: 38px; border-radius: 50%; background: var(--red); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 13px; padding-left: 2px; box-shadow: 0 3px 10px rgba(0,0,0,0.35); }
+    .dna-tile .tag { flex-shrink: 0; font-size: 9px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--amber); border: 1px solid rgba(255,185,29,0.55); border-radius: 20px; padding: 7px 12px; text-align: center; line-height: 1.2; }
+    .dna-roof { background: linear-gradient(90deg, #3d0f19, #591320); }
+    .dna-roof .ico { background: rgba(255,185,29,0.18); }
+    .dna-walls { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 6px 0; }
+    .dna-foundation .shade { background: linear-gradient(90deg, rgba(3,13,36,0.95), rgba(3,13,36,0.66) 60%, rgba(3,13,36,0.5)); }
+
+    /* Pivot Roles & Responsibilities band */
+    .pivot-band { max-width: 640px; margin: 24px auto 0; }
+    .pivot-band .pb-head { display: flex; align-items: center; gap: 11px; margin-bottom: 12px; }
+    .pivot-band .pb-head .bar { width: 4px; height: 34px; background: #5aa9e6; border-radius: 2px; flex-shrink: 0; }
+    .pivot-band .pb-head .k { display: block; font-size: 10px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: #8cc4ec; }
+    .pivot-band .pb-head .t { display: block; font-family: var(--font-display); font-size: 1.18rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.4px; line-height: 1.05; margin-top: 2px; }
+    .pivot-roles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .prole { position: relative; display: block; overflow: hidden; text-decoration: none; background: #082047; border: 1.5px solid rgba(90,169,230,0.4); cursor: pointer; min-height: 152px; transition: border-color 0.16s ease, transform 0.16s ease; }
+    .prole:hover { border-color: #fff; transform: translateY(-2px); }
+    .prole .thumb { position: absolute; inset: 0; background-size: cover; background-position: center 28%; opacity: 0.42; z-index: 0; transition: opacity 0.2s ease; }
+    .prole:hover .thumb { opacity: 0.6; }
+    .prole .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(4,17,44,0.62), rgba(4,17,44,0.93)); z-index: 1; }
+    .prole .in { position: relative; z-index: 2; display: flex; flex-direction: column; height: 100%; min-height: 152px; padding: 14px 15px; }
+    .prole .ico { width: 38px; height: 38px; border-radius: 10px; background: rgba(90,169,230,0.16); display: flex; align-items: center; justify-content: center; font-size: 16px; color: #8cc4ec; margin-bottom: auto; }
+    .prole .name { display: block; font-family: var(--font-display); font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; color: #fff; line-height: 1.08; margin-top: 10px; }
+    .prole .strap { display: block; font-size: 10.5px; color: rgba(255,255,255,0.8); margin-top: 4px; line-height: 1.35; }
+    .prole .play { position: absolute; top: 13px; right: 13px; z-index: 3; width: 34px; height: 34px; border-radius: 50%; background: #2b7cc0; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; padding-left: 2px; box-shadow: 0 3px 10px rgba(0,0,0,0.35); }
 
     /* Video modal — plays a petal's highlights on the page */
     .vmodal { position: fixed; inset: 0; z-index: 1000; background: rgba(0,16,38,0.88); backdrop-filter: blur(6px); display: none; align-items: center; justify-content: center; padding: 4vh 3vw; opacity: 0; transition: opacity 0.22s ease; }
@@ -85,47 +109,12 @@
     body.modal-open { overflow: hidden; }
     @media (max-width: 600px) { .vmodal { padding: 0 12px; } .vmodal-close { top: -50px; right: 0; } .vmodal-fallback { bottom: -34px; } }
 
-    .hub-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 36%; aspect-ratio: 1/1; border-radius: 50%; background: var(--card); box-shadow: 0 12px 38px rgba(0,32,64,0.30); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 5%; z-index: 5; overflow: hidden; }
-    .hub-center::before { content: ''; position: absolute; inset: 0; background-image: url('img/photo-futsal.jpg'); background-size: cover; background-position: center; opacity: 0.85; z-index: 0; pointer-events: none; }
-    .hub-center::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.85) 40%, rgba(255,255,255,0.55) 72%, rgba(255,255,255,0.1) 100%); z-index: 1; pointer-events: none; }
-    .hub-center > * { position: relative; z-index: 2; }
-    .hub-center .lbl-big { font-family: var(--font-display); font-size: clamp(17px, 2.7vw, 24px); font-weight: 700; color: var(--red); line-height: 1; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; text-shadow: 0 1px 2px rgba(255,255,255,0.95), 0 0 9px rgba(255,255,255,0.85); }
-    /* Icon items — movie(6) and star(7). Icon centred above its caption. Both same size. */
-    .hub-center .disc-item { display: flex; flex-direction: column; align-items: center; gap: 2px; text-decoration: none; margin-top: 7px; }
-    .hub-center .ico { position: relative; display: inline-flex; width: 28px; height: 28px; align-items: center; justify-content: center; }
-    .hub-center .ico i { color: var(--amber); font-size: 28px; filter: drop-shadow(0 2px 4px rgba(255,185,29,0.4)); transition: transform 0.15s; }
-    .hub-center .ico .n { position: absolute; left: 50%; transform: translate(-50%, -50%); font-family: var(--font-display); font-weight: 700; color: var(--blue-deep); }
-    .hub-center .ico.movie .n { top: 52%; font-size: 11px; }
-    .hub-center .ico.star .n { top: 56%; font-size: 11px; }
-    .hub-center .disc-item .cap { font-size: 8.5px; font-weight: 800; color: var(--amber-deep); text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.2; text-shadow: 0 1px 2px rgba(255,255,255,0.95), 0 0 7px rgba(255,255,255,0.85); }
-    .hub-center .disc-item:hover .ico i { transform: scale(1.1); }
-    .hub-center .disc-item:hover .cap { color: var(--red); }
-    .hub-center .cta { font-size: 9.5px; font-weight: 700; color: var(--red); margin-top: 8px; letter-spacing: 0.3px; text-decoration: none; text-shadow: 0 1px 2px rgba(255,255,255,0.95), 0 0 7px rgba(255,255,255,0.85); }
-    .hub-center .cta:hover { text-decoration: underline; }
-
-    .hub-mobile { display: none; }
-    .hub-mobile-list { display: grid; gap: 10px; }
-    .m-center { display: flex; flex-direction: column; align-items: center; gap: 11px; background: #fff; border-radius: 14px; padding: 30px 22px; text-decoration: none; color: inherit; text-align: center; border: 2px solid var(--amber); margin-bottom: 12px; }
-    .m-tile { display: flex; align-items: center; gap: 12px; background: var(--card); border: 1px solid var(--border-lt); border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit; box-shadow: 0 2px 6px rgba(0,32,64,0.04); }
-    .m-tile-thumb { position: relative; width: 132px; aspect-ratio: 16/9; flex-shrink: 0; overflow: hidden; background: #000; }
-    .m-tile-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.92; }
-    .m-tile-thumb::after { content: '\f04b'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 34px; height: 34px; border-radius: 50%; background: rgba(206,17,38,0.92); color: #fff; font-size: 11px; display: flex; align-items: center; justify-content: center; padding-left: 2px; }
-    .m-tile-body { padding: 10px 14px 10px 4px; flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; }
-    .m-tile-body .n { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--red); flex-shrink: 0; }
-    .m-tile-body .title { font-size: 0.92rem; font-weight: 800; color: var(--text); line-height: 1.3; }
-    .m-group-head { display: flex; align-items: center; gap: 9px; font-family: var(--font-display); font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #fff; margin: 20px 0 10px; }
-    .m-group-head:first-of-type { margin-top: 0; }
-    .m-group-head .sw { width: 14px; height: 14px; border-radius: 4px; flex-shrink: 0; }
-    .m-group-head.grp-pivot .sw { background: var(--amber); }
-    .m-group-head.grp-profile .sw { background: #5aa9e6; }
-    .hub-mobile-list.grp-pivot .m-tile { border-left: 4px solid var(--amber); }
-    .hub-mobile-list.grp-profile .m-tile { border-left: 4px solid #5aa9e6; }
-
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; gap: 24px; }
       .hero-photo { max-width: 320px; margin: 0 auto; max-height: 400px; }
-      .hub-stage { display: none; }
-      .hub-mobile { display: block; }
+      .dna-walls { grid-template-columns: 1fr; }
+      .pivot-roles { grid-template-columns: 1fr; }
+      .prole, .prole .in { min-height: 112px; }
       .page { padding: 32px 22px 0; }
     }
     @media (max-width: 480px) { .hero-bottom { grid-template-columns: 1fr; } .hero-club-tile { width: 96px; margin: 0 auto; } }
@@ -143,6 +132,17 @@
     .ex-media img, .ex-media video { width: 100%; height: 100%; object-fit: cover; display: block; }
     .ex-item figcaption { margin-top: 10px; font-size: 12.5px; color: rgba(255,255,255,0.82); line-height: 1.45; }
     .ex-item figcaption strong { color: #fff; font-weight: 800; }
+    /* Start Here / assessment context */
+    .starthere { margin: 0 0 42px; background: #fff; border-radius: 14px; padding: 26px 30px 24px; box-shadow: 0 10px 30px rgba(0,20,50,0.24); border-top: 4px solid var(--amber); }
+    .starthere .k { font-size: 11px; font-weight: 800; letter-spacing: 1.7px; text-transform: uppercase; color: var(--red); }
+    .starthere .sh-ctx { font-size: 14.5px; color: var(--text); line-height: 1.62; margin: 9px 0 18px; }
+    .starthere .sh-ctx strong { color: var(--blue-deep); }
+    .sh-links { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .sh-links a { text-align: center; background: var(--blue-deep); color: #fff; text-decoration: none; font-weight: 700; font-size: 12.5px; padding: 13px 12px; border-radius: 9px; transition: background 0.15s ease, transform 0.15s ease; line-height: 1.25; }
+    .sh-links a:hover { background: var(--red); transform: translateY(-2px); }
+    .sh-status { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border-lt); font-size: 12.5px; font-weight: 700; color: var(--text-sec); display: flex; align-items: center; gap: 9px; }
+    .sh-status .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--amber); flex-shrink: 0; box-shadow: 0 0 0 3px rgba(255,185,29,0.25); }
+    @media (max-width: 620px) { .sh-links { grid-template-columns: 1fr 1fr; } }
   </style>
 </head>
 <body>
@@ -169,12 +169,12 @@
       <div class="hero-rule"></div>
       <div class="hero-eyebrow">Pivot · National Futsal Series · Team Sunderland</div>
       <h1>Joe <em>Eason</em></h1>
-      <p class="hero-sub">Athletic, physically strong, technically excellent pivot. Analysed against the seven competencies that decide the modern pivot role.</p>
+      <p class="hero-sub">Athletic, physically strong, technically excellent pivot — measured against England Futsal's <strong>Pride DNA</strong> and the pivot's own roles &amp; responsibilities.</p>
       <div class="hero-bottom">
         <div class="hero-stats">
           <div class="hero-stat"><strong>18</strong><small>Age</small></div>
           <div class="hero-stat"><strong>6'2"</strong><small>Height</small></div>
-          <div class="hero-stat"><strong>84kg</strong><small>Weight</small></div>
+          <div class="hero-stat"><strong>89.9kg</strong><small>Weight</small></div>
         </div>
         <div class="hero-club-tile">
           <img src="img/UOS.jpg" alt="Team Sunderland Futsal badge" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -190,120 +190,125 @@
     </div>
   </div>
 
+  <section class="starthere fi">
+    <div class="k">For England coaches — start here</div>
+    <p class="sh-ctx">Joe attended the <strong>England U23 assessment camp in Derby</strong>, but had to withdraw after the first part of the opening session with a twisted ankle. He has since been invited to the next camp — <strong>Bedford, late October 2026</strong> — but is working back from a 4–6 week injury and may not be fully fit to be assessed there. This platform brings together current, independently verifiable evidence — competency footage, full match film, physical testing data and references — so he can be reviewed now, and reconsidered if the injury limits his assessment at Bedford.</p>
+    <div class="sh-links">
+      <a href="pivot.html">Pivot Competency Review</a>
+      <a href="record.html">Match Footage &amp; Record</a>
+      <a href="physical.html">Physical Profile</a>
+      <a href="references.html">References</a>
+    </div>
+    <div class="sh-status"><span class="dot"></span>Current status: recovering from a twisted ankle (4–6 week) · invited to the next England U23 camp — Bedford, late October 2026</div>
+  </section>
+
   <div class="hub">
     <div class="hub-label">
       <div class="hub-ef"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div>
       <div class="rule"></div>
-      <div class="eyebrow">Position Analysis</div>
-      <h2>The Pivot</h2>
-      <p>England Futsal's Pride framework defines seven requirements for the pivot. Six petals below cover what you can see on film, split into the two halves of the Pride. The seventh — psychological robustness — is the star at the centre. The part you can't coach.</p>
-      <div class="hub-legend">
-        <span class="lg"><span class="sw sw-pivot"></span>Pivot Role — top three</span>
-        <span class="lg"><span class="sw sw-profile"></span>Player Profile — bottom three</span>
-      </div>
+      <div class="eyebrow">England Futsal · The Pride DNA</div>
+      <h2>Joe against the DNA</h2>
+      <p>England Futsal builds every player on the <strong>Pride DNA</strong> — four pillars in one house: Emotional Intelligence at the roof, Game Sense and Technical Excellence as the walls, Athletic Dominance as the foundation. The DNA then sets <strong>role-specific attributes</strong> for each position. Below: Joe against all four pillars, then the three the DNA asks of the pivot.</p>
     </div>
 
-    <div class="hub-stage fi">
-      <svg class="hub-svg" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Pivot — six competency videos hub">
-        <defs>
-          <pattern id="pat-p1" patternUnits="userSpaceOnUse" x="210" y="55" width="380" height="230"><image href="https://img.youtube.com/vi/uVhn9-6P8X8/hqdefault.jpg" x="0" y="0" width="380" height="230" preserveAspectRatio="xMidYMid slice"/></pattern>
-          <pattern id="pat-p2" patternUnits="userSpaceOnUse" x="470" y="70" width="320" height="335"><image href="https://img.youtube.com/vi/zmRC5aI2NDM/hqdefault.jpg" x="0" y="0" width="320" height="335" preserveAspectRatio="xMidYMid slice"/></pattern>
-          <pattern id="pat-p3" patternUnits="userSpaceOnUse" x="470" y="400" width="320" height="335"><image href="https://img.youtube.com/vi/wYYt72EmyF0/hqdefault.jpg" x="0" y="0" width="320" height="335" preserveAspectRatio="xMidYMid slice"/></pattern>
-          <pattern id="pat-p4" patternUnits="userSpaceOnUse" x="210" y="525" width="380" height="220"><image href="https://img.youtube.com/vi/aKdNUCQ0Z8k/hqdefault.jpg" x="0" y="0" width="380" height="220" preserveAspectRatio="xMidYMid slice"/></pattern>
-          <pattern id="pat-p5" patternUnits="userSpaceOnUse" x="15" y="400" width="320" height="335"><image href="https://img.youtube.com/vi/82mNUxfOenM/hqdefault.jpg" x="0" y="0" width="320" height="335" preserveAspectRatio="xMidYMid slice"/></pattern>
-          <pattern id="pat-p6" patternUnits="userSpaceOnUse" x="15" y="70" width="320" height="335"><image href="https://img.youtube.com/vi/eCp5T_w2wy0/hqdefault.jpg" x="0" y="0" width="320" height="335" preserveAspectRatio="xMidYMid slice"/></pattern>
-          <radialGradient id="darken" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#001432" stop-opacity="0.15"/><stop offset="100%" stop-color="#001432" stop-opacity="0.85"/></radialGradient>
-        </defs>
-        <g class="petals">
+    <div class="dna-house fi">
+      <div class="dna-gable" aria-hidden="true"><svg viewBox="0 0 640 50" preserveAspectRatio="none"><polygon points="320,3 637,47 3,47" fill="#4a111c" stroke="#CE1126" stroke-width="3"/></svg></div>
 
-          <a href="https://www.youtube.com/watch?v=uVhn9-6P8X8" target="_blank" rel="noopener" class="petal grp-pivot" data-vid="uVhn9-6P8X8" data-title="Constant Threat" aria-label="Constant Threat — play video">
-            <path d="M 330.52 269.32 A 148 148 0 0 1 469.48 269.32 L 578.40 64.48 A 380 380 0 0 0 221.60 64.48 Z" fill="url(#pat-p1)" class="petal-img"/>
-            <path d="M 330.52 269.32 A 148 148 0 0 1 469.48 269.32 L 578.40 64.48 A 380 380 0 0 0 221.60 64.48 Z" fill="url(#darken)" class="petal-shade"/>
-            <path d="M 330.52 269.32 A 148 148 0 0 1 469.48 269.32 L 578.40 64.48 A 380 380 0 0 0 221.60 64.48 Z" class="petal-stroke" fill="none"/>
-            <g transform="translate(400 100)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="400" y="185" class="petal-title" text-anchor="middle"><tspan x="400" dy="0">Constant</tspan><tspan x="400" dy="18">Threat</tspan></text>
-          </a>
-
-          <a href="https://www.youtube.com/watch?v=zmRC5aI2NDM" target="_blank" rel="noopener" class="petal grp-pivot" data-vid="zmRC5aI2NDM" data-title="Retains Under Pressure" aria-label="Retains Under Pressure — play video">
-            <path d="M 478.43 274.49 A 148 148 0 0 1 547.91 394.83 L 779.77 386.74 A 380 380 0 0 0 601.37 77.74 Z" fill="url(#pat-p2)" class="petal-img"/>
-            <path d="M 478.43 274.49 A 148 148 0 0 1 547.91 394.83 L 779.77 386.74 A 380 380 0 0 0 601.37 77.74 Z" fill="url(#darken)" class="petal-shade"/>
-            <path d="M 478.43 274.49 A 148 148 0 0 1 547.91 394.83 L 779.77 386.74 A 380 380 0 0 0 601.37 77.74 Z" class="petal-stroke" fill="none"/>
-            <g transform="translate(660 250)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="588" y="291" class="petal-title" text-anchor="middle"><tspan x="588" dy="0">Retains</tspan><tspan x="588" dy="18">Under Pressure</tspan></text>
-          </a>
-
-          <a href="https://www.youtube.com/watch?v=wYYt72EmyF0" target="_blank" rel="noopener" class="petal grp-profile" data-vid="wYYt72EmyF0" data-title="Physically Dominant" aria-label="Physically Dominant — play video">
-            <path d="M 547.91 405.17 A 148 148 0 0 1 478.43 525.51 L 601.37 722.26 A 380 380 0 0 0 779.77 413.26 Z" fill="url(#pat-p3)" class="petal-img"/>
-            <path d="M 547.91 405.17 A 148 148 0 0 1 478.43 525.51 L 601.37 722.26 A 380 380 0 0 0 779.77 413.26 Z" fill="url(#darken)" class="petal-shade"/>
-            <path d="M 547.91 405.17 A 148 148 0 0 1 478.43 525.51 L 601.37 722.26 A 380 380 0 0 0 779.77 413.26 Z" class="petal-stroke" fill="none"/>
-            <g transform="translate(660 550)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="588" y="504" class="petal-title" text-anchor="middle"><tspan x="588" dy="0">Physically</tspan><tspan x="588" dy="18">Dominant</tspan></text>
-          </a>
-
-          <a href="https://www.youtube.com/watch?v=aKdNUCQ0Z8k" target="_blank" rel="noopener" class="petal grp-profile" data-vid="aKdNUCQ0Z8k" data-title="Technical Execution" aria-label="Technical Execution — play video">
-            <path d="M 469.48 530.68 A 148 148 0 0 1 330.52 530.68 L 221.60 735.52 A 380 380 0 0 0 578.40 735.52 Z" fill="url(#pat-p4)" class="petal-img"/>
-            <path d="M 469.48 530.68 A 148 148 0 0 1 330.52 530.68 L 221.60 735.52 A 380 380 0 0 0 578.40 735.52 Z" fill="url(#darken)" class="petal-shade"/>
-            <path d="M 469.48 530.68 A 148 148 0 0 1 330.52 530.68 L 221.60 735.52 A 380 380 0 0 0 578.40 735.52 Z" class="petal-stroke" fill="none"/>
-            <g transform="translate(400 700)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="400" y="617" class="petal-title" text-anchor="middle"><tspan x="400" dy="0">Technical</tspan><tspan x="400" dy="18">Execution</tspan></text>
-          </a>
-
-          <a href="https://www.youtube.com/watch?v=82mNUxfOenM" target="_blank" rel="noopener" class="petal grp-profile" data-vid="82mNUxfOenM" data-title="Problem Solver" aria-label="Problem Solver — play video">
-            <path d="M 321.57 525.51 A 148 148 0 0 1 252.09 405.17 L 20.23 413.26 A 380 380 0 0 0 198.63 722.26 Z" fill="url(#pat-p5)" class="petal-img"/>
-            <path d="M 321.57 525.51 A 148 148 0 0 1 252.09 405.17 L 20.23 413.26 A 380 380 0 0 0 198.63 722.26 Z" fill="url(#darken)" class="petal-shade"/>
-            <path d="M 321.57 525.51 A 148 148 0 0 1 252.09 405.17 L 20.23 413.26 A 380 380 0 0 0 198.63 722.26 Z" class="petal-stroke" fill="none"/>
-            <g transform="translate(140 550)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="211" y="504" class="petal-title" text-anchor="middle"><tspan x="211" dy="0">Problem</tspan><tspan x="211" dy="18">Solver</tspan></text>
-          </a>
-
-          <a href="https://www.youtube.com/watch?v=eCp5T_w2wy0" target="_blank" rel="noopener" class="petal grp-pivot" data-vid="eCp5T_w2wy0" data-title="Press Intensity" aria-label="Press Intensity — play video">
-            <path d="M 252.09 394.83 A 148 148 0 0 1 321.57 274.49 L 198.63 77.74 A 380 380 0 0 0 20.23 386.74 Z" fill="url(#pat-p6)" class="petal-img"/>
-            <path d="M 252.09 394.83 A 148 148 0 0 1 321.57 274.49 L 198.63 77.74 A 380 380 0 0 0 20.23 386.74 Z" fill="url(#darken)" class="petal-shade"/>
-            <path d="M 252.09 394.83 A 148 148 0 0 1 321.57 274.49 L 198.63 77.74 A 380 380 0 0 0 20.23 386.74 Z" class="petal-stroke" fill="none"/>
-            <g transform="translate(140 250)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="211" y="291" class="petal-title" text-anchor="middle"><tspan x="211" dy="0">Press</tspan><tspan x="211" dy="18">Intensity</tspan></text>
-          </a>
-
-        </g>
-        <g class="half-frames" aria-hidden="true">
-          <path class="frame-pivot" d="M 4.05 394 A 396 396 0 0 1 795.95 394 L 549.88 394 A 150 150 0 0 0 250.12 394 Z"/>
-          <path class="frame-profile" d="M 4.05 406 A 396 396 0 0 0 795.95 406 L 549.88 406 A 150 150 0 0 1 250.12 406 Z"/>
-        </g>
-      </svg>
-
-      <div class="hub-center">
-        <div class="lbl-big">The Pivot</div>
-        <a href="pivot.html" class="disc-item" title="Six competencies on film">
-          <span class="ico movie"><i class="fas fa-film"></i><span class="n">6</span></span>
-          <span class="cap">Competencies<br>on film</span>
-        </a>
-        <a href="pivot.html#coach" class="disc-item" title="The 7th — the part you can't coach">
-          <span class="ico star"><i class="fas fa-star"></i><span class="n">7</span></span>
-          <span class="cap">The part you<br>can't coach</span>
-        </a>
-        <a href="pivot.html" class="cta">Read the analysis →</a>
-      </div>
-    </div>
-
-    <div class="hub-mobile">
-      <a href="pivot.html#coach" class="m-center">
-        <img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal" style="width: 150px; height: auto;">
-        <div style="font-size: 46px; color: var(--amber); line-height: 1;"><i class="fas fa-star"></i></div>
-        <div style="font-family: var(--font-display); font-size: 28px; color: var(--red); line-height: 1;">7</div>
-        <div style="font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text);">The Part You Can't Coach</div>
-        <div style="font-size: 12.5px; font-weight: 700; color: var(--amber-deep);">Read →</div>
+      <a href="pivot.html#coach" class="dna-tile dna-roof" aria-label="Emotional Intelligence — shown in testimony, not on film">
+        <span class="row">
+          <span class="ico"><i class="fas fa-brain"></i></span>
+          <span class="txt">
+            <span class="role">Pride DNA · Roof</span>
+            <span class="name">Emotional Intelligence</span>
+            <span class="strap">Performance mindset — the pillar you can't film. Shown through coach &amp; scout testimony.</span>
+          </span>
+          <span class="tag">Testimony&nbsp;&rarr;</span>
+        </span>
       </a>
-      <div class="m-group-head grp-pivot"><span class="sw"></span>Pivot Role</div>
-      <div class="hub-mobile-list grp-pivot">
-        <a href="https://www.youtube.com/watch?v=uVhn9-6P8X8" target="_blank" rel="noopener" class="m-tile" data-vid="uVhn9-6P8X8" data-title="Constant Threat"><div class="m-tile-thumb"><img src="https://img.youtube.com/vi/uVhn9-6P8X8/hqdefault.jpg" alt=""></div><div class="m-tile-body"><div class="n">01</div><div class="title">Constant Threat</div></div></a>
-        <a href="https://www.youtube.com/watch?v=zmRC5aI2NDM" target="_blank" rel="noopener" class="m-tile" data-vid="zmRC5aI2NDM" data-title="Retains Under Pressure"><div class="m-tile-thumb"><img src="https://img.youtube.com/vi/zmRC5aI2NDM/hqdefault.jpg" alt=""></div><div class="m-tile-body"><div class="n">02</div><div class="title">Retains Under Pressure</div></div></a>
-        <a href="https://www.youtube.com/watch?v=eCp5T_w2wy0" target="_blank" rel="noopener" class="m-tile" data-vid="eCp5T_w2wy0" data-title="Press Intensity"><div class="m-tile-thumb"><img src="https://img.youtube.com/vi/eCp5T_w2wy0/hqdefault.jpg" alt=""></div><div class="m-tile-body"><div class="n">03</div><div class="title">Press Intensity</div></div></a>
+
+      <div class="dna-walls">
+        <a href="https://www.youtube.com/watch?v=82mNUxfOenM" target="_blank" rel="noopener" class="dna-tile" data-vid="82mNUxfOenM" data-title="Game Sense" aria-label="Game Sense — play video">
+          <span class="thumb" style="background-image:url('https://img.youtube.com/vi/82mNUxfOenM/hqdefault.jpg')"></span>
+          <span class="shade"></span>
+          <span class="row">
+            <span class="ico"><i class="fas fa-eye"></i></span>
+            <span class="txt">
+              <span class="role">Pride DNA · Wall</span>
+              <span class="name">Game Sense</span>
+              <span class="strap">Understand space &amp; time.</span>
+            </span>
+            <span class="play"><i class="fas fa-play"></i></span>
+          </span>
+        </a>
+        <a href="https://www.youtube.com/watch?v=aKdNUCQ0Z8k" target="_blank" rel="noopener" class="dna-tile" data-vid="aKdNUCQ0Z8k" data-title="Technical Excellence" aria-label="Technical Excellence — play video">
+          <span class="thumb" style="background-image:url('https://img.youtube.com/vi/aKdNUCQ0Z8k/hqdefault.jpg')"></span>
+          <span class="shade"></span>
+          <span class="row">
+            <span class="ico"><i class="fas fa-star"></i></span>
+            <span class="txt">
+              <span class="role">Pride DNA · Wall</span>
+              <span class="name">Technical Excellence</span>
+              <span class="strap">Skilfully adaptable under pressure.</span>
+            </span>
+            <span class="play"><i class="fas fa-play"></i></span>
+          </span>
+        </a>
       </div>
-      <div class="m-group-head grp-profile"><span class="sw"></span>Player Profile</div>
-      <div class="hub-mobile-list grp-profile">
-        <a href="https://www.youtube.com/watch?v=aKdNUCQ0Z8k" target="_blank" rel="noopener" class="m-tile" data-vid="aKdNUCQ0Z8k" data-title="Technical Execution"><div class="m-tile-thumb"><img src="https://img.youtube.com/vi/aKdNUCQ0Z8k/hqdefault.jpg" alt=""></div><div class="m-tile-body"><div class="n">01</div><div class="title">Technical Execution</div></div></a>
-        <a href="https://www.youtube.com/watch?v=82mNUxfOenM" target="_blank" rel="noopener" class="m-tile" data-vid="82mNUxfOenM" data-title="Problem Solver"><div class="m-tile-thumb"><img src="https://img.youtube.com/vi/82mNUxfOenM/hqdefault.jpg" alt=""></div><div class="m-tile-body"><div class="n">02</div><div class="title">Problem Solver</div></div></a>
-        <a href="https://www.youtube.com/watch?v=wYYt72EmyF0" target="_blank" rel="noopener" class="m-tile" data-vid="wYYt72EmyF0" data-title="Physically Dominant"><div class="m-tile-thumb"><img src="https://img.youtube.com/vi/wYYt72EmyF0/hqdefault.jpg" alt=""></div><div class="m-tile-body"><div class="n">03</div><div class="title">Physically Dominant</div></div></a>
+
+      <a href="https://www.youtube.com/watch?v=wYYt72EmyF0" target="_blank" rel="noopener" class="dna-tile dna-foundation" data-vid="wYYt72EmyF0" data-title="Athletic Dominance" aria-label="Athletic Dominance — play video">
+        <span class="thumb" style="background-image:url('https://img.youtube.com/vi/wYYt72EmyF0/hqdefault.jpg')"></span>
+        <span class="shade"></span>
+        <span class="row">
+          <span class="ico"><i class="fas fa-dumbbell"></i></span>
+          <span class="txt">
+            <span class="role">Pride DNA · Foundation</span>
+            <span class="name">Athletic Dominance</span>
+            <span class="strap">Efficient and effective mover.</span>
+          </span>
+          <span class="play"><i class="fas fa-play"></i></span>
+        </span>
+      </a>
+    </div>
+
+    <div class="pivot-band fi">
+      <div class="pb-head">
+        <span class="bar"></span>
+        <span>
+          <span class="k">Pride DNA · Role-Specific Attributes</span>
+          <span class="t">The Pivot</span>
+        </span>
+      </div>
+      <div class="pivot-roles">
+        <a href="https://www.youtube.com/watch?v=uVhn9-6P8X8" target="_blank" rel="noopener" class="prole" data-vid="uVhn9-6P8X8" data-title="Constant Threat" aria-label="Constant threat — play video">
+          <span class="thumb" style="background-image:url('https://img.youtube.com/vi/uVhn9-6P8X8/hqdefault.jpg')"></span>
+          <span class="shade"></span>
+          <span class="play"><i class="fas fa-play"></i></span>
+          <span class="in">
+            <span class="ico"><i class="fas fa-bullseye"></i></span>
+            <span class="name">Constant Threat</span>
+            <span class="strap">Receiving, turning &amp; shooting in the final third.</span>
+          </span>
+        </a>
+        <a href="https://www.youtube.com/watch?v=zmRC5aI2NDM" target="_blank" rel="noopener" class="prole" data-vid="zmRC5aI2NDM" data-title="Retains Under Pressure" aria-label="Retains under pressure — play video">
+          <span class="thumb" style="background-image:url('https://img.youtube.com/vi/zmRC5aI2NDM/hqdefault.jpg')"></span>
+          <span class="shade"></span>
+          <span class="play"><i class="fas fa-play"></i></span>
+          <span class="in">
+            <span class="ico"><i class="fas fa-shield-halved"></i></span>
+            <span class="name">Retains Under Pressure</span>
+            <span class="strap">Effectively retains possession under pressure.</span>
+          </span>
+        </a>
+        <a href="https://www.youtube.com/watch?v=eCp5T_w2wy0" target="_blank" rel="noopener" class="prole" data-vid="eCp5T_w2wy0" data-title="First-Line Press" aria-label="First-line press — play video">
+          <span class="thumb" style="background-image:url('https://img.youtube.com/vi/eCp5T_w2wy0/hqdefault.jpg')"></span>
+          <span class="shade"></span>
+          <span class="play"><i class="fas fa-play"></i></span>
+          <span class="in">
+            <span class="ico"><i class="fas fa-bolt"></i></span>
+            <span class="name">First-Line Press</span>
+            <span class="strap">Athleticism &amp; understanding to press effectively at the first line.</span>
+          </span>
+        </a>
       </div>
     </div>
   </div>
