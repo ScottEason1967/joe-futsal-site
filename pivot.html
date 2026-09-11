@@ -28,6 +28,8 @@
 
     .switch { margin-top: 20px; }
     .tabs { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-bottom: 20px; }
+    .tabs-3 { grid-template-columns: repeat(3, 1fr); margin-bottom: 24px; }
+    .tab-group-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: var(--amber-deep); margin: 4px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border-lt); }
     .tab { position: relative; cursor: pointer; background: var(--card); border: 1.5px solid var(--border-lt); border-radius: 10px; overflow: hidden; text-align: left; padding: 0; font-family: inherit; transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s; box-shadow: 0 1px 4px rgba(0,32,64,0.06); }
     .tab:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,32,64,0.14); border-color: var(--red); }
     .tab.active { border-color: var(--amber); box-shadow: 0 6px 16px rgba(206,17,38,0.18); }
@@ -174,7 +176,7 @@
 
   <div class="intro-split fi">
     <div class="intro-text">
-      <p class="lead">Joe plays pivot for <strong>FutsalUOS</strong> in the National Futsal Series Tier 2 North. His current coach, <strong>Tony Loftus</strong>, describes him as an athletic, physically strong, technically excellent pivot who can protect the ball, beat players 1v1 and finish.</p>
+      <p class="lead">Joe plays pivot for <strong>Team Sunderland</strong> in the National Futsal Series Tier 2 North. His current coach, <strong>Tony Loftus</strong>, describes him as an athletic, physically strong, technically excellent pivot who can protect the ball, beat players 1v1 and finish.</p>
       <p class="lead">The six film-able competencies sit in the tabs below. The seventh — <strong>psychological robustness</strong> — is treated separately as "The Part You Can't Coach", using coach testimony rather than video.</p>
       <div class="intro-facts">
         <span>18 years</span>
@@ -197,29 +199,33 @@
   </div>
 
   <div class="switch fi">
-    <div class="tabs" role="tablist" aria-label="Six pivot competencies">
-      <button class="tab active" data-tab="1" type="button">
-        <div class="tab-thumb"><img src="https://img.youtube.com/vi/DlT4JBb6Fo0/hqdefault.jpg" alt=""><span class="tab-num">01</span><span class="tp"><i class="fas fa-play"></i></span></div>
-        <div class="tab-title">Physically Dominant</div>
-      </button>
-      <button class="tab" data-tab="2" type="button">
-        <div class="tab-thumb"><img src="https://img.youtube.com/vi/uVhn9-6P8X8/hqdefault.jpg" alt=""><span class="tab-num">02</span><span class="tp"><i class="fas fa-play"></i></span></div>
+    <div class="tab-group-label">Pivot-Specific · The Pride</div>
+    <div class="tabs tabs-3" role="tablist" aria-label="Pivot-specific competencies">
+      <button class="tab active" data-tab="2" type="button">
+        <div class="tab-thumb"><img src="https://img.youtube.com/vi/uVhn9-6P8X8/hqdefault.jpg" alt=""><span class="tab-num">01</span><span class="tp"><i class="fas fa-play"></i></span></div>
         <div class="tab-title">Constant Threat</div>
       </button>
       <button class="tab" data-tab="3" type="button">
-        <div class="tab-thumb"><img src="https://img.youtube.com/vi/zmRC5aI2NDM/hqdefault.jpg" alt=""><span class="tab-num">03</span><span class="tp"><i class="fas fa-play"></i></span></div>
+        <div class="tab-thumb"><img src="https://img.youtube.com/vi/zmRC5aI2NDM/hqdefault.jpg" alt=""><span class="tab-num">02</span><span class="tp"><i class="fas fa-play"></i></span></div>
         <div class="tab-title">Retains Under Pressure</div>
       </button>
       <button class="tab" data-tab="4" type="button">
-        <div class="tab-thumb"><img src="https://img.youtube.com/vi/eCp5T_w2wy0/hqdefault.jpg" alt=""><span class="tab-num">04</span><span class="tp"><i class="fas fa-play"></i></span></div>
+        <div class="tab-thumb"><img src="https://img.youtube.com/vi/eCp5T_w2wy0/hqdefault.jpg" alt=""><span class="tab-num">03</span><span class="tp"><i class="fas fa-play"></i></span></div>
         <div class="tab-title">Press Intensity</div>
       </button>
+    </div>
+    <div class="tab-group-label">The Pride · Player Profile</div>
+    <div class="tabs tabs-3" role="tablist" aria-label="Player profile competencies">
+      <button class="tab" data-tab="1" type="button">
+        <div class="tab-thumb"><img src="https://img.youtube.com/vi/DlT4JBb6Fo0/hqdefault.jpg" alt=""><span class="tab-num">01</span><span class="tp"><i class="fas fa-play"></i></span></div>
+        <div class="tab-title">Physically Dominant</div>
+      </button>
       <button class="tab" data-tab="5" type="button">
-        <div class="tab-thumb"><img src="https://img.youtube.com/vi/82mNUxfOenM/hqdefault.jpg" alt=""><span class="tab-num">05</span><span class="tp"><i class="fas fa-play"></i></span></div>
+        <div class="tab-thumb"><img src="https://img.youtube.com/vi/82mNUxfOenM/hqdefault.jpg" alt=""><span class="tab-num">02</span><span class="tp"><i class="fas fa-play"></i></span></div>
         <div class="tab-title">Problem Solver</div>
       </button>
       <button class="tab" data-tab="6" type="button">
-        <div class="tab-thumb"><img src="https://img.youtube.com/vi/aKdNUCQ0Z8k/hqdefault.jpg" alt=""><span class="tab-num">06</span><span class="tp"><i class="fas fa-play"></i></span></div>
+        <div class="tab-thumb"><img src="https://img.youtube.com/vi/aKdNUCQ0Z8k/hqdefault.jpg" alt=""><span class="tab-num">03</span><span class="tp"><i class="fas fa-play"></i></span></div>
         <div class="tab-title">Technical Execution</div>
       </button>
     </div>
@@ -236,7 +242,7 @@
 
     <div class="panels">
 
-      <div class="panel active" data-panel="1" id="p1">
+      <div class="panel" data-panel="1" id="p1">
         <div class="case">
           <div class="case-banner"><span class="num">01</span><div class="heads"><span class="role">Pride Player Profile</span><h3>Physically dominant in all areas of the court</h3></div></div>
           <p class="case-lead">The pivot has to <strong>own the physical exchange</strong> — absorb contact, stay up, set the ball. On a 40m court, there's nowhere to hide from it.</p>
@@ -250,8 +256,8 @@
           </div>
           <div class="case-quotes">
             <div class="case-quote">
-              <div class="cq-logo"><img src="img/UOS.jpg" class="round" alt="FutsalUOS"></div>
-              <div class="cq-body"><span class="k">Coach · FutsalUOS IPDP</span><p class="q">"Strong physical presence and ball protection."</p><p class="a">Tony Loftus · FutsalUOS Head Coach</p></div>
+              <div class="cq-logo"><img src="img/UOS.jpg" class="round" alt="Team Sunderland"></div>
+              <div class="cq-body"><span class="k">Coach · Team Sunderland IPDP</span><p class="q">"Strong physical presence and ball protection."</p><p class="a">Tony Loftus · Team Sunderland Head Coach</p></div>
             </div>
             <div class="case-quote">
               <div class="cq-logo"><img src="img/logo-df-coaching.svg" alt="DF Coaching"></div>
@@ -266,9 +272,9 @@
         </div>
       </div>
 
-      <div class="panel" data-panel="2" id="p2">
+      <div class="panel active" data-panel="2" id="p2">
         <div class="case">
-          <div class="case-banner"><span class="num">02</span><div class="heads"><span class="role">Pivot-Specific Pillar</span><h3>A constant threat receiving, turning and shooting in the attacking third</h3></div></div>
+          <div class="case-banner"><span class="num">01</span><div class="heads"><span class="role">Pivot-Specific Pillar</span><h3>A constant threat receiving, turning and shooting in the attacking third</h3></div></div>
           <p class="case-lead">The pivot's core job on the ball. <strong>Receive, turn, shoot</strong> — a permanent threat every time possession arrives in the attacking third.</p>
           <div class="ef-quote"><div class="ef-logo"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div><div class="ef-body"><div class="k">England Futsal · Pride Pivot</div><div class="t">"Possesses a constant threat through receiving, turning and shooting in the attacking third."</div></div></div>
           <a class="vid-embed" href="https://www.youtube.com/watch?v=uVhn9-6P8X8" target="_blank" rel="noopener" aria-label="Play Constant Threat highlights"><img src="https://i.ytimg.com/vi/uVhn9-6P8X8/hqdefault.jpg" alt="Constant Threat highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
@@ -279,8 +285,8 @@
           </div>
           <div class="case-quotes">
             <div class="case-quote">
-              <div class="cq-logo"><img src="img/UOS.jpg" class="round" alt="FutsalUOS"></div>
-              <div class="cq-body"><span class="k">Coach · FutsalUOS IPDP</span><p class="q">"Positive 1v1 dribbling and finishing ability."</p><p class="a">Tony Loftus · FutsalUOS Head Coach</p></div>
+              <div class="cq-logo"><img src="img/UOS.jpg" class="round" alt="Team Sunderland"></div>
+              <div class="cq-body"><span class="k">Coach · Team Sunderland IPDP</span><p class="q">"Positive 1v1 dribbling and finishing ability."</p><p class="a">Tony Loftus · Team Sunderland Head Coach</p></div>
             </div>
             <div class="case-quote">
               <div class="cq-logo"><img src="img/logo-bss.png" alt="Brazilian Soccer Schools"></div>
@@ -297,14 +303,14 @@
 
       <div class="panel" data-panel="3" id="p3">
         <div class="case">
-          <div class="case-banner"><span class="num">03</span><div class="heads"><span class="role">Pivot-Specific Pillar</span><h3>Effectively retains possession under pressure</h3></div></div>
+          <div class="case-banner"><span class="num">02</span><div class="heads"><span class="role">Pivot-Specific Pillar</span><h3>Effectively retains possession under pressure</h3></div></div>
           <p class="case-lead">The pivot is the team's <strong>focal point</strong>. Retaining under pressure isn't just holding — it's absorbing contact, staying up, and setting the ball back cleanly so the team plays through you rather than around you.</p>
           <div class="ef-quote"><div class="ef-logo"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div><div class="ef-body"><div class="k">England Futsal · Pride Pivot</div><div class="t">"Effectively retains possession under pressure."</div></div></div>
           <a class="vid-embed" href="https://www.youtube.com/watch?v=zmRC5aI2NDM" target="_blank" rel="noopener" aria-label="Play Retains Under Pressure highlights"><img src="https://i.ytimg.com/vi/zmRC5aI2NDM/hqdefault.jpg" alt="Retains Under Pressure highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
           <div class="case-quotes">
             <div class="case-quote">
-              <div class="cq-logo"><img src="img/UOS.jpg" class="round" alt="FutsalUOS"></div>
-              <div class="cq-body"><span class="k">Coach · FutsalUOS IPDP</span><p class="q">"Athletic, physically strong, technically excellent pivot who can protect the ball, beat players 1v1 and finish."</p><p class="a">Tony Loftus · FutsalUOS Head Coach</p></div>
+              <div class="cq-logo"><img src="img/UOS.jpg" class="round" alt="Team Sunderland"></div>
+              <div class="cq-body"><span class="k">Coach · Team Sunderland IPDP</span><p class="q">"Athletic, physically strong, technically excellent pivot who can protect the ball, beat players 1v1 and finish."</p><p class="a">Tony Loftus · Team Sunderland Head Coach</p></div>
             </div>
             <div class="case-quote">
               <div class="cq-logo"><img src="img/logo-bss.png" alt="Brazilian Soccer Schools"></div>
@@ -321,7 +327,7 @@
 
       <div class="panel" data-panel="4" id="p4">
         <div class="case">
-          <div class="case-banner"><span class="num">04</span><div class="heads"><span class="role">Pivot-Specific Pillar</span><h3>Demonstrates an intensity and understanding to press the ball and/or passing line</h3></div></div>
+          <div class="case-banner"><span class="num">03</span><div class="heads"><span class="role">Pivot-Specific Pillar</span><h3>Demonstrates an intensity and understanding to press the ball and/or passing line</h3></div></div>
           <p class="case-lead">The pivot is the team's <strong>furthest-forward defender</strong>. Press intensity plus positional understanding — knowing which passing line to close and when.</p>
           <div class="ef-quote"><div class="ef-logo"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div><div class="ef-body"><div class="k">England Futsal · Pride Pivot</div><div class="t">"Demonstrates an intensity and understanding to press the ball and/or passing line."</div></div></div>
           <a class="vid-embed" href="https://www.youtube.com/watch?v=eCp5T_w2wy0" target="_blank" rel="noopener" aria-label="Play Press Intensity highlights"><img src="https://i.ytimg.com/vi/eCp5T_w2wy0/hqdefault.jpg" alt="Press Intensity highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
@@ -332,8 +338,8 @@
           </div>
           <div class="case-quotes">
             <div class="case-quote">
-              <div class="cq-logo"><img src="img/UOS.jpg" class="round" alt="FutsalUOS"></div>
-              <div class="cq-body"><span class="k">Coach · FutsalUOS IPDP</span><p class="q">"High work rate and energy."</p><p class="a">Tony Loftus · FutsalUOS Head Coach</p></div>
+              <div class="cq-logo"><img src="img/UOS.jpg" class="round" alt="Team Sunderland"></div>
+              <div class="cq-body"><span class="k">Coach · Team Sunderland IPDP</span><p class="q">"High work rate and energy."</p><p class="a">Tony Loftus · Team Sunderland Head Coach</p></div>
             </div>
             <div class="case-quote">
               <div class="cq-logo"><img src="img/logo-redhouse.png" alt="Red House School"></div>
@@ -350,7 +356,7 @@
 
       <div class="panel" data-panel="5" id="p5">
         <div class="case">
-          <div class="case-banner"><span class="num">05</span><div class="heads"><span class="role">Pride Player Profile</span><h3>Effective problem solver within the game — as an individual and for the team</h3></div></div>
+          <div class="case-banner"><span class="num">02</span><div class="heads"><span class="role">Pride Player Profile</span><h3>Effective problem solver within the game — as an individual and for the team</h3></div></div>
           <p class="case-lead">A Pride player <strong>reads the picture and acts on it</strong>. For the pivot, that's the decision loop of hold / set / turn / drive / finish — reading the defender, the wing runner and the space around all in one moment.</p>
           <div class="ef-quote"><div class="ef-logo"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div><div class="ef-body"><div class="k">England Futsal · Pride Profile</div><div class="t">"Effective problem solver within the game as an individual and for the team."</div></div></div>
           <a class="vid-embed" href="https://www.youtube.com/watch?v=82mNUxfOenM" target="_blank" rel="noopener" aria-label="Play Problem Solver highlights"><img src="https://i.ytimg.com/vi/82mNUxfOenM/hqdefault.jpg" alt="Problem Solver highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
@@ -374,7 +380,7 @@
 
       <div class="panel" data-panel="6" id="p6">
         <div class="case">
-          <div class="case-banner"><span class="num">06</span><div class="heads"><span class="role">Pride Player Profile</span><h3>Consistent technical execution under pressure</h3></div></div>
+          <div class="case-banner"><span class="num">03</span><div class="heads"><span class="role">Pride Player Profile</span><h3>Consistent technical execution under pressure</h3></div></div>
           <p class="case-lead">The Pride standard is <strong>consistent, not occasional</strong>. First touch, weight of pass, quality of set — all held under pressure from the defending pivot with the ball moving quickly around them.</p>
           <div class="ef-quote"><div class="ef-logo"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div><div class="ef-body"><div class="k">England Futsal · Pride Profile</div><div class="t">"Consistent technical execution under pressure."</div></div></div>
           <a class="vid-embed" href="https://www.youtube.com/watch?v=aKdNUCQ0Z8k" target="_blank" rel="noopener" aria-label="Play Technical Execution highlights"><img src="https://i.ytimg.com/vi/aKdNUCQ0Z8k/hqdefault.jpg" alt="Technical Execution highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
@@ -383,8 +389,8 @@
           </div>
           <div class="case-quotes">
             <div class="case-quote">
-              <div class="cq-logo"><img src="img/UOS.jpg" class="round" alt="FutsalUOS"></div>
-              <div class="cq-body"><span class="k">Coach · FutsalUOS IPDP</span><p class="q">"Technically excellent with the ball."</p><p class="a">Tony Loftus · FutsalUOS Head Coach</p></div>
+              <div class="cq-logo"><img src="img/UOS.jpg" class="round" alt="Team Sunderland"></div>
+              <div class="cq-body"><span class="k">Coach · Team Sunderland IPDP</span><p class="q">"Technically excellent with the ball."</p><p class="a">Tony Loftus · Team Sunderland Head Coach</p></div>
             </div>
             <div class="case-quote">
               <div class="cq-logo"><img src="img/logo-df-coaching.svg" alt="DF Coaching"></div>
