@@ -66,9 +66,11 @@
     .pp-top .tab-coach { grid-column: 2 / 4; width: 100%; justify-content: flex-start; padding: 14px 22px; }
 
     .panels { position: relative; }
-    .panel { display: none; background: var(--card); border: 1px solid var(--border-lt); border-radius: 14px; box-shadow: 0 4px 14px rgba(0,0,0,0.15); animation: fade 0.22s ease; }
+    .panel { display: none; background: var(--card); border: 1px solid var(--border-lt); border-radius: 14px; box-shadow: 0 4px 14px rgba(0,0,0,0.15); animation: fade 0.22s ease; scroll-margin-top: 84px; }
     .panel.active { display: block; }
+    .panel.flash { animation: panelpulse 1.1s ease; }
     @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes panelpulse { 0% { box-shadow: 0 0 0 3px var(--amber), 0 8px 22px rgba(0,0,0,0.2); } 65% { box-shadow: 0 0 0 3px rgba(255,185,29,0.4), 0 8px 22px rgba(0,0,0,0.2); } 100% { box-shadow: 0 4px 14px rgba(0,0,0,0.15); } }
 
     .case { padding: 32px 36px 28px; scroll-margin-top: 70px; }
     .case-banner { display: flex; align-items: baseline; gap: 16px; padding-bottom: 16px; margin-bottom: 20px; border-bottom: 1px solid var(--border-lt); }
@@ -500,7 +502,14 @@ function activateTab(id) {
   document.querySelectorAll('.tab, .tab-coach').forEach(b => b.classList.toggle('active', b.dataset.tab === id));
   document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.dataset.panel === id));
 }
-document.querySelectorAll('.tab, .tab-coach').forEach(btn => btn.addEventListener('click', () => activateTab(btn.dataset.tab)));
+document.querySelectorAll('.tab, .tab-coach').forEach(btn => btn.addEventListener('click', () => {
+  activateTab(btn.dataset.tab);
+  const panel = document.querySelector('.panel.active');
+  if (panel) {
+    panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    panel.classList.remove('flash'); void panel.offsetWidth; panel.classList.add('flash');
+  }
+}));
 
 function openFromHash() {
   const h = window.location.hash;
