@@ -49,6 +49,11 @@
     .hub-label .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2.2px; color: rgba(255,255,255,0.85); text-transform: uppercase; margin-bottom: 8px; }
     .hub-label h2 { font-size: 30px; font-weight: 800; color: #fff; letter-spacing: -0.6px; line-height: 1.1; margin-bottom: 6px; }
     .hub-label p { font-size: 14.5px; color: rgba(255,255,255,0.88); line-height: 1.55; max-width: 600px; }
+    .hub-legend { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 16px; }
+    .hub-legend .lg { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.4px; color: rgba(255,255,255,0.9); text-transform: uppercase; }
+    .hub-legend .sw { width: 16px; height: 16px; border-radius: 4px; flex-shrink: 0; }
+    .hub-legend .sw-pivot { background: var(--amber); }
+    .hub-legend .sw-profile { background: #5aa9e6; }
 
     .hub-stage { position: relative; width: 100%; max-width: 720px; margin: 0 auto; aspect-ratio: 1/1; }
     .hub-svg { width: 100%; height: 100%; display: block; overflow: visible; }
@@ -56,9 +61,14 @@
     .hub-svg .petal-shade, .hub-svg .petal-stroke { transition: opacity 0.22s ease, stroke 0.22s ease, stroke-width 0.22s ease; }
     .hub-svg .petal-play { transition: transform 0.22s ease; transform-origin: center; transform-box: fill-box; }
     .hub-svg .petal-stroke { stroke: rgba(255,255,255,0.18); stroke-width: 1.5; }
+    .hub-svg .petal.grp-pivot .petal-stroke { stroke: var(--amber); stroke-width: 3; }
+    .hub-svg .petal.grp-profile .petal-stroke { stroke: #5aa9e6; stroke-width: 3; }
     .hub-svg .petal:hover .petal-shade { opacity: 0.28; }
-    .hub-svg .petal:hover .petal-stroke { stroke: var(--amber); stroke-width: 3; }
+    .hub-svg .petal:hover .petal-stroke { stroke: #fff; stroke-width: 4; }
     .hub-svg .petal:hover .petal-play { transform: scale(1.12); }
+    .hub-svg .half-frames { pointer-events: none; }
+    .hub-svg .frame-pivot { fill: none; stroke: var(--amber); stroke-width: 4; stroke-dasharray: 1 13; stroke-linecap: round; opacity: 0.92; }
+    .hub-svg .frame-profile { fill: none; stroke: #5aa9e6; stroke-width: 4; stroke-dasharray: 1 13; stroke-linecap: round; opacity: 0.92; }
     .hub-svg .petal-title { font-family: var(--font-display); font-size: 15.5px; font-weight: 700; fill: #fff; text-transform: uppercase; letter-spacing: 0.6px; paint-order: stroke; stroke: rgba(0,20,50,0.78); stroke-width: 3.5; stroke-linejoin: round; pointer-events: none; }
 
     /* Video modal — plays a petal's highlights on the page */
@@ -103,6 +113,13 @@
     .m-tile-body { padding: 10px 14px 10px 4px; flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; }
     .m-tile-body .n { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--red); flex-shrink: 0; }
     .m-tile-body .title { font-size: 0.92rem; font-weight: 800; color: var(--text); line-height: 1.3; }
+    .m-group-head { display: flex; align-items: center; gap: 9px; font-family: var(--font-display); font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #fff; margin: 20px 0 10px; }
+    .m-group-head:first-of-type { margin-top: 0; }
+    .m-group-head .sw { width: 14px; height: 14px; border-radius: 4px; flex-shrink: 0; }
+    .m-group-head.grp-pivot .sw { background: var(--amber); }
+    .m-group-head.grp-profile .sw { background: #5aa9e6; }
+    .hub-mobile-list.grp-pivot .m-tile { border-left: 4px solid var(--amber); }
+    .hub-mobile-list.grp-profile .m-tile { border-left: 4px solid #5aa9e6; }
 
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; gap: 24px; }
@@ -179,55 +196,59 @@
       <div class="rule"></div>
       <div class="eyebrow">Position Analysis</div>
       <h2>The Pivot</h2>
-      <p>England Futsal's Pride framework defines seven requirements for the pivot. Six petals below cover what you can see on film. The seventh — psychological robustness — is the star at the centre. The part you can't coach.</p>
+      <p>England Futsal's Pride framework defines seven requirements for the pivot. Six petals below cover what you can see on film, split into the two halves of the Pride. The seventh — psychological robustness — is the star at the centre. The part you can't coach.</p>
+      <div class="hub-legend">
+        <span class="lg"><span class="sw sw-pivot"></span>Pivot Role — top three</span>
+        <span class="lg"><span class="sw sw-profile"></span>Player Profile — bottom three</span>
+      </div>
     </div>
 
     <div class="hub-stage fi">
       <svg class="hub-svg" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Pivot — six competency videos hub">
         <defs>
-          <pattern id="pat-p1" patternUnits="userSpaceOnUse" x="210" y="55" width="380" height="230"><image href="https://img.youtube.com/vi/DlT4JBb6Fo0/hqdefault.jpg" x="0" y="0" width="380" height="230" preserveAspectRatio="xMidYMid slice"/></pattern>
-          <pattern id="pat-p2" patternUnits="userSpaceOnUse" x="470" y="70" width="320" height="335"><image href="https://img.youtube.com/vi/uVhn9-6P8X8/hqdefault.jpg" x="0" y="0" width="320" height="335" preserveAspectRatio="xMidYMid slice"/></pattern>
-          <pattern id="pat-p3" patternUnits="userSpaceOnUse" x="470" y="400" width="320" height="335"><image href="https://img.youtube.com/vi/zmRC5aI2NDM/hqdefault.jpg" x="0" y="0" width="320" height="335" preserveAspectRatio="xMidYMid slice"/></pattern>
-          <pattern id="pat-p4" patternUnits="userSpaceOnUse" x="210" y="525" width="380" height="220"><image href="https://img.youtube.com/vi/eCp5T_w2wy0/hqdefault.jpg" x="0" y="0" width="380" height="220" preserveAspectRatio="xMidYMid slice"/></pattern>
+          <pattern id="pat-p1" patternUnits="userSpaceOnUse" x="210" y="55" width="380" height="230"><image href="https://img.youtube.com/vi/uVhn9-6P8X8/hqdefault.jpg" x="0" y="0" width="380" height="230" preserveAspectRatio="xMidYMid slice"/></pattern>
+          <pattern id="pat-p2" patternUnits="userSpaceOnUse" x="470" y="70" width="320" height="335"><image href="https://img.youtube.com/vi/zmRC5aI2NDM/hqdefault.jpg" x="0" y="0" width="320" height="335" preserveAspectRatio="xMidYMid slice"/></pattern>
+          <pattern id="pat-p3" patternUnits="userSpaceOnUse" x="470" y="400" width="320" height="335"><image href="https://img.youtube.com/vi/wYYt72EmyF0/hqdefault.jpg" x="0" y="0" width="320" height="335" preserveAspectRatio="xMidYMid slice"/></pattern>
+          <pattern id="pat-p4" patternUnits="userSpaceOnUse" x="210" y="525" width="380" height="220"><image href="https://img.youtube.com/vi/aKdNUCQ0Z8k/hqdefault.jpg" x="0" y="0" width="380" height="220" preserveAspectRatio="xMidYMid slice"/></pattern>
           <pattern id="pat-p5" patternUnits="userSpaceOnUse" x="15" y="400" width="320" height="335"><image href="https://img.youtube.com/vi/82mNUxfOenM/hqdefault.jpg" x="0" y="0" width="320" height="335" preserveAspectRatio="xMidYMid slice"/></pattern>
-          <pattern id="pat-p6" patternUnits="userSpaceOnUse" x="15" y="70" width="320" height="335"><image href="https://img.youtube.com/vi/aKdNUCQ0Z8k/hqdefault.jpg" x="0" y="0" width="320" height="335" preserveAspectRatio="xMidYMid slice"/></pattern>
+          <pattern id="pat-p6" patternUnits="userSpaceOnUse" x="15" y="70" width="320" height="335"><image href="https://img.youtube.com/vi/eCp5T_w2wy0/hqdefault.jpg" x="0" y="0" width="320" height="335" preserveAspectRatio="xMidYMid slice"/></pattern>
           <radialGradient id="darken" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#001432" stop-opacity="0.15"/><stop offset="100%" stop-color="#001432" stop-opacity="0.85"/></radialGradient>
         </defs>
         <g class="petals">
 
-          <a href="https://www.youtube.com/watch?v=DlT4JBb6Fo0" target="_blank" rel="noopener" class="petal" data-vid="DlT4JBb6Fo0" data-title="Physically Dominant" aria-label="Physically Dominant — play video">
+          <a href="https://www.youtube.com/watch?v=uVhn9-6P8X8" target="_blank" rel="noopener" class="petal grp-pivot" data-vid="uVhn9-6P8X8" data-title="Constant Threat" aria-label="Constant Threat — play video">
             <path d="M 330.52 269.32 A 148 148 0 0 1 469.48 269.32 L 578.40 64.48 A 380 380 0 0 0 221.60 64.48 Z" fill="url(#pat-p1)" class="petal-img"/>
             <path d="M 330.52 269.32 A 148 148 0 0 1 469.48 269.32 L 578.40 64.48 A 380 380 0 0 0 221.60 64.48 Z" fill="url(#darken)" class="petal-shade"/>
             <path d="M 330.52 269.32 A 148 148 0 0 1 469.48 269.32 L 578.40 64.48 A 380 380 0 0 0 221.60 64.48 Z" class="petal-stroke" fill="none"/>
             <g transform="translate(400 100)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="400" y="185" class="petal-title" text-anchor="middle"><tspan x="400" dy="0">Physically</tspan><tspan x="400" dy="18">Dominant</tspan></text>
+            <text x="400" y="185" class="petal-title" text-anchor="middle"><tspan x="400" dy="0">Constant</tspan><tspan x="400" dy="18">Threat</tspan></text>
           </a>
 
-          <a href="https://www.youtube.com/watch?v=uVhn9-6P8X8" target="_blank" rel="noopener" class="petal" data-vid="uVhn9-6P8X8" data-title="Constant Threat" aria-label="Constant Threat — play video">
+          <a href="https://www.youtube.com/watch?v=zmRC5aI2NDM" target="_blank" rel="noopener" class="petal grp-pivot" data-vid="zmRC5aI2NDM" data-title="Retains Under Pressure" aria-label="Retains Under Pressure — play video">
             <path d="M 478.43 274.49 A 148 148 0 0 1 547.91 394.83 L 779.77 386.74 A 380 380 0 0 0 601.37 77.74 Z" fill="url(#pat-p2)" class="petal-img"/>
             <path d="M 478.43 274.49 A 148 148 0 0 1 547.91 394.83 L 779.77 386.74 A 380 380 0 0 0 601.37 77.74 Z" fill="url(#darken)" class="petal-shade"/>
             <path d="M 478.43 274.49 A 148 148 0 0 1 547.91 394.83 L 779.77 386.74 A 380 380 0 0 0 601.37 77.74 Z" class="petal-stroke" fill="none"/>
             <g transform="translate(660 250)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="588" y="291" class="petal-title" text-anchor="middle"><tspan x="588" dy="0">Constant</tspan><tspan x="588" dy="18">Threat</tspan></text>
+            <text x="588" y="291" class="petal-title" text-anchor="middle"><tspan x="588" dy="0">Retains</tspan><tspan x="588" dy="18">Under Pressure</tspan></text>
           </a>
 
-          <a href="https://www.youtube.com/watch?v=zmRC5aI2NDM" target="_blank" rel="noopener" class="petal" data-vid="zmRC5aI2NDM" data-title="Retains Under Pressure" aria-label="Retains Under Pressure — play video">
+          <a href="https://www.youtube.com/watch?v=wYYt72EmyF0" target="_blank" rel="noopener" class="petal grp-profile" data-vid="wYYt72EmyF0" data-title="Physically Dominant" aria-label="Physically Dominant — play video">
             <path d="M 547.91 405.17 A 148 148 0 0 1 478.43 525.51 L 601.37 722.26 A 380 380 0 0 0 779.77 413.26 Z" fill="url(#pat-p3)" class="petal-img"/>
             <path d="M 547.91 405.17 A 148 148 0 0 1 478.43 525.51 L 601.37 722.26 A 380 380 0 0 0 779.77 413.26 Z" fill="url(#darken)" class="petal-shade"/>
             <path d="M 547.91 405.17 A 148 148 0 0 1 478.43 525.51 L 601.37 722.26 A 380 380 0 0 0 779.77 413.26 Z" class="petal-stroke" fill="none"/>
             <g transform="translate(660 550)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="588" y="504" class="petal-title" text-anchor="middle"><tspan x="588" dy="0">Retains</tspan><tspan x="588" dy="18">Under Pressure</tspan></text>
+            <text x="588" y="504" class="petal-title" text-anchor="middle"><tspan x="588" dy="0">Physically</tspan><tspan x="588" dy="18">Dominant</tspan></text>
           </a>
 
-          <a href="https://www.youtube.com/watch?v=eCp5T_w2wy0" target="_blank" rel="noopener" class="petal" data-vid="eCp5T_w2wy0" data-title="Press Intensity" aria-label="Press Intensity — play video">
+          <a href="https://www.youtube.com/watch?v=aKdNUCQ0Z8k" target="_blank" rel="noopener" class="petal grp-profile" data-vid="aKdNUCQ0Z8k" data-title="Technical Execution" aria-label="Technical Execution — play video">
             <path d="M 469.48 530.68 A 148 148 0 0 1 330.52 530.68 L 221.60 735.52 A 380 380 0 0 0 578.40 735.52 Z" fill="url(#pat-p4)" class="petal-img"/>
             <path d="M 469.48 530.68 A 148 148 0 0 1 330.52 530.68 L 221.60 735.52 A 380 380 0 0 0 578.40 735.52 Z" fill="url(#darken)" class="petal-shade"/>
             <path d="M 469.48 530.68 A 148 148 0 0 1 330.52 530.68 L 221.60 735.52 A 380 380 0 0 0 578.40 735.52 Z" class="petal-stroke" fill="none"/>
             <g transform="translate(400 700)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="400" y="617" class="petal-title" text-anchor="middle"><tspan x="400" dy="0">Press</tspan><tspan x="400" dy="18">Intensity</tspan></text>
+            <text x="400" y="617" class="petal-title" text-anchor="middle"><tspan x="400" dy="0">Technical</tspan><tspan x="400" dy="18">Execution</tspan></text>
           </a>
 
-          <a href="https://www.youtube.com/watch?v=82mNUxfOenM" target="_blank" rel="noopener" class="petal" data-vid="82mNUxfOenM" data-title="Problem Solver" aria-label="Problem Solver — play video">
+          <a href="https://www.youtube.com/watch?v=82mNUxfOenM" target="_blank" rel="noopener" class="petal grp-profile" data-vid="82mNUxfOenM" data-title="Problem Solver" aria-label="Problem Solver — play video">
             <path d="M 321.57 525.51 A 148 148 0 0 1 252.09 405.17 L 20.23 413.26 A 380 380 0 0 0 198.63 722.26 Z" fill="url(#pat-p5)" class="petal-img"/>
             <path d="M 321.57 525.51 A 148 148 0 0 1 252.09 405.17 L 20.23 413.26 A 380 380 0 0 0 198.63 722.26 Z" fill="url(#darken)" class="petal-shade"/>
             <path d="M 321.57 525.51 A 148 148 0 0 1 252.09 405.17 L 20.23 413.26 A 380 380 0 0 0 198.63 722.26 Z" class="petal-stroke" fill="none"/>
@@ -235,14 +256,18 @@
             <text x="211" y="504" class="petal-title" text-anchor="middle"><tspan x="211" dy="0">Problem</tspan><tspan x="211" dy="18">Solver</tspan></text>
           </a>
 
-          <a href="https://www.youtube.com/watch?v=aKdNUCQ0Z8k" target="_blank" rel="noopener" class="petal" data-vid="aKdNUCQ0Z8k" data-title="Technical Execution" aria-label="Technical Execution — play video">
+          <a href="https://www.youtube.com/watch?v=eCp5T_w2wy0" target="_blank" rel="noopener" class="petal grp-pivot" data-vid="eCp5T_w2wy0" data-title="Press Intensity" aria-label="Press Intensity — play video">
             <path d="M 252.09 394.83 A 148 148 0 0 1 321.57 274.49 L 198.63 77.74 A 380 380 0 0 0 20.23 386.74 Z" fill="url(#pat-p6)" class="petal-img"/>
             <path d="M 252.09 394.83 A 148 148 0 0 1 321.57 274.49 L 198.63 77.74 A 380 380 0 0 0 20.23 386.74 Z" fill="url(#darken)" class="petal-shade"/>
             <path d="M 252.09 394.83 A 148 148 0 0 1 321.57 274.49 L 198.63 77.74 A 380 380 0 0 0 20.23 386.74 Z" class="petal-stroke" fill="none"/>
             <g transform="translate(140 250)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="211" y="291" class="petal-title" text-anchor="middle"><tspan x="211" dy="0">Technical</tspan><tspan x="211" dy="18">Execution</tspan></text>
+            <text x="211" y="291" class="petal-title" text-anchor="middle"><tspan x="211" dy="0">Press</tspan><tspan x="211" dy="18">Intensity</tspan></text>
           </a>
 
+        </g>
+        <g class="half-frames" aria-hidden="true">
+          <path class="frame-pivot" d="M 4.05 394 A 396 396 0 0 1 795.95 394 L 549.88 394 A 150 150 0 0 0 250.12 394 Z"/>
+          <path class="frame-profile" d="M 4.05 406 A 396 396 0 0 0 795.95 406 L 549.88 406 A 150 150 0 0 1 250.12 406 Z"/>
         </g>
       </svg>
 
@@ -268,13 +293,17 @@
         <div style="font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text);">The Part You Can't Coach</div>
         <div style="font-size: 12.5px; font-weight: 700; color: var(--amber-deep);">Read →</div>
       </a>
-      <div class="hub-mobile-list">
-        <a href="https://www.youtube.com/watch?v=DlT4JBb6Fo0" target="_blank" rel="noopener" class="m-tile" data-vid="DlT4JBb6Fo0" data-title="Physically Dominant"><div class="m-tile-thumb"><img src="https://img.youtube.com/vi/DlT4JBb6Fo0/hqdefault.jpg" alt=""></div><div class="m-tile-body"><div class="n">01</div><div class="title">Physically Dominant</div></div></a>
-        <a href="https://www.youtube.com/watch?v=uVhn9-6P8X8" target="_blank" rel="noopener" class="m-tile" data-vid="uVhn9-6P8X8" data-title="Constant Threat"><div class="m-tile-thumb"><img src="https://img.youtube.com/vi/uVhn9-6P8X8/hqdefault.jpg" alt=""></div><div class="m-tile-body"><div class="n">02</div><div class="title">Constant Threat</div></div></a>
-        <a href="https://www.youtube.com/watch?v=zmRC5aI2NDM" target="_blank" rel="noopener" class="m-tile" data-vid="zmRC5aI2NDM" data-title="Retains Under Pressure"><div class="m-tile-thumb"><img src="https://img.youtube.com/vi/zmRC5aI2NDM/hqdefault.jpg" alt=""></div><div class="m-tile-body"><div class="n">03</div><div class="title">Retains Under Pressure</div></div></a>
-        <a href="https://www.youtube.com/watch?v=eCp5T_w2wy0" target="_blank" rel="noopener" class="m-tile" data-vid="eCp5T_w2wy0" data-title="Press Intensity"><div class="m-tile-thumb"><img src="https://img.youtube.com/vi/eCp5T_w2wy0/hqdefault.jpg" alt=""></div><div class="m-tile-body"><div class="n">04</div><div class="title">Press Intensity</div></div></a>
-        <a href="https://www.youtube.com/watch?v=82mNUxfOenM" target="_blank" rel="noopener" class="m-tile" data-vid="82mNUxfOenM" data-title="Problem Solver"><div class="m-tile-thumb"><img src="https://img.youtube.com/vi/82mNUxfOenM/hqdefault.jpg" alt=""></div><div class="m-tile-body"><div class="n">05</div><div class="title">Problem Solver</div></div></a>
-        <a href="https://www.youtube.com/watch?v=aKdNUCQ0Z8k" target="_blank" rel="noopener" class="m-tile" data-vid="aKdNUCQ0Z8k" data-title="Technical Execution"><div class="m-tile-thumb"><img src="https://img.youtube.com/vi/aKdNUCQ0Z8k/hqdefault.jpg" alt=""></div><div class="m-tile-body"><div class="n">06</div><div class="title">Technical Execution</div></div></a>
+      <div class="m-group-head grp-pivot"><span class="sw"></span>Pivot Role</div>
+      <div class="hub-mobile-list grp-pivot">
+        <a href="https://www.youtube.com/watch?v=uVhn9-6P8X8" target="_blank" rel="noopener" class="m-tile" data-vid="uVhn9-6P8X8" data-title="Constant Threat"><div class="m-tile-thumb"><img src="https://img.youtube.com/vi/uVhn9-6P8X8/hqdefault.jpg" alt=""></div><div class="m-tile-body"><div class="n">01</div><div class="title">Constant Threat</div></div></a>
+        <a href="https://www.youtube.com/watch?v=zmRC5aI2NDM" target="_blank" rel="noopener" class="m-tile" data-vid="zmRC5aI2NDM" data-title="Retains Under Pressure"><div class="m-tile-thumb"><img src="https://img.youtube.com/vi/zmRC5aI2NDM/hqdefault.jpg" alt=""></div><div class="m-tile-body"><div class="n">02</div><div class="title">Retains Under Pressure</div></div></a>
+        <a href="https://www.youtube.com/watch?v=eCp5T_w2wy0" target="_blank" rel="noopener" class="m-tile" data-vid="eCp5T_w2wy0" data-title="Press Intensity"><div class="m-tile-thumb"><img src="https://img.youtube.com/vi/eCp5T_w2wy0/hqdefault.jpg" alt=""></div><div class="m-tile-body"><div class="n">03</div><div class="title">Press Intensity</div></div></a>
+      </div>
+      <div class="m-group-head grp-profile"><span class="sw"></span>Player Profile</div>
+      <div class="hub-mobile-list grp-profile">
+        <a href="https://www.youtube.com/watch?v=aKdNUCQ0Z8k" target="_blank" rel="noopener" class="m-tile" data-vid="aKdNUCQ0Z8k" data-title="Technical Execution"><div class="m-tile-thumb"><img src="https://img.youtube.com/vi/aKdNUCQ0Z8k/hqdefault.jpg" alt=""></div><div class="m-tile-body"><div class="n">01</div><div class="title">Technical Execution</div></div></a>
+        <a href="https://www.youtube.com/watch?v=82mNUxfOenM" target="_blank" rel="noopener" class="m-tile" data-vid="82mNUxfOenM" data-title="Problem Solver"><div class="m-tile-thumb"><img src="https://img.youtube.com/vi/82mNUxfOenM/hqdefault.jpg" alt=""></div><div class="m-tile-body"><div class="n">02</div><div class="title">Problem Solver</div></div></a>
+        <a href="https://www.youtube.com/watch?v=wYYt72EmyF0" target="_blank" rel="noopener" class="m-tile" data-vid="wYYt72EmyF0" data-title="Physically Dominant"><div class="m-tile-thumb"><img src="https://img.youtube.com/vi/wYYt72EmyF0/hqdefault.jpg" alt=""></div><div class="m-tile-body"><div class="n">03</div><div class="title">Physically Dominant</div></div></a>
       </div>
     </div>
   </div>
