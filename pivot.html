@@ -173,6 +173,52 @@
     .tab-group.grp-role { border-top: 3px solid #5aa9e6; }
     .tab-group.grp-pillars { border-top: 3px solid var(--amber); }
     @media (max-width: 620px) { .dfk-part { min-width: 0; } .dfk-plus { display: none; } }
+    .coach-sub { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.4px; color: var(--amber-deep); margin: 26px 0 12px; }
+    .coach-ev { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .coach-ev .ce-block { background: #fafbfc; border: 1px solid var(--border-lt); border-left: 3px solid var(--amber); border-radius: 8px; padding: 16px 18px; }
+    .coach-ev .ce-block.wide { grid-column: 1 / -1; }
+    .coach-ev .ce-block .h { display: flex; align-items: center; gap: 9px; font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--text); text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 7px; }
+    .coach-ev .ce-block .h i { color: var(--amber-deep); font-size: 0.95rem; width: 22px; text-align: center; }
+    .coach-ev .ce-block p { font-size: 0.86rem; color: var(--text-sec); line-height: 1.6; margin: 0; }
+    .coach-ev .ce-block p strong { color: var(--blue-deep); }
+    @media (max-width: 640px) { .coach-ev { grid-template-columns: 1fr; } }
+    /* Development Journey */
+    .journey { margin-top: 44px; }
+    .jn-head { text-align: center; max-width: 720px; margin: 0 auto 26px; }
+    .jn-kicker { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); margin-bottom: 8px; }
+    .jn-head h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.3px; line-height: 1.05; margin-bottom: 10px; }
+    .jn-head p { font-size: 14.5px; color: rgba(255,255,255,0.85); line-height: 1.6; }
+    .jn-ipdp { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: stretch; }
+    .jn-card { background: var(--card); border-radius: 12px; padding: 22px 24px; box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+    .jn-card.then { border-top: 3px solid var(--text-muted); }
+    .jn-card.now { border-top: 3px solid var(--amber); }
+    .jn-card-h { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--text); text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 14px; display: flex; flex-direction: column; }
+    .jn-card-h span { font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 1.4px; color: var(--text-muted); margin-top: 3px; }
+    .jn-card ul { list-style: none; display: grid; gap: 8px; }
+    .jn-card li { position: relative; padding-left: 20px; font-size: 0.9rem; color: var(--text-sec); line-height: 1.45; }
+    .jn-card li::before { content: ''; position: absolute; left: 4px; top: 8px; width: 7px; height: 7px; border-radius: 50%; }
+    .jn-card.then li::before { background: var(--text-muted); }
+    .jn-card.now li::before { background: var(--amber); }
+    .jn-progress { align-self: center; display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--amber); font-weight: 800; text-transform: uppercase; font-size: 9px; letter-spacing: 1px; text-align: center; }
+    .jn-progress i { font-size: 1.5rem; }
+    .jn-quote { max-width: 760px; margin: 18px auto 0; text-align: center; font-style: italic; color: rgba(255,255,255,0.9); font-size: 0.95rem; line-height: 1.6; }
+    .jn-quote span { display: block; font-style: normal; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-top: 8px; }
+    .jn-proof { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 26px 0; }
+    .jn-proof span { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 9px 16px; font-size: 12.5px; font-weight: 700; color: #fff; }
+    .jn-proof i { color: var(--amber); }
+    .jn-timeline { max-width: 760px; margin: 0 auto; position: relative; }
+    .jn-timeline::before { content: ''; position: absolute; left: 8px; top: 4px; bottom: 10px; width: 2px; background: rgba(255,255,255,0.2); }
+    .tl-item { position: relative; padding: 0 0 18px 34px; }
+    .tl-item::before { content: ''; position: absolute; left: 2px; top: 3px; width: 14px; height: 14px; border-radius: 50%; background: var(--amber); border: 3px solid var(--blue-dark); }
+    .tl-when { font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--amber); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
+    .tl-what { font-size: 0.9rem; color: rgba(255,255,255,0.88); line-height: 1.5; }
+    .tl-what strong { color: #fff; }
+    .jn-ceiling { max-width: 700px; margin: 30px auto 0; text-align: center; background: linear-gradient(135deg, var(--blue-deep), var(--blue-dark)); border: 1px solid rgba(255,255,255,0.15); border-radius: 14px; padding: 26px 30px; }
+    .jn-ceiling > i { color: var(--amber); font-size: 1.2rem; opacity: 0.7; }
+    .jn-ceiling p { font-size: 1.25rem; color: #fff; font-weight: 600; line-height: 1.4; margin: 10px 0 12px; }
+    .jn-ceiling p strong { color: var(--amber); }
+    .jn-ceiling span { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.65); }
+    @media (max-width: 760px) { .jn-ipdp { grid-template-columns: 1fr; } .jn-progress { flex-direction: row; padding: 4px 0; } .jn-progress i { transform: rotate(90deg); } }
   </style>
 </head>
 <body>
@@ -449,8 +495,32 @@
       <div class="panel coach" data-panel="coach" id="coach">
         <div class="case">
           <div class="case-banner"><span class="num" style="color: var(--amber-deep);">04</span><div class="heads"><span class="role" style="color: var(--amber-deep);">Pride DNA · Emotional Intelligence</span><h3>Psychologically robust and emotionally intelligent within the Pride environment</h3></div></div>
-          <p class="coach-lead">Emotional Intelligence is the fourth pillar of the <strong>Pride DNA</strong> — and the one that never shows up on film. It doesn't get a highlight reel, so it is evidenced the only way it can be: through the people who have coached and scouted Joe. Every one of them raises the same thing unprompted — <strong>determination, self-awareness, and how he behaves under pressure and after a mistake</strong>. Independent voices from every stage of his development, all pointing the same way.</p>
+          <p class="coach-lead">Emotional Intelligence is the fourth pillar of the <strong>Pride DNA</strong> — and the one that never shows up on film. So it is evidenced two ways: by <strong>what Joe actually does</strong> — how he responds to setbacks, takes coaching and drives his own development — and by what the people who have coached and scouted him say, unprompted, from every stage of his career.</p>
           <div class="ef-quote"><div class="ef-logo"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div><div class="ef-body"><div class="k">England Futsal · Pride DNA</div><div class="t">"Psychologically robust &amp; emotionally intelligent within the Pride environment."</div></div></div>
+          <div class="coach-sub">What the film can't show</div>
+          <div class="coach-ev">
+            <div class="ce-block wide">
+              <div class="h"><i class="fas fa-shield-halved"></i>Comes back from setbacks</div>
+              <p>Growth-related knee problems as a teenager put him out for <strong>nine months</strong> — he completed the rehab and came back. He fought through relegation seasons and heavy defeats at 16 with Grangetown without his head dropping. And when he twisted his ankle in the opening drill of the England U23 camp in Derby, he stayed for the afternoon classroom session, then immediately built a plan with his physio and S&amp;C coach to train around the injury and hold his fitness — using the moment to step back from football and commit fully to futsal and England.</p>
+            </div>
+            <div class="ce-block">
+              <div class="h"><i class="fas fa-clipboard-check"></i>Acts on every coaching point</div>
+              <p>Feedback becomes action. Told to sharpen his scanning, he added VR scanning work and one-to-one cognitive coaching. Told to build core strength, he is on a structured programme running through to December. Every development-plan priority is matched by a concrete step he takes himself.</p>
+            </div>
+            <div class="ce-block">
+              <div class="h"><i class="fas fa-video"></i>Reviews his own game</div>
+              <p>He records and watches every match on Veo, and does one-to-one video analysis — scanning, turning and decision-making — the habit of a player who holds himself to account rather than waiting to be told.</p>
+            </div>
+            <div class="ce-block">
+              <div class="h"><i class="fas fa-dumbbell"></i>Relentless — and self-driven</div>
+              <p>Brazilian Soccer School from age four, strength &amp; conditioning from age seven, and today a self-built weekly programme across cognitive/scanning work, technical coaching, VR, S&amp;C, technical-fitness and futsal. The work rate every coach describes is a decade-deep habit.</p>
+            </div>
+            <div class="ce-block">
+              <div class="h"><i class="fas fa-users"></i>Leads, and gives back</div>
+              <p>Captain of numerous teams, and the player who set the training standards at Gateshead's academy. Off the court he coaches at Thornaby Women's FC, works as a Level 1 PT and assistant S&amp;C coach, referees, and has started his UEFA C coaching badge — real responsibility, carried at 18.</p>
+            </div>
+          </div>
+          <div class="coach-sub">In their words — independent voices</div>
           <div class="coach-grid">
             <div class="coach-card">
               <span class="k">Character reference · School</span>
@@ -510,6 +580,63 @@
 
     </div>
   </div>
+
+  <section class="journey fi" id="journey">
+    <div class="jn-head">
+      <div class="jn-kicker">Development Journey</div>
+      <h2>Built over years — and still climbing</h2>
+      <p>England coaches aren't only assessing what Joe is today — they're assessing what he could become. His development has been deliberate, measured against his plan, and largely self-driven. The trajectory is still upward.</p>
+    </div>
+
+    <div class="jn-ipdp">
+      <div class="jn-card then">
+        <div class="jn-card-h">Where he started<span>Original IPDP</span></div>
+        <ul>
+          <li>Sole-of-foot first touch</li>
+          <li>Decision-making under pressure</li>
+          <li>Defensive positioning &amp; pressing</li>
+          <li>Pivot rotations in a 3–1</li>
+          <li>Back-post finishing</li>
+          <li>Stretching play to create space</li>
+        </ul>
+      </div>
+      <div class="jn-progress"><i class="fas fa-arrow-right"></i><span>Worked on<br>&amp; improved</span></div>
+      <div class="jn-card now">
+        <div class="jn-card-h">Where he is now<span>Current IPDP</span></div>
+        <ul>
+          <li>Hold-up play consistency under pressure</li>
+          <li>Cleaner link-up with wing players</li>
+          <li>Timing &amp; quality of lay-offs</li>
+          <li>Earlier decisions — hold, set, turn or finish</li>
+          <li>Delaying runs in behind</li>
+        </ul>
+      </div>
+    </div>
+    <p class="jn-quote">"Joe has progressed well since returning to futsal. His earlier development work focused on sole control and the fundamentals of playing as a pivot."<span>Team Sunderland · Individual Player Development Plan</span></p>
+
+    <div class="jn-proof">
+      <span><i class="fas fa-bolt"></i> Strength skyrocketed — 3.7&times; bodyweight (Aug 2026)</span>
+      <span><i class="fas fa-arrow-trend-up"></i> Earned a move up to Step 4</span>
+      <span><i class="fas fa-trophy"></i> Scarborough Athletic U19 Player of the Season 2024/25</span>
+      <span><i class="fas fa-shield-halved"></i> Invited to England U23 assessment camp</span>
+    </div>
+
+    <div class="jn-timeline">
+      <div class="tl-item"><div class="tl-when">Age 4–16</div><div class="tl-what"><strong>Brazilian Soccer School</strong> — the technical foundation. League title with his futsal team at 13.</div></div>
+      <div class="tl-item"><div class="tl-when">Age 7</div><div class="tl-what"><strong>Strength &amp; conditioning begins</strong> at PROformance — years of verified testing since.</div></div>
+      <div class="tl-item"><div class="tl-when">2024</div><div class="tl-what"><strong>Semi-pro football debut</strong> — youngest ever at the club · trial at Stoke City.</div></div>
+      <div class="tl-item"><div class="tl-when">2024/25</div><div class="tl-what"><strong>Scarborough Athletic U19 Player of the Season</strong> · steps up to Step 5.</div></div>
+      <div class="tl-item"><div class="tl-when">2025</div><div class="tl-what">Trial at <strong>Charlton Athletic</strong>.</div></div>
+      <div class="tl-item"><div class="tl-when">2026 · age 18</div><div class="tl-what">Steps up to <strong>Step 4</strong> · joins <strong>Team Sunderland</strong> (NFS Tier 2 North) — 8 goals in his first season.</div></div>
+      <div class="tl-item"><div class="tl-when">Now</div><div class="tl-what">Steps back from football to commit fully to futsal &amp; the <strong>England pathway</strong> · invited to the England U23 assessment camp · Barnsley trial upcoming.</div></div>
+    </div>
+
+    <div class="jn-ceiling">
+      <i class="fas fa-quote-left"></i>
+      <p>His head coach believes Joe has <strong>the potential to go a long way in futsal</strong>.</p>
+      <span>— Tony Loftus · Head Coach, Team Sunderland</span>
+    </div>
+  </section>
 
 </div>
 
