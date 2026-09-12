@@ -25,16 +25,23 @@
     .d-row:last-child { border-bottom: none; padding-bottom: 0; }
     .d-lbl { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 2px; }
     .d-val { font-weight: 600; color: var(--text); font-size: 0.9rem; }
-    .beyond { margin-top: 22px; flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 26px 30px; background: linear-gradient(135deg, rgba(206,17,38,0.06), rgba(206,17,38,0.02)); border: 1px solid var(--border-lt); border-left: 3px solid var(--red); border-radius: 12px; }
+    .beyond { margin-top: 22px; flex: 1; display: flex; flex-direction: column; justify-content: flex-start; padding: 24px 26px; background: linear-gradient(135deg, rgba(206,17,38,0.06), rgba(206,17,38,0.02)); border: 1px solid var(--border-lt); border-left: 3px solid var(--red); border-radius: 12px; }
     .beyond .h { font-size: 11px; font-weight: 800; color: var(--red); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px; }
-    .beyond ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 28px; }
-    .beyond li { font-size: 0.9rem; color: var(--text-sec); line-height: 1.55; padding: 5px 0 5px 18px; position: relative; }
-    .beyond li::before { content: '·'; color: var(--red); font-weight: 700; position: absolute; left: 6px; font-size: 1.3rem; line-height: 1; }
+    .cred-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .cred { display: flex; align-items: center; gap: 11px; background: #fff; border: 1px solid var(--border-lt); border-radius: 10px; padding: 10px 12px; }
+    .cred.full { grid-column: 1 / -1; }
+    .cred-ic { width: 60px; height: 46px; border-radius: 8px; background: #f4f7fa; border: 1px solid var(--border-lt); flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+    .cred-ic img { max-width: 52px; max-height: 40px; object-fit: contain; display: block; position: relative; z-index: 1; }
+    .cred-ic i { position: absolute; font-size: 1.1rem; }
+    .cred-ic:not(.ni) i { display: none; }
+    .cred-ic i.ic-red { color: var(--red); } .cred-ic i.ic-blue { color: var(--blue); } .cred-ic i.ic-green { color: var(--green); } .cred-ic i.ic-deep { color: var(--blue-deep); } .cred-ic i.ic-amber { color: var(--amber); }
+    .cred .ct { font-size: 0.82rem; font-weight: 800; color: var(--text); line-height: 1.2; }
+    .cred .cs { font-size: 0.72rem; color: var(--text-sec); line-height: 1.25; margin-top: 2px; }
     .bio-quote { margin-top: 26px; padding: 26px 30px; background: linear-gradient(135deg, var(--blue-deep), var(--blue-dark)); border-radius: 14px; color: #fff; }
     .bio-quote .k { display: inline-block; padding: 4px 10px; border-radius: 6px; background: rgba(255,185,29,0.16); color: var(--amber); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px; }
     .bio-quote p { font-size: 1.08rem; font-style: italic; line-height: 1.65; color: #fff; margin: 0; }
     .bio-quote .a { font-family: var(--font-display); font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.75); text-transform: uppercase; letter-spacing: 2px; margin-top: 18px; font-style: normal; }
-    @media (max-width: 900px) { .bio-grid { grid-template-columns: 1fr; } .bio-photo { max-width: 340px; margin: 0 auto; } .beyond ul { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) { .bio-grid { grid-template-columns: 1fr; } .bio-photo { max-width: 340px; margin: 0 auto; } .cred-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -69,7 +76,7 @@
         <p>Joe Eason is an 18-year-old athlete from Stockton-on-Tees currently playing pivot for <strong>Team Sunderland</strong> in the National Futsal Series Tier 2 North. Now in his first NFS season, he has scored <strong>8 goals from 7 appearances</strong>.</p>
         <p>His head coach at Team Sunderland describes him as <strong>athletic, physically strong, technically excellent</strong> — able to protect the ball, beat players 1v1 and finish. At 6'2" and 89.9kg with elite verified sprint and jump numbers, he brings the physical presence a modern pivot needs, matched by two-footed technique and the composure to receive with a defender close.</p>
         <p>Away from futsal, Joe has an extensive senior football background — playing central midfield and centre-back at Step 4 and 5 of the English non-league pyramid, with independently verified S&amp;C data from nine years at PROformance Athlete Development. That base carries directly into the pivot role: acceleration for the press, jump for aerial reach in the attacking third, frame for hold-up.</p>
-        <p>Off the pitch, he coaches at <strong>Thornaby Women's FC</strong> as an assistant, is a <strong>Level 1 Personal Trainer</strong>, and works as an <strong>assistant strength &amp; conditioning coach at PROformance</strong> alongside his own training. Nine GCSEs at grades 7–9, Duke of Edinburgh Award, and qualified referee.</p>
+        <p>Off the pitch, he holds his <strong>FA Level 1 in Coaching Football</strong> and is an assistant coach at <strong>Thornaby Women's FC</strong>, a <strong>Level 1 Personal Trainer</strong>, and an <strong>assistant strength &amp; conditioning coach at PROformance</strong> alongside his own training. Nine GCSEs at grades 7–9, a Duke of Edinburgh Award, and an FA-qualified referee. He studied <strong>Sport &amp; Exercise Science at Gateshead College</strong>, achieving straight Distinction* grades.</p>
         <div class="bio-quote">
           <div class="k">Head Coach · Team Sunderland</div>
           <p>"An athletic, physically strong, technically excellent pivot who can protect the ball, beat players 1v1 and finish."</p>
@@ -77,14 +84,16 @@
         </div>
         <div class="beyond">
           <div class="h">Beyond the court</div>
-          <ul>
-            <li>Assistant coach — Thornaby Women's FC</li>
-            <li>Level 1 Personal Trainer</li>
-            <li>Assistant S&amp;C Coach — PROformance Athlete Development</li>
-            <li>Qualified referee</li>
-            <li>Duke of Edinburgh Award</li>
-            <li>Nine GCSEs at grades 7–9</li>
-          </ul>
+          <div class="cred-grid">
+            <div class="cred"><span class="cred-ic"><img src="img/badge-thornaby.png" alt="Thornaby Women's FC" onerror="this.remove();this.parentNode.classList.add('ni')"><i class="fas fa-futbol ic-deep"></i></span><div><div class="ct">Assistant Coach</div><div class="cs">Thornaby Women's FC</div></div></div>
+            <div class="cred"><span class="cred-ic"><img src="img/badge-fa.png" alt="The FA" onerror="this.remove();this.parentNode.classList.add('ni')"><i class="fas fa-chalkboard-user ic-red"></i></span><div><div class="ct">FA Level 1 Coaching</div><div class="cs">The FA</div></div></div>
+            <div class="cred"><span class="cred-ic"><img src="img/badge-fa.png" alt="The FA" onerror="this.remove();this.parentNode.classList.add('ni')"><i class="fas fa-flag ic-amber"></i></span><div><div class="ct">FA Level 1 Referee</div><div class="cs">Qualified official</div></div></div>
+            <div class="cred"><span class="cred-ic"><img src="img/badge-pt.png" alt="Active IQ" onerror="this.remove();this.parentNode.classList.add('ni')"><i class="fas fa-dumbbell ic-green"></i></span><div><div class="ct">Personal Trainer</div><div class="cs">Level 1 · Active IQ</div></div></div>
+            <div class="cred"><span class="cred-ic"><img src="img/logo-proformance-trim.png" alt="PROformance" onerror="this.remove();this.parentNode.classList.add('ni')"><i class="fas fa-heart-pulse ic-blue"></i></span><div><div class="ct">Assistant S&amp;C Coach</div><div class="cs">PROformance</div></div></div>
+            <div class="cred"><span class="cred-ic"><img src="img/badge-dofe.png" alt="Duke of Edinburgh's Award" onerror="this.remove();this.parentNode.classList.add('ni')"><i class="fas fa-award ic-red"></i></span><div><div class="ct">Duke of Edinburgh</div><div class="cs">Award</div></div></div>
+            <div class="cred"><span class="cred-ic"><img src="img/badge-gateshead.png" alt="Gateshead College" onerror="this.remove();this.parentNode.classList.add('ni')"><i class="fas fa-graduation-cap ic-deep"></i></span><div><div class="ct">Gateshead College</div><div class="cs">Sport &amp; Exercise Science · Distinction*</div></div></div>
+            <div class="cred"><span class="cred-ic"><img src="img/logo-redhouse.png" alt="Red House School" onerror="this.remove();this.parentNode.classList.add('ni')"><i class="fas fa-graduation-cap ic-blue"></i></span><div><div class="ct">Nine GCSEs</div><div class="cs">Red House School · 7–9</div></div></div>
+          </div>
         </div>
       </div>
       <div class="bio-right">
