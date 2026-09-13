@@ -12,7 +12,8 @@
   <style>
     .journey { margin-top: 10px; }
     .jn-ipdp { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: stretch; }
-    .jn-card { background: var(--card); border-radius: 12px; padding: 22px 24px; box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+    .jn-card { background: var(--card); border-radius: 12px; padding: 20px 22px; box-shadow: 0 4px 14px rgba(0,0,0,0.15); display: flex; gap: 18px; align-items: stretch; }
+    .jn-card.now { flex-direction: row-reverse; }
     .jn-card.then { border-top: 3px solid var(--text-muted); }
     .jn-card.now { border-top: 3px solid var(--amber); }
     .jn-card-h { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--text); text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 14px; display: flex; flex-direction: column; }
@@ -22,6 +23,10 @@
     .jn-card li::before { content: ''; position: absolute; left: 4px; top: 8px; width: 7px; height: 7px; border-radius: 50%; }
     .jn-card.then li::before { background: var(--text-muted); }
     .jn-card.now li::before { background: var(--amber); }
+    .jn-card-photo { flex-shrink: 0; width: 122px; border-radius: 10px; overflow: hidden; background: #0a1a2e; }
+    .jn-card-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .jn-card-body { flex: 1; min-width: 0; }
+    @media (max-width: 420px) { .jn-card-photo { width: 96px; } }
     .jn-progress { align-self: center; display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--amber); font-weight: 800; text-transform: uppercase; font-size: 9px; letter-spacing: 1px; text-align: center; }
     .jn-progress i { font-size: 1.5rem; }
     .jn-quote { max-width: 760px; margin: 18px auto 0; text-align: center; font-style: italic; color: rgba(255,255,255,0.9); font-size: 0.95rem; line-height: 1.6; }
@@ -31,11 +36,16 @@
     .jn-proof i { color: var(--amber); }
     .jn-timeline { max-width: 760px; margin: 0 auto; position: relative; }
     .jn-timeline::before { content: ''; position: absolute; left: 8px; top: 4px; bottom: 10px; width: 2px; background: rgba(255,255,255,0.2); }
-    .tl-item { position: relative; padding: 0 0 18px 34px; }
+    .tl-item { position: relative; display: flex; align-items: center; gap: 14px; padding: 0 0 18px 34px; }
     .tl-item::before { content: ''; position: absolute; left: 2px; top: 3px; width: 14px; height: 14px; border-radius: 50%; background: var(--amber); border: 3px solid var(--blue-dark); }
     .tl-when { font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--amber); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
     .tl-what { font-size: 0.9rem; color: rgba(255,255,255,0.88); line-height: 1.5; }
     .tl-what strong { color: #fff; }
+    .tl-body { flex: 1; min-width: 0; }
+    .tl-logo { position: relative; flex-shrink: 0; width: 56px; height: 56px; border-radius: 10px; overflow: hidden; background: #fff; display: flex; align-items: center; justify-content: center; padding: 7px; box-shadow: 0 3px 10px rgba(0,0,0,0.25); }
+    .tl-logo img { position: relative; z-index: 1; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; }
+    .tl-logo.dark { background: #0a1f45; }
+    .tl-mono { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: var(--blue-deep); letter-spacing: 0.5px; }
     .jn-ceiling { max-width: 700px; margin: 30px auto 0; text-align: center; background: linear-gradient(135deg, var(--blue-deep), var(--blue-dark)); border: 1px solid rgba(255,255,255,0.15); border-radius: 14px; padding: 26px 30px; }
     .jn-ceiling > i { color: var(--amber); font-size: 1.2rem; opacity: 0.7; }
     .jn-ceiling p { font-size: 1.25rem; color: #fff; font-weight: 600; line-height: 1.4; margin: 10px 0 12px; }
@@ -54,11 +64,10 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="pivot.html">The Pivot</a></li>
+      <li><a href="physical.html">Physical</a></li>
       <li><a href="journey.html" class="on">Journey</a></li>
       <li><a href="record.html">Record</a></li>
-      <li><a href="bio.html">Bio</a></li>
-      <li><a href="physical.html">Physical</a></li>
-      <li><a href="references.html">References</a></li>
+      <li><a href="bio.html">Bio</a></li>      <li><a href="references.html">References</a></li>
     </ul>
   </div>
 </nav>
@@ -77,26 +86,32 @@
 
     <div class="jn-ipdp">
       <div class="jn-card then">
-        <div class="jn-card-h">Where he started<span>Original IPDP</span></div>
-        <ul>
-          <li>Sole-of-foot first touch</li>
-          <li>Decision-making under pressure</li>
-          <li>Defensive positioning &amp; pressing</li>
-          <li>Pivot rotations in a 3–1</li>
-          <li>Back-post finishing</li>
-          <li>Stretching play to create space</li>
-        </ul>
+        <div class="jn-card-photo"><img src="img/bio.jpg" alt="Joe in training"></div>
+        <div class="jn-card-body">
+          <div class="jn-card-h">Where he started<span>Original IPDP</span></div>
+          <ul>
+            <li>Sole-of-foot first touch</li>
+            <li>Decision-making under pressure</li>
+            <li>Defensive positioning &amp; pressing</li>
+            <li>Pivot rotations in a 3–1</li>
+            <li>Back-post finishing</li>
+            <li>Stretching play to create space</li>
+          </ul>
+        </div>
       </div>
       <div class="jn-progress"><i class="fas fa-arrow-right"></i><span>Worked on<br>&amp; improved</span></div>
       <div class="jn-card now">
-        <div class="jn-card-h">Where he is now<span>Current IPDP</span></div>
-        <ul>
-          <li>Hold-up play consistency under pressure</li>
-          <li>Cleaner link-up with wing players</li>
-          <li>Timing &amp; quality of lay-offs</li>
-          <li>Earlier decisions — hold, set, turn or finish</li>
-          <li>Delaying runs in behind</li>
-        </ul>
+        <div class="jn-card-photo"><img src="img/hero.jpg" alt="Joe in futsal action"></div>
+        <div class="jn-card-body">
+          <div class="jn-card-h">Where he is now<span>Current IPDP</span></div>
+          <ul>
+            <li>Hold-up play consistency under pressure</li>
+            <li>Cleaner link-up with wing players</li>
+            <li>Timing &amp; quality of lay-offs</li>
+            <li>Earlier decisions — hold, set, turn or finish</li>
+            <li>Delaying runs in behind</li>
+          </ul>
+        </div>
       </div>
     </div>
     <p class="jn-quote">"Joe has progressed well since returning to futsal. His earlier development work focused on sole control and the fundamentals of playing as a pivot."<span>Team Sunderland · Individual Player Development Plan</span></p>
@@ -109,13 +124,13 @@
     </div>
 
     <div class="jn-timeline">
-      <div class="tl-item"><div class="tl-when">Age 4–16</div><div class="tl-what"><strong>Brazilian Soccer School</strong> — the technical foundation. League title with his futsal team at 13.</div></div>
-      <div class="tl-item"><div class="tl-when">Age 7</div><div class="tl-what"><strong>Strength &amp; conditioning begins</strong> at PROformance — years of verified testing since.</div></div>
-      <div class="tl-item"><div class="tl-when">2024</div><div class="tl-what"><strong>Semi-pro football debut</strong> — youngest ever at the club · trial at Stoke City.</div></div>
-      <div class="tl-item"><div class="tl-when">2024/25</div><div class="tl-what"><strong>Scarborough Athletic U19 Player of the Season</strong> · steps up to Step 5.</div></div>
-      <div class="tl-item"><div class="tl-when">2025</div><div class="tl-what">Trial at <strong>Charlton Athletic</strong>.</div></div>
-      <div class="tl-item"><div class="tl-when">2026 · age 18</div><div class="tl-what">Steps up to <strong>Step 4</strong> · joins <strong>Team Sunderland</strong> (NFS Tier 2 North) — 8 goals in his first season.</div></div>
-      <div class="tl-item"><div class="tl-when">Now</div><div class="tl-what">Steps back from football to commit fully to futsal &amp; the <strong>England pathway</strong> · invited to the England U23 assessment camp · Barnsley trial upcoming.</div></div>
+      <div class="tl-item"><div class="tl-body"><div class="tl-when">Age 4–16</div><div class="tl-what"><strong>Brazilian Soccer School</strong> — the technical foundation. League title with his futsal team at 13.</div></div><div class="tl-logo"><img src="img/logo-bss.png" alt="Brazilian Soccer Schools"></div></div>
+      <div class="tl-item"><div class="tl-body"><div class="tl-when">Age 7</div><div class="tl-what"><strong>Strength &amp; conditioning begins</strong> at PROformance — years of verified testing since.</div></div><div class="tl-logo dark"><img src="img/logo-proformance.jpg" alt="PROformance"></div></div>
+      <div class="tl-item"><div class="tl-body"><div class="tl-when">2024</div><div class="tl-what"><strong>Semi-pro football debut</strong> — youngest ever at the club · trial at Stoke City.</div></div><div class="tl-logo"><img src="img/badge-stoke.png" alt="Stoke City"></div></div>
+      <div class="tl-item"><div class="tl-body"><div class="tl-when">2024/25</div><div class="tl-what"><strong>Scarborough Athletic U19 Player of the Season</strong> · steps up to Step 5.</div></div><div class="tl-logo"><img src="img/scarborough.png" alt="Scarborough Athletic"></div></div>
+      <div class="tl-item"><div class="tl-body"><div class="tl-when">2025</div><div class="tl-what">Trial at <strong>Charlton Athletic</strong>.</div></div><div class="tl-logo"><img src="img/charlton.png" alt="Charlton Athletic"></div></div>
+      <div class="tl-item"><div class="tl-body"><div class="tl-when">2026 · age 18</div><div class="tl-what">Steps up to <strong>Step 4</strong> · joins <strong>Team Sunderland</strong> (NFS Tier 2 North) — 8 goals in his first season.</div></div><div class="tl-logo"><img src="img/UOS.jpg" alt="Team Sunderland"></div></div>
+      <div class="tl-item"><div class="tl-body"><div class="tl-when">Now</div><div class="tl-what">Steps back from football to commit fully to futsal &amp; the <strong>England pathway</strong> · invited to the England U23 assessment camp · Barnsley trial upcoming.</div></div><div class="tl-logo wide"><img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal"></div></div>
     </div>
 
     <div class="jn-ceiling">

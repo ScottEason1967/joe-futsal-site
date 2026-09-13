@@ -21,11 +21,25 @@
     .intro-ef img { width: 96px; height: auto; flex-shrink: 0; }
     .intro-ef span { font-size: 12px; color: var(--text-muted); font-weight: 600; line-height: 1.5; }
     .intro-photo { width: 100%; aspect-ratio: 1/1; max-width: 300px; margin: 0 auto; border-radius: 12px; overflow: hidden; background: linear-gradient(135deg, #0a1a2e, #1a2e4a); border: 1px solid var(--border-lt); box-shadow: 0 4px 14px rgba(0,32,64,0.10); display: flex; align-items: center; justify-content: center; }
-    .intro-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 56%; }
+    .intro-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 90%; }
     .intro-photo .ph { color: rgba(255,255,255,0.45); text-align: center; padding: 24px; }
     .intro-photo .ph i { font-size: 1.4rem; display: block; margin-bottom: 8px; opacity: 0.55; }
     .intro-photo .ph span { display: block; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
 
+    .watch { margin-top: 22px; scroll-margin-top: 70px; }
+    .watch-head { text-align: center; max-width: 720px; margin: 0 auto 16px; }
+    .watch-kicker { font-size: 10.5px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); }
+    .watch-head h2 { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.3px; line-height: 1.05; margin-top: 4px; }
+    .watch-head p { font-size: 14px; color: rgba(255,255,255,0.85); margin-top: 6px; }
+    .watch-embed { position: relative; display: block; max-width: 860px; margin: 0 auto; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; background: #000; box-shadow: 0 10px 30px rgba(0,0,0,0.35); cursor: pointer; border: 1px solid rgba(255,255,255,0.15); }
+    .watch-embed img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.25s; }
+    .watch-embed:hover img { transform: scale(1.03); }
+    .watch-embed .watch-pl { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.18); transition: background 0.15s; }
+    .watch-embed:hover .watch-pl { background: rgba(0,0,0,0.05); }
+    .watch-embed .watch-pl i { width: 74px; height: 74px; border-radius: 50%; background: var(--red); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 24px; padding-left: 5px; box-shadow: 0 6px 20px rgba(0,0,0,0.5); }
+    .watch-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .watch-more { text-align: center; margin-top: 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: rgba(255,255,255,0.82); }
+    .watch-more i { color: var(--amber); margin-right: 7px; }
     .switch { margin-top: 20px; }
     .tabs { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-bottom: 20px; }
     .tabs-3 { grid-template-columns: repeat(3, 1fr); margin-bottom: 24px; }
@@ -236,11 +250,10 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="pivot.html" class="on">The Pivot</a></li>
+      <li><a href="physical.html">Physical</a></li>
       <li><a href="journey.html">Journey</a></li>
       <li><a href="record.html">Record</a></li>
-      <li><a href="bio.html">Bio</a></li>
-      <li><a href="physical.html">Physical</a></li>
-      <li><a href="references.html">References</a></li>
+      <li><a href="bio.html">Bio</a></li>      <li><a href="references.html">References</a></li>
     </ul>
   </div>
 </nav>
@@ -274,6 +287,19 @@
       </div>
     </div>
   </div>
+
+  <section class="watch fi" id="watch">
+    <div class="watch-head">
+      <div class="watch-kicker">Highlights film · 7 min</div>
+      <h2>The Making of a Pivot</h2>
+      <p>A highlights package of Joe across England Futsal's Pride DNA — a quick overview, not the full detail. For the evidence on each competency, explore the Pride DNA house below.</p>
+    </div>
+    <a class="watch-embed" id="watchEmbed" role="button" tabindex="0" aria-label="Play the highlights film">
+      <img src="https://i.ytimg.com/vi/pAU2eoXO0ZA/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/pAU2eoXO0ZA/hqdefault.jpg';" alt="The Making of a Pivot — highlights film">
+      <span class="watch-pl"><i class="fas fa-play"></i></span>
+    </a>
+    <div class="watch-more"><i class="fas fa-chevron-down"></i> Explore each competency in the Pride DNA house below</div>
+  </section>
 
   <div class="switch fi">
     <div class="pv-layout">
@@ -577,6 +603,8 @@ function openFromHash() {
 }
 window.addEventListener('hashchange', openFromHash);
 window.addEventListener('load', openFromHash);
+
+(function(){var we=document.getElementById('watchEmbed');if(!we)return;function play(){if(we.dataset.on)return;we.dataset.on='1';var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/pAU2eoXO0ZA?autoplay=1&rel=0&modestbranding=1&playsinline=1';f.title='The Making of a Pivot';f.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');f.setAttribute('allowfullscreen','');we.innerHTML='';we.appendChild(f);}we.addEventListener('click',play);we.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();play();}});})();
 </script>
 <script src="dna-modal.js"></script>
 </body>

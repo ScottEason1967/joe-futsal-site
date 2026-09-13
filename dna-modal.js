@@ -11,7 +11,7 @@
       {t:'Confident to receive under pressure. Showed a high level of responsibility.',a:'Richard Eyley · Scout, Sheffield United FC',l:'img/sheffield-united-logo-footylogos.png'}]},
     'first-line-press':{group:'Pride DNA · Pivot Role',name:'First-Line Press',pride:'Demonstrates athleticism and an understanding to press effectively at the first line.',video:'eCp5T_w2wy0',anchor:'pivot.html#p4',quotes:[
       {t:'In defence, he defends at a high intensity, not allowing his man any time on the ball, and is rarely caught out of position in turnovers.',a:'Tom Thorogood · Red House School',l:'img/logo-redhouse.png'},
-      {t:'He works hard week in, week out, always giving 100%. I never have to encourage him to work hard.',a:'Lee Moore MSc ASCC · PROformance',l:'img/logo-proformance.jpg'}]},
+      {t:'He works hard week in, week out, always giving 100%. I never have to encourage him to work hard.',a:'Lee Moore MSc ASCC · PROformance',l:'img/logo-proformance.jpg',dark:true}]},
     'technical-excellence':{group:'Pride DNA · Pillar',name:'Technical Excellence',pride:'Skilfully adaptable under pressure.',video:'aKdNUCQ0Z8k',anchor:'pivot.html#p6',quotes:[
       {t:'Joe has a lovely feel for the ball — he can manipulate it easily and freely between both feet and perform technical actions to a high, game-realistic level.',a:'Danny Fowler · UEFA A, Middlesbrough Academy',l:'img/logo-df-coaching.svg'},
       {t:'Superb with both right and left foot in terms of close ball control, first touch and short passing.',a:'Mark Hodgson · Brazilian Soccer Schools',l:'img/logo-bss.png'}]},
@@ -21,8 +21,8 @@
     'game-sense':{group:'Pride DNA · Pillar',name:'Game Sense',pride:'Understand space & time.',video:'82mNUxfOenM',anchor:'pivot.html#p5',quotes:[
       {t:'He plays with his head up and scans the pitch both with and without the ball, which allows him to take up excellent positions and make good decisions.',a:'Mark Hodgson · Brazilian Soccer Schools',l:'img/logo-bss.png'},
       {t:'He reads the game well, winning 50/50s and interceptions, and repositions well to help progress the attack.',a:'Tom Thorogood · Red House School',l:'img/logo-redhouse.png'}]},
-    'emotional-intelligence':{group:'Pride DNA · Pillar',name:'Emotional Intelligence',pride:'Psychologically robust & emotionally intelligent within the Pride environment.',video:null,anchor:'pivot.html#coach',quotes:[
-      {t:'I have never met anyone as determined as Joe in terms of mindset and wanting to achieve at something. He is like a sponge.',a:'Lee Moore MSc ASCC · PROformance',l:'img/logo-proformance.jpg'},
+    'emotional-intelligence':{group:'Pride DNA · Pillar',name:'Emotional Intelligence',pride:'Psychologically robust & emotionally intelligent within the Pride environment.',video:null,photo:'img/ei-photo.jpg',anchor:'pivot.html#coach',quotes:[
+      {t:'I have never met anyone as determined as Joe in terms of mindset and wanting to achieve at something. He is like a sponge.',a:'Lee Moore MSc ASCC · PROformance',l:'img/logo-proformance.jpg',dark:true},
       {t:'Despite carrying an injury and an early heavy scoreline, Joe showed no signs of frustration or blaming teammates — encouraging and praising them throughout.',a:'Jack Manship · Scout, Doncaster Rovers',l:'img/Doncaster_Rovers_F.C._logo.svg.webp'}]}
   };
   var css='.dnam-backdrop{position:fixed;inset:0;z-index:1000;background:rgba(0,16,38,.9);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:4vh 3vw;opacity:0;transition:opacity .2s}'
@@ -39,14 +39,19 @@
     +'.dnam-pride p{margin:0;color:var(--text);font-style:italic;font-size:1rem;line-height:1.45;font-weight:600}'
     +'.dnam-video{position:relative;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;margin-bottom:18px}'
     +'.dnam-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}'
-    +'.dnam-novideo{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;background:linear-gradient(135deg,rgba(206,17,38,.22),rgba(10,31,69,.55));border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:34px 26px;color:#fff;margin-bottom:18px}'
-    +'.dnam-novideo i{color:var(--amber);font-size:2rem;margin:0}'
-    +'.dnam-novideo .nv-h{font-family:var(--font-display);font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#fff}'
-    +'.dnam-novideo .nv-p{font-size:.9rem;color:rgba(255,255,255,.85);max-width:540px;line-height:1.55;margin:0}'
+    +'.dnam-novideo{display:flex;flex-direction:row;align-items:center;gap:18px;text-align:left;background:linear-gradient(135deg,rgba(206,17,38,.20),rgba(10,31,69,.55));border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:18px 20px;color:#fff;margin-bottom:18px}'
+    +'.dnam-nv-photo{flex-shrink:0;width:120px;height:150px;border-radius:10px;overflow:hidden;background:#000}'
+    +'.dnam-nv-photo img{width:100%;height:100%;object-fit:cover;object-position:center 60%;display:block}'
+    +'.dnam-nv-text{min-width:0}'
+    +'.dnam-novideo .nv-h{font-family:var(--font-display);font-size:1.15rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#fff;margin-bottom:6px}'
+    +'.dnam-novideo .nv-h i{color:var(--amber);margin-right:8px}'
+    +'.dnam-novideo .nv-p{font-size:.88rem;color:rgba(255,255,255,.85);line-height:1.55;margin:0}'
+    +'@media(max-width:560px){.dnam-novideo{flex-direction:column;text-align:center}}'
     +'.dnam-quotes{display:grid;gap:10px;margin-bottom:16px}'
     +'.dnam-q{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.05);border-left:3px solid var(--amber);border-radius:8px;padding:13px 16px}'
-    +'.dnam-q-logo{flex-shrink:0;width:46px;height:46px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:8px;padding:4px}'
-    +'.dnam-q-logo img{max-width:100%;max-height:38px;width:auto;height:auto;object-fit:contain}'
+    +'.dnam-q-logo{flex-shrink:0;width:52px;height:52px;overflow:hidden;background:#fff;border-radius:9px;border:1px solid rgba(255,255,255,.55);display:flex;align-items:center;justify-content:center;padding:5px}'
+    +'.dnam-q-logo.dark{background:#0a1f45;border-color:rgba(255,255,255,.3)}'
+    +'.dnam-q-logo img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}'
     +'.dnam-q-logo .sc{width:100%;height:100%;border-radius:6px;background:rgba(0,94,184,.15);display:flex;align-items:center;justify-content:center}'
     +'.dnam-q-logo .sc i{color:#2f6fb0;font-size:16px}'
     +'.dnam-q-body{min-width:0}'
@@ -59,10 +64,14 @@
   var st=document.createElement('style'); st.textContent=css; document.head.appendChild(st);
   var el=null;
   function render(d){
-    var vid = d.video
-      ? '<div class="dnam-video"><iframe src="https://www.youtube-nocookie.com/embed/'+d.video+'?autoplay=1&rel=0&modestbranding=1&playsinline=1" title="'+d.name+' highlights" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>'
-      : '<div class="dnam-novideo"><i class="fas fa-brain"></i><div class="nv-h">The part you can&rsquo;t film</div><div class="nv-p">Emotional intelligence never shows up on camera. It&rsquo;s evidenced in how Joe responds to setbacks, takes coaching and drives his own development &mdash; and in what coaches and scouts say about him, unprompted.</div></div>';
-    var quotes = d.quotes.map(function(q){var lg = q.l ? '<img src="'+q.l+'" alt="">' : '<span class="sc"><i class="fas fa-binoculars"></i></span>'; return '<div class="dnam-q"><div class="dnam-q-logo">'+lg+'</div><div class="dnam-q-body"><p>&ldquo;'+q.t+'&rdquo;</p><span>'+q.a+'</span></div></div>';}).join('');
+    var vid;
+    if (d.video) {
+      vid = '<div class="dnam-video"><iframe src="https://www.youtube-nocookie.com/embed/'+d.video+'?autoplay=1&rel=0&modestbranding=1&playsinline=1" title="'+d.name+' highlights" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>';
+    } else {
+      var ph = d.photo ? '<div class="dnam-nv-photo"><img src="'+d.photo+'" alt="'+d.name+'"></div>' : '';
+      vid = '<div class="dnam-novideo">'+ph+'<div class="dnam-nv-text"><div class="nv-h"><i class="fas fa-brain"></i>The part you can&rsquo;t film</div><div class="nv-p">Emotional intelligence never shows up on camera. It&rsquo;s evidenced in how Joe responds to setbacks, takes coaching and drives his own development &mdash; and in what coaches and scouts say about him, unprompted.</div></div></div>';
+    }
+    var quotes = d.quotes.map(function(q){var lg = q.l ? '<img src="'+q.l+'" alt="">' : '<span class="sc"><i class="fas fa-binoculars"></i></span>'; return '<div class="dnam-q"><div class="dnam-q-logo'+(q.dark?' dark':'')+'">'+lg+'</div><div class="dnam-q-body"><p>&ldquo;'+q.t+'&rdquo;</p><span>'+q.a+'</span></div></div>';}).join('');
     return '<button class="dnam-close" type="button" aria-label="Close">&times;</button>'
       +'<div class="dnam-scroll"><div class="dnam-head"><span class="dnam-eyebrow">'+d.group+'</span><h3>'+d.name+'</h3></div>'
       +'<div class="dnam-pride"><img src="'+EF_LOGO+'" alt="England Futsal"><p>&ldquo;'+d.pride+'&rdquo;</p></div>'

@@ -36,6 +36,11 @@
     .hero-statline .st strong { font-family: var(--font-display); font-size: 1.55rem; font-weight: 700; color: #fff; line-height: 1; }
     .hero-statline .st small { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.3px; color: rgba(255,255,255,0.7); }
     .hero-statline .sep { color: rgba(255,255,255,0.35); font-size: 1.1rem; }
+    .hero-cta { display: inline-flex; align-items: center; gap: 10px; margin-top: 22px; padding: 13px 22px; background: var(--red); color: #fff; border-radius: 10px; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; text-decoration: none; box-shadow: 0 8px 22px rgba(206,17,38,0.35); transition: transform 0.15s, box-shadow 0.15s; }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(206,17,38,0.45); }
+    .hero-cta i { font-size: 14px; }
+    .hero-cta span { font-weight: 700; opacity: 0.82; letter-spacing: 1px; }
+    .hero-cta-note { margin-top: 9px; font-size: 12px; color: rgba(255,255,255,0.72); line-height: 1.5; max-width: 400px; }
     .hero-bottom { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: stretch; }
     .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--card); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,32,64,0.12); }
     .hero-stat { padding: 16px 14px; text-align: center; border-right: 1px solid var(--border-lt); }
@@ -204,11 +209,10 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html" class="on">Home</a></li>
       <li><a href="pivot.html">The Pivot</a></li>
+      <li><a href="physical.html">Physical</a></li>
       <li><a href="journey.html">Journey</a></li>
       <li><a href="record.html">Record</a></li>
-      <li><a href="bio.html">Bio</a></li>
-      <li><a href="physical.html">Physical</a></li>
-      <li><a href="references.html">References</a></li>
+      <li><a href="bio.html">Bio</a></li>      <li><a href="references.html">References</a></li>
     </ul>
   </div>
 </nav>
@@ -236,6 +240,8 @@
         <span class="st"><strong>6'2"</strong><small>Height</small></span><span class="sep">·</span>
         <span class="st"><strong>89.9kg</strong><small>Weight</small></span>
       </div>
+      <a class="hero-cta" href="pivot.html#watch"><i class="fas fa-play"></i> Watch the highlights film <span>· 7 min</span></a>
+      <p class="hero-cta-note">Brief highlights across the Pride DNA — with the deeper dive, competency by competency, in the house below.</p>
     </div>
     <div class="hero-right">
       <div class="sh-tile">
