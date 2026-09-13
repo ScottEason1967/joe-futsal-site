@@ -3,22 +3,22 @@
 (function(){
   var EF_LOGO='img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp';
   var DNA_DATA={
-    'constant-threat':{group:'Pride DNA · Pivot Role',name:'Constant Threat',pride:'Possess a constant threat through receiving, turning and shooting in the final third.',video:'uVhn9-6P8X8',anchor:'pivot.html#p2',quotes:[
+    'constant-threat':{group:'Pride DNA · Pivot Role',name:'Constant Threat',pride:'Possess a constant threat through receiving, turning and shooting in the final third.',video:'9-SwxMIFYE8',anchor:'pivot.html#p2',quotes:[
       {t:'Positive 1v1 dribbling and finishing ability.',a:'Tony Loftus · Team Sunderland Head Coach',l:'img/UOS.jpg'},
       {t:'He is a threat with the ball, can pick a hard pass, play through the lines, and judges his attacking runs well.',a:'David Banjura · Former National League Chief Scout',l:null}]},
-    'retains-under-pressure':{group:'Pride DNA · Pivot Role',name:'Retains Under Pressure',pride:'Effectively retains possession under pressure.',video:'zmRC5aI2NDM',anchor:'pivot.html#p3',quotes:[
+    'retains-under-pressure':{group:'Pride DNA · Pivot Role',name:'Retains Under Pressure',pride:'Effectively retains possession under pressure.',video:'x3MjMtS9fmA',anchor:'pivot.html#p3',quotes:[
       {t:'He is very rarely flustered when under pressure and is able to turn away from defenders, protecting the ball, with great ease.',a:'Mark Hodgson · Brazilian Soccer Schools',l:'img/logo-bss.png'},
       {t:'Confident to receive under pressure. Showed a high level of responsibility.',a:'Richard Eyley · Scout, Sheffield United FC',l:'img/sheffield-united-logo-footylogos.png'}]},
-    'first-line-press':{group:'Pride DNA · Pivot Role',name:'First-Line Press',pride:'Demonstrates athleticism and an understanding to press effectively at the first line.',video:'eCp5T_w2wy0',anchor:'pivot.html#p4',quotes:[
+    'first-line-press':{group:'Pride DNA · Pivot Role',name:'First-Line Press',pride:'Demonstrates athleticism and an understanding to press effectively at the first line.',video:'zlSBD5FL7J4',anchor:'pivot.html#p4',quotes:[
       {t:'In defence, he defends at a high intensity, not allowing his man any time on the ball, and is rarely caught out of position in turnovers.',a:'Tom Thorogood · Red House School',l:'img/logo-redhouse.png'},
       {t:'He works hard week in, week out, always giving 100%. I never have to encourage him to work hard.',a:'Lee Moore MSc ASCC · PROformance',l:'img/logo-proformance.jpg',dark:true}]},
-    'technical-excellence':{group:'Pride DNA · Pillar',name:'Technical Excellence',pride:'Skilfully adaptable under pressure.',video:'aKdNUCQ0Z8k',anchor:'pivot.html#p6',quotes:[
+    'technical-excellence':{group:'Pride DNA · Pillar',name:'Technical Excellence',pride:'Skilfully adaptable under pressure.',video:'0rCUMXnwlGE',anchor:'pivot.html#p6',quotes:[
       {t:'Joe has a lovely feel for the ball — he can manipulate it easily and freely between both feet and perform technical actions to a high, game-realistic level.',a:'Danny Fowler · UEFA A, Middlesbrough Academy',l:'img/logo-df-coaching.svg'},
       {t:'Superb with both right and left foot in terms of close ball control, first touch and short passing.',a:'Mark Hodgson · Brazilian Soccer Schools',l:'img/logo-bss.png'}]},
-    'athletic-dominance':{group:'Pride DNA · Pillar',name:'Athletic Dominance',pride:'Efficient and effective mover.',video:'wYYt72EmyF0',anchor:'pivot.html#p1',quotes:[
+    'athletic-dominance':{group:'Pride DNA · Pillar',name:'Athletic Dominance',pride:'Efficient and effective mover.',video:'5Jff7Dusd9s',anchor:'pivot.html#p1',quotes:[
       {t:"Physically he is, for want of a better term, 'a machine' — with strength, pace, power and stamina to boot.",a:'Danny Fowler · UEFA A, Middlesbrough Academy',l:'img/logo-df-coaching.svg'},
       {t:'He has developed into an extremely quick, strong and physical athlete who can dominate physically due to his height, pace and strength.',a:'Mark Hodgson · Brazilian Soccer Schools',l:'img/logo-bss.png'}]},
-    'game-sense':{group:'Pride DNA · Pillar',name:'Game Sense',pride:'Understand space & time.',video:'82mNUxfOenM',anchor:'pivot.html#p5',quotes:[
+    'game-sense':{group:'Pride DNA · Pillar',name:'Game Sense',pride:'Understand space & time.',video:'iP1Az8voL2I',anchor:'pivot.html#p5',quotes:[
       {t:'He plays with his head up and scans the pitch both with and without the ball, which allows him to take up excellent positions and make good decisions.',a:'Mark Hodgson · Brazilian Soccer Schools',l:'img/logo-bss.png'},
       {t:'He reads the game well, winning 50/50s and interceptions, and repositions well to help progress the attack.',a:'Tom Thorogood · Red House School',l:'img/logo-redhouse.png'}]},
     'emotional-intelligence':{group:'Pride DNA · Pillar',name:'Emotional Intelligence',pride:'Psychologically robust & emotionally intelligent within the Pride environment.',video:null,photo:'img/ei-photo.jpg',anchor:'pivot.html#coach',quotes:[
