@@ -28,7 +28,7 @@
     .joe-chip:hover .joe-chip-pop, .joe-chip:focus-within .joe-chip-pop { opacity: 1; visibility: visible; transform: translateY(-50%) scale(1); }
     .joe-chip-pop .jq { display: block; font-size: 13px; font-style: italic; line-height: 1.55; color: var(--text); }
     .joe-chip-pop .jq-attr { display: block; margin-top: 9px; font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--red); }
-    @media (max-width: 900px) { .joe-chip-pop { left: auto; right: 0; top: calc(100% + 12px); width: min(320px, 86vw); transform: translateY(6px) scale(0.97); } .joe-chip-pop::before { left: auto; right: 18px; top: -8px; transform: none; border: 8px solid transparent; border-bottom-color: #fff; } .joe-chip:hover .joe-chip-pop, .joe-chip:focus-within .joe-chip-pop { transform: translateY(0) scale(1); } }
+    @media (max-width: 900px) { .joe-chip-pop { position: fixed; left: 50%; right: auto; top: auto; bottom: 16px; width: min(340px, 92vw); transform: translateX(-50%) translateY(8px); } .joe-chip-pop::before { display: none; } .joe-chip:hover .joe-chip-pop, .joe-chip:focus-within .joe-chip-pop { transform: translateX(-50%) translateY(0); } }
     .hero-sub { font-size: 16px; color: rgba(255,255,255,0.9); line-height: 1.65; margin-bottom: 24px; max-width: 500px; }
     .hero-sub strong { color: #fff; font-weight: 700; }
     .hero-statline { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; }
@@ -204,6 +204,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html" class="on">Home</a></li>
       <li><a href="pivot.html">The Pivot</a></li>
+      <li><a href="journey.html">Journey</a></li>
       <li><a href="record.html">Record</a></li>
       <li><a href="bio.html">Bio</a></li>
       <li><a href="physical.html">Physical</a></li>
@@ -238,11 +239,11 @@
     </div>
     <div class="hero-right">
       <div class="sh-tile">
-        <div class="k">For England coaches — start here</div>
-        <p class="sh-ctx">Current, independently verifiable evidence on Joe, measured against England Futsal&rsquo;s <strong>Pride DNA</strong>. Start with the house below.</p>
-        <div class="sh-status"><span class="dot"></span>Withdrew injured at the Derby U23 camp (twisted ankle, 4&ndash;6 wks) &middot; invited to the next camp &mdash; <strong>Bedford, late Oct 2026</strong></div>
+        <div class="k">The background</div>
+        <p class="sh-ctx">An up-to-date, independently verifiable case for Joe as a pivot, measured against England Futsal&rsquo;s <strong>Pride DNA</strong>. He was invited to the England U23 assessment day in Derby, then had to withdraw with a high ankle sprain &mdash; damage to the lateral ligament (ATFL) and the syndesmosis (AITFL).</p>
+        <p class="sh-ctx">He&rsquo;s now in full rehab, aiming to be fit for the England U23 session at <strong>Bedford in mid-October</strong>. If he can&rsquo;t make it in time, this site is the competitive evidence he would have shown there &mdash; and a measure of how much he wants to be part of the England setup.</p>
       </div>
-      <div class="reel-tile"><video autoplay muted loop playsinline poster="img/hero-27.jpg"><source src="videos/hero-showreel.mp4" type="video/mp4"></video></div>
+      <div class="reel-tile"><video autoplay muted loop playsinline poster="img/hero-27.jpg"><source src="videos/Freestyle.mp4" type="video/mp4"></video></div>
     </div>
   </div>
 

@@ -71,7 +71,7 @@ img { display: block; max-width: 100%; }
 
 /* FADE-IN */
 .fi { opacity: 0; transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s ease; }
-.fi.vis { opacity: 1; transform: translateY(0); }
+.fi.vis { opacity: 1; transform: none; }
 
 /* FOOTER */
 .foot { padding: 32px 0; text-align: center; }
