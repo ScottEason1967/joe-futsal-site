@@ -91,6 +91,18 @@
     ensure();
     el.querySelector('.dnam-box').innerHTML=render(d);
     el.querySelector('.dnam-close').addEventListener('click',close);
+    /* "Full written analysis": when it points at a section of the page we're already
+       on (pivot.html -> pivot.html#p2) the browser just changes the hash underneath,
+       so the pop-up has to get out of the way or it looks like nothing happened. */
+    el.querySelector('.dnam-more').addEventListener('click',function(e){
+      var a=e.currentTarget, url=new URL(a.getAttribute('href'), location.href);
+      if(url.pathname!==location.pathname) return;          // different page: normal navigation
+      close();
+      if(url.hash===location.hash){                           // same hash: no hashchange would fire
+        e.preventDefault();
+        window.dispatchEvent(new HashChangeEvent('hashchange'));
+      }
+    });
     el.classList.add('open'); document.body.classList.add('dnam-lock');
   }
   function close(){

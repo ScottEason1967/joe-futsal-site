@@ -240,8 +240,6 @@
       .pv-selector { position: static; }
     }
   </style>
-  <!-- Makes YouTube embeds open in 1080p rather than 360p -->
-  <script defer src="hd-embed.js"></script>
 </head>
 <body>
 
@@ -601,10 +599,23 @@ function openFromHash() {
   let id = null;
   if (h === '#coach') id = 'coach';
   else { const m = h.match(/^#p(\d)$/); if (m) id = m[1]; }
-  if (id) { activatePivot(id); document.querySelector('.panel.active')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  if (id) {
+    activatePivot(id);
+    const panel = document.querySelector('.panel.active');
+    if (panel) {
+      panel.classList.remove('flash'); void panel.offsetWidth; panel.classList.add('flash');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }
 window.addEventListener('hashchange', openFromHash);
-window.addEventListener('load', openFromHash);
+/* Run as soon as the page is parsed rather than waiting for every image to load,
+   so arriving from a homepage pop-up lands on the right section straight away;
+   run again on load in case images above it shifted the layout. */
+openFromHash();
+window.addEventListener('load', () => {
+  if (/^#(coach|p\d)$/.test(location.hash)) document.querySelector('.panel.active')?.scrollIntoView({ block: 'start' });
+});
 
 (function(){var we=document.getElementById('watchEmbed');if(!we)return;function play(){if(we.dataset.on)return;we.dataset.on='1';var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/pAU2eoXO0ZA?autoplay=1&rel=0&modestbranding=1&playsinline=1';f.title='The Making of a Pivot';f.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');f.setAttribute('allowfullscreen','');we.innerHTML='';we.appendChild(f);}we.addEventListener('click',play);we.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();play();}});})();
 </script>
