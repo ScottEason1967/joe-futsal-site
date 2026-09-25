@@ -15,7 +15,11 @@
     'technical-excellence':{group:'Pride DNA · Pillar',name:'Technical Excellence',pride:'Skilfully adaptable under pressure.',video:'0rCUMXnwlGE',anchor:'pivot.html#p6',quotes:[
       {t:'Joe has a lovely feel for the ball — he can manipulate it easily and freely between both feet and perform technical actions to a high, game-realistic level.',a:'Danny Fowler · UEFA A, Middlesbrough Academy',l:'img/logo-df-coaching.svg'},
       {t:'Superb with both right and left foot in terms of close ball control, first touch and short passing.',a:'Mark Hodgson · Brazilian Soccer Schools',l:'img/logo-bss.png'}]},
-    'athletic-dominance':{group:'Pride DNA · Pillar',name:'Athletic Dominance',pride:'Efficient and effective mover.',video:'5Jff7Dusd9s',anchor:'pivot.html#p1',quotes:[
+    'athletic-dominance':{group:'Pride DNA · Pillar',name:'Athletic Dominance',pride:'Efficient and effective mover.',video:'5Jff7Dusd9s',anchor:'pivot.html#p1',
+      links:[
+        {h:'physical.html#tests',i:'fa-chart-column',t:'The Physical Base',s:'Test results, what the numbers mean &amp; the tests on film'},
+        {h:'docs/reference-moore.pdf',i:'fa-file-pdf',t:'PROformance reference',s:'Lee Moore MSc ASCC &middot; 9 years coaching Joe',ext:true}],
+      quotes:[
       {t:"Physically he is, for want of a better term, 'a machine' — with strength, pace, power and stamina to boot.",a:'Danny Fowler · UEFA A, Middlesbrough Academy',l:'img/logo-df-coaching.svg'},
       {t:'He has developed into an extremely quick, strong and physical athlete who can dominate physically due to his height, pace and strength.',a:'Mark Hodgson · Brazilian Soccer Schools',l:'img/logo-bss.png'}]},
     'game-sense':{group:'Pride DNA · Pillar',name:'Game Sense',pride:'Understand space & time.',video:'iP1Az8voL2I',anchor:'pivot.html#p5',quotes:[
@@ -57,6 +61,14 @@
     +'.dnam-q-body{min-width:0}'
     +'.dnam-q p{margin:0 0 6px;color:rgba(255,255,255,.92);font-style:italic;font-size:.9rem;line-height:1.5}'
     +'.dnam-q span{font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:rgba(255,255,255,.6)}'
+    +'.dnam-links{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 16px}'
+    +'.dnam-link{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid rgba(255,185,29,.45);border-radius:10px;background:rgba(255,255,255,.05);text-decoration:none;color:#fff;transition:background .15s,border-color .15s}'
+    +'.dnam-link:hover{background:rgba(255,185,29,.12);border-color:var(--amber)}'
+    +'.dnam-link>i:first-child{font-size:1.1rem;color:var(--amber);flex-shrink:0;width:20px;text-align:center}'
+    +'.dnam-link span{font-size:.78rem;color:rgba(255,255,255,.72);line-height:1.4;flex:1;min-width:0}'
+    +'.dnam-link span strong{display:block;font-size:.86rem;color:#fff;font-weight:800;margin-bottom:1px}'
+    +'.dnam-link .ar{font-size:.78rem;color:rgba(255,255,255,.5)}'
+    +'@media(max-width:600px){.dnam-links{grid-template-columns:1fr}}'
     +'.dnam-more{display:inline-block;font-weight:800;font-size:12.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--amber);text-decoration:none}'
     +'.dnam-more:hover{text-decoration:underline}'
     +'body.dnam-lock{overflow:hidden}'
@@ -72,11 +84,13 @@
       vid = '<div class="dnam-novideo">'+ph+'<div class="dnam-nv-text"><div class="nv-h"><i class="fas fa-brain"></i>The part you can&rsquo;t film</div><div class="nv-p">Emotional intelligence never shows up on camera. It&rsquo;s evidenced in how Joe responds to setbacks, takes coaching and drives his own development &mdash; and in what coaches and scouts say about him, unprompted.</div></div></div>';
     }
     var quotes = d.quotes.map(function(q){var lg = q.l ? '<img src="'+q.l+'" alt="">' : '<span class="sc"><i class="fas fa-binoculars"></i></span>'; return '<div class="dnam-q"><div class="dnam-q-logo'+(q.dark?' dark':'')+'">'+lg+'</div><div class="dnam-q-body"><p>&ldquo;'+q.t+'&rdquo;</p><span>'+q.a+'</span></div></div>';}).join('');
+    var links = d.links ? '<div class="dnam-links">'+d.links.map(function(l){ return '<a class="dnam-link" href="'+l.h+'"'+(l.ext?' target="_blank" rel="noopener"':'')+'><i class="fas '+l.i+'"></i><span><strong>'+l.t+'</strong>'+l.s+'</span><i class="fas fa-arrow-right ar"></i></a>'; }).join('')+'</div>' : '';
     return '<button class="dnam-close" type="button" aria-label="Close">&times;</button>'
       +'<div class="dnam-scroll"><div class="dnam-head"><span class="dnam-eyebrow">'+d.group+'</span><h3>'+d.name+'</h3></div>'
       +'<div class="dnam-pride"><img src="'+EF_LOGO+'" alt="England Futsal"><p>&ldquo;'+d.pride+'&rdquo;</p></div>'
       +vid
       +'<div class="dnam-quotes">'+quotes+'</div>'
+      +links
       +'<a class="dnam-more" href="'+d.anchor+'">Full written analysis &rarr;</a></div>';
   }
   function ensure(){
@@ -91,17 +105,23 @@
     ensure();
     el.querySelector('.dnam-box').innerHTML=render(d);
     el.querySelector('.dnam-close').addEventListener('click',close);
-    /* "Full written analysis": when it points at a section of the page we're already
-       on (pivot.html -> pivot.html#p2) the browser just changes the hash underneath,
-       so the pop-up has to get out of the way or it looks like nothing happened. */
-    el.querySelector('.dnam-more').addEventListener('click',function(e){
-      var a=e.currentTarget, url=new URL(a.getAttribute('href'), location.href);
-      if(url.pathname!==location.pathname) return;          // different page: normal navigation
-      close();
-      if(url.hash===location.hash){                           // same hash: no hashchange would fire
-        e.preventDefault();
-        window.dispatchEvent(new HashChangeEvent('hashchange'));
-      }
+    /* Links inside the pop-up that point at a section of the page we're already on
+       (pivot.html -> pivot.html#p2, physical.html -> physical.html#tests) only change
+       the hash underneath, so the pop-up has to get out of the way or it looks like
+       nothing happened. PDFs and other new-tab links are left alone. */
+    Array.prototype.forEach.call(el.querySelectorAll('.dnam-box a[href]'),function(a){
+      if(a.target==='_blank') return;
+      a.addEventListener('click',function(e){
+        var url=new URL(a.getAttribute('href'), location.href);
+        if(url.pathname!==location.pathname) return;        // different page: normal navigation
+        close();
+        if(url.hash===location.hash){                         // same hash: nothing would fire
+          e.preventDefault();
+          window.dispatchEvent(new HashChangeEvent('hashchange'));
+          var t=url.hash && document.getElementById(url.hash.slice(1));
+          if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      });
     });
     el.classList.add('open'); document.body.classList.add('dnam-lock');
   }

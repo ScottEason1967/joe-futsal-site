@@ -53,7 +53,7 @@
     @media (max-width: 640px) { .af-block { grid-template-columns: 1fr; } .af-photo { height: auto; } .af-media { flex: none; min-height: 0; aspect-ratio: 951/1600; max-width: 220px; } .af-jumps { grid-template-columns: 1fr 1fr; } .af-jumps .af-adtile { grid-column: 1 / -1; min-height: 96px; } }
 
     /* On-page tabbed nav */
-    .phys-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 24px; }
+    .phys-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 24px; scroll-margin-top: 84px; }
     .phys-tabs .ptab { flex: 1 1 200px; font-family: var(--font-display); font-size: 1.02rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; padding: 15px 18px; border: 1.5px solid var(--border-lt); background: #f1f5f9; color: var(--text); border-radius: 10px; cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s; text-align: left; }
     .phys-tabs .ptab:hover { border-color: var(--red); }
     .phys-tabs .ptab.active { background: var(--blue-deep); color: #fff; border-color: var(--blue-deep); }
@@ -177,14 +177,14 @@
       </figure>
     </div>
 
-    <div class="phys-tabs" role="tablist">
+    <div class="phys-tabs" id="tests" role="tablist">
       <button class="ptab active" data-ptab="results" type="button">Test Results</button>
       <button class="ptab" data-ptab="means" type="button">What the Numbers Mean</button>
       <button class="ptab" data-ptab="film" type="button">The Tests on Film</button>
     </div>
 
     <div class="phys-panel active" id="ptab-results">
-      <p class="sec-sub">Elite-benchmarked results, grouped by speed, jumping and power — independently measured at PROformance.</p>
+      <p class="sec-sub">Elite-benchmarked results, grouped by speed, jumping and power — independently measured at PROformance, apart from the 30m sprint, timed on speed gates at Gateshead Academy.</p>
       <div class="res-groups">
         <div class="res-group rg-speed">
           <div class="rg-head"><i class="fas fa-gauge-high"></i> Speed</div>
@@ -198,7 +198,7 @@
         <div class="res-group rg-jump">
           <div class="rg-head"><i class="fas fa-arrow-up"></i> Jumping</div>
           <div class="rg-tiles">
-            <div class="p-tile"><div class="v">60cm</div><div class="l">Countermovement</div><span class="b">Elite</span></div>
+            <div class="p-tile"><div class="v">60.1cm</div><div class="l">Countermovement</div><span class="b">Elite</span></div>
             <div class="p-tile"><div class="v">62.5cm</div><div class="l">Abalakov Jump</div><span class="b">Elite</span></div>
             <div class="p-tile"><div class="v">305cm</div><div class="l">Broad Jump</div><span class="b">Elite</span></div>
           </div>
@@ -230,7 +230,7 @@
         <div class="res-group rg-jump">
           <div class="rg-head"><i class="fas fa-arrow-up"></i> Jumping</div>
           <div class="sc-row">
-            <div class="sc-metric"><div class="v">60cm</div><div class="l">Countermovement Jump</div></div>
+            <div class="sc-metric"><div class="v">60.1cm</div><div class="l">Countermovement Jump</div></div>
             <div class="sc-translate"><strong>Aerial reach in the attacking third.</strong> Winning a keeper's long throw or a clearance dropping into the final part of the court. Elite vertical means Joe gets to the ball first when it hangs in the air ahead of a defender.</div>
           </div>
           <div class="sc-row">
@@ -261,7 +261,7 @@
             <div class="tag">Sprint · Session 1</div>
             <div class="play"><i class="fas fa-play"></i></div>
           </div>
-          <div class="v-body"><h4>Sprint testing · session 1</h4><p>Verified: 5m 0.91s · 10m 1.62s · 30m 3.89s · top speed 34 km/h.</p></div>
+          <div class="v-body"><h4>Sprint testing · session 1</h4><p>Best verified times: 5m 0.91s · 10m 1.62s · top speed 34 km/h.</p></div>
         </div>
         <div class="v-card card-landscape">
           <div class="v-frame f-landscape" data-src="videos/test-running-2.mp4">
@@ -277,7 +277,7 @@
             <div class="tag">Jumping</div>
             <div class="play"><i class="fas fa-play"></i></div>
           </div>
-          <div class="v-body"><h4>Jump testing compilation</h4><p>CMJ, Abalakov, broad &amp; box jumps. Verified: CMJ 60cm · Abalakov 62.5cm · broad 305cm.</p></div>
+          <div class="v-body"><h4>Jump testing compilation</h4><p>CMJ, Abalakov, broad &amp; box jumps. Verified: CMJ 60.1cm · Abalakov 62.5cm · broad 305cm.</p></div>
         </div>
       </div>
     </div>
@@ -298,6 +298,12 @@ document.querySelectorAll('.ptab').forEach(btn => btn.addEventListener('click', 
   const id = 'ptab-' + btn.dataset.ptab;
   document.querySelectorAll('.phys-panel').forEach(p => p.classList.toggle('active', p.id === id));
 }));
+
+// Arriving from an Athletic Dominance link (physical.html#tests): land on the tabs, and
+// re-align once the photos above have loaded in case they pushed the tabs down.
+window.addEventListener('load', () => {
+  if (location.hash === '#tests') document.getElementById('tests')?.scrollIntoView({ block: 'start' });
+});
 
 // Click-to-play native videos
 document.querySelectorAll('.v-frame[data-src]').forEach(frame => {

@@ -119,6 +119,15 @@
     .case-stat.feat .v, .case-stat.feat .l { color: #fff; }
     .case-stat.feat .l { color: rgba(255,255,255,0.85); }
     .case-stats.cs6 { grid-template-columns: repeat(6, 1fr); }
+    /* Athletic Dominance: onward links to the full testing and the S&C reference */
+    .ad-links { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: -8px 0 22px; }
+    .ad-link { display: flex; align-items: center; gap: 12px; padding: 13px 16px; border: 1.5px solid var(--border-lt); border-radius: 10px; background: #fff; text-decoration: none; color: var(--text); transition: border-color .15s, transform .15s, box-shadow .15s; }
+    .ad-link:hover { border-color: var(--red); transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,32,64,.10); }
+    .ad-link > i:first-child { font-size: 1.15rem; color: var(--red); flex-shrink: 0; width: 22px; text-align: center; }
+    .ad-link span { font-size: .8rem; color: var(--text-sec); line-height: 1.4; flex: 1; min-width: 0; }
+    .ad-link span strong { display: block; font-size: .88rem; color: var(--blue-deep); font-weight: 800; margin-bottom: 1px; }
+    .ad-link .ar { font-size: .8rem; color: var(--text-muted); }
+    @media (max-width: 700px) { .ad-links { grid-template-columns: 1fr; } }
     @media (max-width: 720px){ .case-stats.cs6 { grid-template-columns: repeat(3, 1fr); } }
     @media (max-width: 430px){ .case-stats.cs6 { grid-template-columns: repeat(2, 1fr); } }
     .case-stat.cs-speed { background: rgba(0,94,184,0.06); border: 1px solid var(--border-lt); border-top: 3px solid var(--blue); }
@@ -332,9 +341,13 @@
             <div class="case-stat cs-speed"><div class="v">0.91s</div><div class="l">5m Sprint</div><span class="b">Elite</span></div>
             <div class="case-stat cs-speed"><div class="v">34 km/h</div><div class="l">Top Speed</div><span class="b">Elite</span></div>
             <div class="case-stat cs-jump"><div class="v">305cm</div><div class="l">Broad Jump</div><span class="b">Elite</span></div>
-            <div class="case-stat cs-jump"><div class="v">60cm</div><div class="l">CMJ</div><span class="b">Elite</span></div>
+            <div class="case-stat cs-jump"><div class="v">60.1cm</div><div class="l">CMJ</div><span class="b">Elite</span></div>
             <div class="case-stat cs-phys"><div class="v">89.9kg</div><div class="l">Frame</div></div>
             <div class="case-stat cs-phys"><div class="v">3.7&times;BW</div><div class="l">Mid-Thigh Pull</div></div>
+          </div>
+          <div class="ad-links">
+            <a class="ad-link" href="physical.html#tests"><i class="fas fa-chart-column"></i><span><strong>The Physical Base</strong>Test results, what the numbers mean &amp; the tests on film</span><i class="fas fa-arrow-right ar"></i></a>
+            <a class="ad-link" href="docs/reference-moore.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i><span><strong>PROformance reference</strong>Lee Moore MSc ASCC &middot; 9 years coaching Joe</span><i class="fas fa-arrow-right ar"></i></a>
           </div>
           <div class="case-quotes">
             <div class="case-quote">
@@ -411,7 +424,7 @@
             <div class="case-stat cs-speed"><div class="v">0.91s</div><div class="l">5m Sprint</div><span class="b">Elite</span></div>
             <div class="case-stat cs-speed"><div class="v">34 km/h</div><div class="l">Top Speed</div><span class="b">Elite</span></div>
             <div class="case-stat cs-jump"><div class="v">305cm</div><div class="l">Broad Jump</div><span class="b">Elite</span></div>
-            <div class="case-stat cs-jump"><div class="v">60cm</div><div class="l">CMJ</div><span class="b">Elite</span></div>
+            <div class="case-stat cs-jump"><div class="v">60.1cm</div><div class="l">CMJ</div><span class="b">Elite</span></div>
             <div class="case-stat cs-phys"><div class="v">89.9kg</div><div class="l">Frame</div></div>
             <div class="case-stat cs-phys"><div class="v">3.7&times;BW</div><div class="l">Mid-Thigh Pull</div></div>
           </div>
