@@ -40,7 +40,7 @@
     .watch-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
     .watch-more { text-align: center; margin-top: 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: rgba(255,255,255,0.82); }
     .watch-more i { color: var(--amber); margin-right: 7px; }
-    .switch { margin-top: 20px; }
+    .switch { margin-top: 20px; scroll-margin-top: 84px; }
     .tabs { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-bottom: 20px; }
     .tabs-3 { grid-template-columns: repeat(3, 1fr); margin-bottom: 24px; }
     .tab-group { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 14px; padding: 20px 20px 4px; margin-bottom: 22px; }
@@ -310,7 +310,7 @@
     <div class="watch-more"><i class="fas fa-chevron-down"></i> Explore each competency in the Pride DNA house below</div>
   </section>
 
-  <div class="switch fi">
+  <div class="switch fi" id="analysis">
     <div class="pv-layout">
       <div class="pv-selector">
         <div class="pv-house">
@@ -629,6 +629,13 @@ openFromHash();
 window.addEventListener('load', () => {
   if (/^#(coach|p\d)$/.test(location.hash)) document.querySelector('.panel.active')?.scrollIntoView({ block: 'start' });
 });
+/* "See the full analysis" in the homepage highlights pop-up lands on the Pride DNA house.
+   Land again once fonts and images have settled so it doesn't drift. */
+if (location.hash === '#analysis') {
+  const landOnHouse = () => document.getElementById('analysis')?.scrollIntoView({ block: 'start' });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(landOnHouse);
+  window.addEventListener('load', () => { landOnHouse(); setTimeout(landOnHouse, 700); }, { once: true });
+}
 
 (function(){var we=document.getElementById('watchEmbed');if(!we)return;function play(){if(we.dataset.on)return;we.dataset.on='1';var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/pAU2eoXO0ZA?autoplay=1&rel=0&modestbranding=1&playsinline=1';f.title='The Making of a Pivot';f.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');f.setAttribute('allowfullscreen','');we.innerHTML='';we.appendChild(f);}we.addEventListener('click',play);we.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();play();}});})();
 </script>
