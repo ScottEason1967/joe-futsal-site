@@ -5,7 +5,7 @@
   var DNA_DATA={
     'constant-threat':{group:'Pride DNA · Pivot Role',name:'Constant Threat',pride:'Possess a constant threat through receiving, turning and shooting in the final third.',video:'9-SwxMIFYE8',anchor:'pivot.html#p2',quotes:[
       {t:'Positive 1v1 dribbling and finishing ability.',a:'Tony Loftus · Team Sunderland Head Coach',l:'img/UOS.jpg'},
-      {t:'He is a threat with the ball, can pick a hard pass, play through the lines, and judges his attacking runs well.',a:'David Banjura · Former National League Chief Scout',l:null}]},
+      {t:'He is a threat with the ball, can pick a hard pass, play through the lines, and judges his attacking runs well.',a:'David Banjura · Former National League Chief Scout',l:'img/badge-national-league.png'}]},
     'retains-under-pressure':{group:'Pride DNA · Pivot Role',name:'Retains Under Pressure',pride:'Effectively retains possession under pressure.',video:'x3MjMtS9fmA',anchor:'pivot.html#p3',quotes:[
       {t:'He is very rarely flustered when under pressure and is able to turn away from defenders, protecting the ball, with great ease.',a:'Mark Hodgson · Brazilian Soccer Schools',l:'img/logo-bss.png'},
       {t:'Confident to receive under pressure. Showed a high level of responsibility.',a:'Richard Eyley · Scout, Sheffield United FC',l:'img/sheffield-united-logo-footylogos.png'}]},

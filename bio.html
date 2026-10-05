@@ -41,6 +41,10 @@
     .bio-quote .k { display: inline-block; padding: 4px 10px; border-radius: 6px; background: rgba(255,185,29,0.16); color: var(--amber); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px; }
     .bio-quote p { font-size: 1.08rem; font-style: italic; line-height: 1.65; color: #fff; margin: 0; }
     .bio-quote .a { font-family: var(--font-display); font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.75); text-transform: uppercase; letter-spacing: 2px; margin-top: 18px; font-style: normal; }
+    /* every quote carries the club's logo beside who said it */
+    .bio-quote .bq-foot { display: flex; align-items: center; gap: 12px; margin-top: 18px; }
+    .bio-quote .bq-foot img { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; flex-shrink: 0; box-shadow: 0 0 0 1px rgba(255,255,255,0.25); }
+    .bio-quote .bq-foot .a { margin-top: 0; }
     @media (max-width: 900px) { .bio-grid { grid-template-columns: 1fr; } .bio-photo { max-width: 340px; margin: 0 auto; } .cred-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
@@ -80,7 +84,7 @@
         <div class="bio-quote">
           <div class="k">Head Coach · Team Sunderland</div>
           <p>"An athletic, physically strong, technically excellent pivot who can protect the ball, beat players 1v1 and finish."</p>
-          <div class="a">— Tony Loftus · Individual Player Development Plan</div>
+          <div class="bq-foot"><img src="img/UOS.jpg" alt="Team Sunderland"><div class="a">— Tony Loftus · Individual Player Development Plan</div></div>
         </div>
         <div class="beyond">
           <div class="h">Beyond the court</div>
