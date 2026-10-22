@@ -6,8 +6,8 @@
   --blue-dark: #001c4a;
   --red: #CE1126;
   --red-deep: #8B0A1B;
-  --amber: #CE1126;   /* futsal accent = red (was football amber) */
-  --amber-deep: #A50D1E;
+  --amber: #FFB91D;
+  --amber-deep: #C9A227;
   --green: #006747;
   --text: #212B32;
   --text-sec: #4C6272;
@@ -84,7 +84,7 @@ img { display: block; max-width: 100%; }
 
 /* BUTTONS */
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: var(--red); color: #fff; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; border-radius: 8px; text-decoration: none; }
-.btn.amber { background: var(--amber); color: #fff; }
+.btn.amber { background: var(--amber); color: var(--blue-deep); }
 
 @media (max-width: 900px) {
   .g2, .g3, .g4 { grid-template-columns: 1fr; }
