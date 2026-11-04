@@ -45,12 +45,21 @@
     .af-media img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
     .af-photo figcaption { margin-top: 10px; font-size: 12.5px; color: var(--text-sec); line-height: 1.45; }
     .af-photo figcaption strong { color: var(--text); font-weight: 800; }
-    .af-jumps { display: grid; grid-template-columns: 140px 140px 1fr; gap: 12px; margin-top: 16px; align-items: stretch; }
+    .af-jumps { display: grid; grid-template-columns: 140px 140px 140px 1fr; gap: 12px; margin-top: 16px; align-items: stretch; }
     .af-jumps figure { margin: 0; }
     .af-jumps .jm { border-radius: 10px; overflow: hidden; background: #0a1a2e; box-shadow: 0 4px 14px rgba(0,0,0,0.14); aspect-ratio: 4/5; }
     .af-jumps .jm img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    /* the single-leg box jump plays on its own, silently, beside the two jump photos */
+    .af-jumps .jm { position: relative; }
+    .af-jumps .jm video { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; display: block; }
+    .af-jumps .jm-tag { position: absolute; left: 6px; right: 6px; bottom: 6px; text-align: center; padding: 3px 4px; border-radius: 4px; background: var(--amber); color: var(--blue-deep); font-size: 9px; font-weight: 800; letter-spacing: 0.6px; text-transform: uppercase; line-height: 1.2; }
+    @media (max-width: 1100px) { .af-jumps { grid-template-columns: repeat(3, 1fr); } .af-jumps .af-adtile { grid-column: 1 / -1; min-height: 96px; } }
+    /* films tab: the landscape sprint film on top, exactly as wide as the three portrait films beneath it */
+    .v-break { flex-basis: 100%; height: 0; }
+    /* every film the same height on a row, so the tops and bottoms line up */
+    @media (min-width: 901px) { .v-grid .v-frame { flex: none; height: 352px; min-height: 0; } .v-grid .v-body { flex: 1; } .v-grid .v-card.card-landscape { width: 626px; } }
     .af-jumps figcaption { margin-top: 6px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; color: var(--text-sec); }
-    @media (max-width: 640px) { .af-block { grid-template-columns: 1fr; } .af-photo { height: auto; } .af-media { flex: none; min-height: 0; aspect-ratio: 951/1600; max-width: 220px; } .af-jumps { grid-template-columns: 1fr 1fr; } .af-jumps .af-adtile { grid-column: 1 / -1; min-height: 96px; } }
+    @media (max-width: 640px) { .af-block { grid-template-columns: 1fr; } .af-photo { height: auto; } .af-media { flex: none; min-height: 0; aspect-ratio: 951/1600; max-width: 220px; } .af-jumps { grid-template-columns: repeat(3, 1fr); } .af-jumps .af-adtile { grid-column: 1 / -1; min-height: 96px; } }
 
     /* On-page tabbed nav */
     .phys-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 24px; scroll-margin-top: 84px; }
@@ -165,6 +174,7 @@
         <div class="af-jumps">
           <figure><div class="jm"><img src="img/photo-jump-squat.jpg" alt="Joe loading the squat phase before take-off"></div></figure>
           <figure><div class="jm"><img src="img/photo-jump-airborne.jpg" alt="Joe airborne at the peak of the jump"></div></figure>
+          <figure><div class="jm"><video src="videos/test-single-leg-jump.mp4" poster="img/poster-single-leg-jump.jpg" autoplay muted loop playsinline preload="auto" aria-label="Single-leg box jump onto a 105cm box"></video><span class="jm-tag">Single-leg · 105cm</span></div></figure>
           <a href="pivot.html#p1" class="dna-tile dna-foundation af-adtile" data-dna="athletic-dominance" aria-label="Athletic Dominance — watch the video">
             <span class="thumb" style="background-image:url('https://img.youtube.com/vi/5Jff7Dusd9s/hqdefault.jpg')"></span>
             <span class="shade"></span>
@@ -255,14 +265,6 @@
     <div class="phys-panel" id="ptab-film">
       <p class="sec-sub">Click any video to play in place — testing sessions filmed at PROformance.</p>
       <div class="v-grid">
-        <div class="v-card card-portrait">
-          <div class="v-frame f-portrait" data-src="videos/test-running-1.mp4">
-            <img class="poster" src="img/poster-run1.jpg" alt="Sprint testing — session 1">
-            <div class="tag">Sprint · Session 1</div>
-            <div class="play"><i class="fas fa-play"></i></div>
-          </div>
-          <div class="v-body"><h4>Sprint testing · session 1</h4><p>Best verified times: 5m 0.91s · 10m 1.62s · top speed 34 km/h.</p></div>
-        </div>
         <div class="v-card card-landscape">
           <div class="v-frame f-landscape" data-src="videos/test-running-2.mp4">
             <img class="poster" src="img/poster-test-running-2.jpg" alt="Sprint testing on track — session 2">
@@ -271,6 +273,15 @@
           </div>
           <div class="v-body"><h4>Track sprint testing · session 2</h4><p>Second sprint session at the same intensity — top-end pace repeated and confirmed across the run.</p></div>
         </div>
+        <div class="v-break" aria-hidden="true"></div>
+        <div class="v-card card-portrait">
+          <div class="v-frame f-portrait" data-src="videos/test-running-1.mp4">
+            <img class="poster" src="img/poster-run1.jpg" alt="Sprint testing — session 1">
+            <div class="tag">Sprint · Session 1</div>
+            <div class="play"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="v-body"><h4>Sprint testing · session 1</h4><p>Best verified times: 5m 0.91s · 10m 1.62s · top speed 34 km/h.</p></div>
+        </div>
         <div class="v-card card-portrait">
           <div class="v-frame f-portrait" data-src="videos/test-jumping.mp4">
             <img class="poster" src="img/poster-jump.jpg" alt="Jump testing at PROformance">
@@ -278,6 +289,14 @@
             <div class="play"><i class="fas fa-play"></i></div>
           </div>
           <div class="v-body"><h4>Jump testing compilation</h4><p>CMJ, Abalakov, broad &amp; box jumps. Verified: CMJ 60.1cm · Abalakov 62.5cm · broad 305cm.</p></div>
+        </div>
+        <div class="v-card card-portrait">
+          <div class="v-frame f-portrait" data-src="videos/test-single-leg-jump.mp4">
+            <img class="poster" src="img/poster-single-leg-jump.jpg" alt="Single-leg box jump onto a 105cm box at PROformance">
+            <div class="tag">Jumping</div>
+            <div class="play"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="v-body"><h4>Single-leg box jump</h4><p>Take-off from one leg onto a 105cm box stack: 15cm, 30cm and 60cm.</p></div>
         </div>
       </div>
     </div>
