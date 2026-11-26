@@ -30,6 +30,14 @@
     .team-band .cap .s { font-size: 12px; color: rgba(255,255,255,0.85); font-weight: 600; margin-top: 5px; letter-spacing: 0.3px; }
     @media (max-width: 720px) { .team-band img { height: 200px; } }
 
+    /* 26 Nov 2026: career totals across both NFS seasons */
+    .career { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; }
+    .career .num-grid { min-width: 300px; }
+    .career-split { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 12px; font-size: 0.88rem; color: var(--text-muted); }
+    .career-split span { display: inline-flex; align-items: center; gap: 8px; }
+    .career-split img { display: inline-block; width: 26px; height: 26px; object-fit: contain; border-radius: 4px; }
+    .career-split strong { color: var(--text); }
+    @media (max-width: 720px) { .career { grid-template-columns: 1fr; text-align: center; } .career .num-grid { min-width: 0; } .career-split { justify-content: center; } }
     .fixture { display: grid; grid-template-columns: 90px 1fr auto; gap: 20px; align-items: center; padding: 18px 22px; background: #fafbfc; border: 1px solid var(--border-lt); border-left: 3px solid var(--red); border-radius: 10px; margin-bottom: 10px; }
     .fixture .date { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--blue-deep); line-height: 1.15; }
     .fixture .date small { display: block; font-size: 9.5px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
@@ -43,8 +51,8 @@
     .vid-soon i { font-size: 10px; }
     .vid-thumb { position: relative; display: block; width: 168px; aspect-ratio: 16/9; border-radius: 8px; overflow: hidden; flex-shrink: 0; background: #000; box-shadow: 0 2px 8px rgba(0,32,64,0.16); }
     .vid-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.2s; }
-    .vid-thumb .pl { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.18); transition: background 0.15s; }
-    .vid-thumb .pl i { width: 38px; height: 38px; border-radius: 50%; background: var(--red); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 13px; padding-left: 3px; box-shadow: 0 3px 10px rgba(0,0,0,0.45); }
+    .vid-thumb .pl { position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: flex-end; padding: 6px; background: rgba(0,0,0,0.18); transition: background 0.15s; }
+    .vid-thumb .pl i { width: 30px; height: 30px; border-radius: 50%; background: var(--red); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 11px; padding-left: 2px; box-shadow: 0 3px 10px rgba(0,0,0,0.45); }
     .vid-thumb:hover img { transform: scale(1.05); }
     .vid-thumb:hover .pl { background: rgba(0,0,0,0.05); }
     .vid-thumb.open { pointer-events: none; opacity: 0.5; }
@@ -82,6 +90,26 @@
   </div>
 </div>
 
+<!-- Career totals across both seasons (added 26 Nov 2026) -->
+<section class="sec" style="padding-bottom: 0;">
+  <div class="wrap fi">
+    <div class="career">
+      <div>
+        <div class="sec-label">Career Totals · National Futsal Series</div>
+        <div class="sec-title" style="margin-bottom: 0;">10 goals in 8 appearances</div>
+        <div class="career-split">
+          <span><img src="img/newcastle-futsal.jpg" alt="Newcastle Futsal badge"><strong>2026/27</strong> Newcastle Futsal · 2 goals in 1</span>
+          <span><img src="img/UOS.jpg" alt="Team Sunderland Futsal badge"><strong>2025/26</strong> Team Sunderland · 8 goals in 7</span>
+        </div>
+      </div>
+      <div class="num-grid">
+        <div class="num-card"><div class="v">8</div><div class="l">Appearances</div></div>
+        <div class="num-card feat"><div class="v">10</div><div class="l">Goals</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 2026/27 - Newcastle Futsal (added 26 Nov 2026) -->
 <section class="sec">
   <div class="wrap fi">
@@ -92,7 +120,21 @@
         <div class="s">National Futsal Series · Tier 2 North · 2026/27</div>
       </div>
     </div>
-    <div class="sec-label">Fixtures</div>
+    <div class="totals">
+      <div class="totals-badge">
+        <img src="img/newcastle-futsal.jpg" alt="Newcastle Futsal badge">
+      </div>
+      <div class="totals-content" style="width: 100%;">
+        <div class="sec-label">Season Totals · 2026/27</div>
+        <div class="sec-title" style="margin-bottom: 20px;">2 goals in 1 appearance</div>
+        <div class="num-grid">
+          <div class="num-card"><div class="v">1</div><div class="l">Appearance</div></div>
+          <div class="num-card feat"><div class="v">2</div><div class="l">Goals</div></div>
+        </div>
+        <p class="num-note">Two goals on his Newcastle Futsal debut against Birmingham WLV.</p>
+      </div>
+    </div>
+    <div class="sec-label" style="margin-top: 34px;">Fixtures</div>
     <div class="sec-title">Match record · 2026/27</div>
     <p class="sec-sub">Joe's games for <strong>Newcastle Futsal</strong> in the 2026/27 National Futsal Series. Click any thumbnail to play the highlights right here on the page.</p>
 
@@ -100,7 +142,7 @@
       <div class="fixture">
         <div class="date">22.11.26<small>Nov 26</small></div>
         <div><h4>Newcastle Futsal v Birmingham WLV <span style="color:var(--text-muted); font-weight:600;">(H)</span></h4><div class="comp">National Futsal Series · Tier 2 North</div></div>
-        <a class="vid-thumb" href="https://www.youtube.com/watch?v=eyHZGN-5HVQ" target="_blank" rel="noopener" aria-label="Watch Birmingham WLV highlights"><img src="img/match-2026-11-22-v-birmingham-wlv.jpg" alt="Birmingham WLV highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
+        <a class="vid-thumb" href="https://www.youtube.com/watch?v=eyHZGN-5HVQ" target="_blank" rel="noopener" aria-label="Watch Birmingham WLV highlights"><img src="img/yt-match-2026-11-22-v-birmingham-wlv.jpg" alt="Birmingham WLV highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
       </div>
     </div>
   </div>
@@ -146,7 +188,7 @@
       <div class="fixture">
         <div class="date">05.10.25<small>Oct 25</small></div>
         <div><h4>Team Sunderland v Loughborough Students B <span style="color:var(--text-muted); font-weight:600;">(H)</span></h4><div class="comp">National Futsal Series · Tier 2 North</div></div>
-        <a class="vid-thumb" href="https://www.youtube.com/watch?v=NtvBumcTEwI" target="_blank" rel="noopener" aria-label="Watch Loughborough highlights"><img src="img/match-2025-10-05-v-loughborough-students-b.jpg" alt="Loughborough highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
+        <a class="vid-thumb" href="https://www.youtube.com/watch?v=NtvBumcTEwI" target="_blank" rel="noopener" aria-label="Watch Loughborough highlights"><img src="img/yt-match-2025-10-05-v-loughborough-students-b.jpg" alt="Loughborough highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
       </div>
       <div class="fixture">
         <div class="date">26.10.25<small>Oct 25</small></div>
@@ -156,27 +198,27 @@
       <div class="fixture">
         <div class="date">02.11.25<small>Nov 25</small></div>
         <div><h4>Team Sunderland v Bolton B <span style="color:var(--text-muted); font-weight:600;">(H)</span></h4><div class="comp">National Futsal Series · Tier 2 North</div></div>
-        <a class="vid-thumb" href="https://www.youtube.com/watch?v=OhJecYCgBBM" target="_blank" rel="noopener" aria-label="Watch Bolton (home) highlights"><img src="img/match-2025-11-02-v-bolton-b.jpg" alt="Bolton home highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
+        <a class="vid-thumb" href="https://www.youtube.com/watch?v=OhJecYCgBBM" target="_blank" rel="noopener" aria-label="Watch Bolton (home) highlights"><img src="img/yt-match-2025-11-02-v-bolton-b.jpg" alt="Bolton home highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
       </div>
       <div class="fixture">
         <div class="date">09.11.25<small>Nov 25</small></div>
         <div><h4>Team Sunderland v Manchester B <span style="color:var(--text-muted); font-weight:600;">(H)</span></h4><div class="comp">National Futsal Series · Tier 2 North</div></div>
-        <a class="vid-thumb" href="https://www.youtube.com/watch?v=8HZ9BZaGxG4" target="_blank" rel="noopener" aria-label="Watch Manchester (league) highlights"><img src="img/match-2025-11-09-v-manchester-b.jpg" alt="Manchester league highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
+        <a class="vid-thumb" href="https://www.youtube.com/watch?v=8HZ9BZaGxG4" target="_blank" rel="noopener" aria-label="Watch Manchester (league) highlights"><img src="img/yt-match-2025-11-09-v-manchester-b.jpg" alt="Manchester league highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
       </div>
       <div class="fixture">
         <div class="date">23.11.25<small>Nov 25</small></div>
         <div><h4>Team Sunderland v Manchester B <span style="color:var(--text-muted); font-weight:600;">(H)</span></h4><div class="comp">NFS Tier 2 North Men's Cup · Quarter-Final</div></div>
-        <a class="vid-thumb" href="https://www.youtube.com/watch?v=atZjL1zQvug" target="_blank" rel="noopener" aria-label="Watch Manchester (cup) highlights"><img src="img/match-2025-11-23-v-manchester-b-cup.jpg" alt="Manchester cup highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
+        <a class="vid-thumb" href="https://www.youtube.com/watch?v=atZjL1zQvug" target="_blank" rel="noopener" aria-label="Watch Manchester (cup) highlights"><img src="img/yt-match-2025-11-23-v-manchester-b-cup.jpg" alt="Manchester cup highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
       </div>
       <div class="fixture">
         <div class="date">15.02.26<small>Feb 26</small></div>
         <div><h4>Bolton B v Team Sunderland <span style="color:var(--text-muted); font-weight:600;">(A)</span></h4><div class="comp">National Futsal Series · Tier 2 North</div></div>
-        <a class="vid-thumb" href="https://www.youtube.com/watch?v=kr2TLqwjIv8" target="_blank" rel="noopener" aria-label="Watch Bolton (away) highlights"><img src="img/match-2026-02-15-v-bolton-b-away.jpg" alt="Bolton away highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
+        <a class="vid-thumb" href="https://www.youtube.com/watch?v=kr2TLqwjIv8" target="_blank" rel="noopener" aria-label="Watch Bolton (away) highlights"><img src="img/yt-match-2026-02-15-v-bolton-b-away.jpg" alt="Bolton away highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
       </div>
       <div class="fixture">
         <div class="date">22.02.26<small>Feb 26</small></div>
         <div><h4>Team Sunderland v East Riding <span style="color:var(--text-muted); font-weight:600;">(H)</span></h4><div class="comp">National Futsal Series · Tier 2 North</div></div>
-        <a class="vid-thumb" href="https://www.youtube.com/watch?v=uI147LDmNHM" target="_blank" rel="noopener" aria-label="Watch East Riding highlights"><img src="img/match-2026-02-22-v-east-riding.jpg" alt="East Riding highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
+        <a class="vid-thumb" href="https://www.youtube.com/watch?v=uI147LDmNHM" target="_blank" rel="noopener" aria-label="Watch East Riding highlights"><img src="img/yt-match-2026-02-22-v-east-riding.jpg" alt="East Riding highlights" loading="lazy"><span class="pl"><i class="fas fa-play"></i></span></a>
       </div>
     </div>
 
